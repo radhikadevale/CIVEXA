@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | CIVEXA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="dashboard.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="dashboard-navbar">
+
+    <div class="logo">
+
+        <span class="logo-mark">◆</span>
+
+        CIVEXA
+
+    </div>
+
+
+    <nav class="dashboard-nav">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="report.html">
+            Report Issue
+        </a>
+
+        <a href="browse.html">
+            Browse Issues
+        </a>
+
+        <a href="track.html">
+            Track Issue
+        </a>
+
+    </nav>
+
+
+    <div class="profile-area">
+
+        <div class="notification-button" title="Notifications">
+
+            🔔
+
+            <span class="notification-dot"></span>
+
+        </div>
+
+
+        <a href="profile.html" class="profile-mini">
+
+            <span class="profile-avatar" id="dashboardAvatar">
+            C
+            </span>
+
+        <span class="profile-name" id="dashboardProfileName">
+            Citizen
+        </span>
+
+            <span class="profile-arrow">
+                ▾
+            </span>
+
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     DASHBOARD MAIN
+===================================================== -->
+
+<main class="dashboard-container">
+
+
+    <!-- =================================================
+         WELCOME HERO
+    ================================================== -->
+
+    <section class="dashboard-welcome">
+
+        <div class="welcome-content">
+
+            <span class="welcome-eyebrow">
+                CITIZEN DASHBOARD
+            </span>
+
+
+            <h1>
+            Welcome back,
+            <span id="dashboardUserName">Citizen.</span>
+             </h1>
+
+
+            <p>
+                Here's a quick look at your community
+                activity and the issues you're helping solve.
+            </p>
+
+
+            <div class="welcome-actions">
+
+                <a href="report.html" class="primary-action">
+                    <span>+</span>
+                    Report an Issue
+                </a>
+
+
+                <a href="browse.html" class="secondary-action">
+                    Explore Issues →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- COMMUNITY VISUAL -->
+
+        <div class="welcome-visual">
+
+            <div class="visual-glow"></div>
+
+
+            <div class="orbit orbit-one"></div>
+
+            <div class="orbit orbit-two"></div>
+
+
+            <div class="visual-center">
+
+                <span class="center-symbol">
+                    ◆
+                </span>
+
+                <strong>
+                    CIVEXA
+                </strong>
+
+                <small>
+                    Community
+                </small>
+
+            </div>
+
+
+            <div class="floating-card report-float">
+
+                <span class="float-icon">
+                    +
+                </span>
+
+                <div>
+                    <strong id="heroTotalReports">0</strong>
+<span>Reports</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="floating-card support-float">
+
+                <span class="float-icon">
+                    ♡
+                </span>
+
+                <div>
+                    <strong id="heroSupportedIssues">0</strong>
+<span>Supported</span>
+                </div>
+
+            </div>
+
+
+            <div class="floating-card resolved-float">
+
+    <span class="float-icon">
+        ✓
+    </span>
+
+    <div>
+        <strong id="heroResolvedIssues">
+            0
+        </strong>
+
+        <small>
+            Resolved
+        </small>
+    </div>
+
+</div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         STATISTICS
+    ================================================== -->
+
+    <section class="dashboard-stats">
+
+
+        <div class="dashboard-stat-card">
+
+            <div class="stat-icon reports-icon">
+                +
+            </div>
+
+            <div class="stat-info">
+
+                <span>
+                    YOUR REPORTS
+                </span>
+
+                <h2>
+                    <span class="counter" id="totalReports" data-target="0">
+                    0
+                </span>
+                </h2>
+
+                <p>
+                    Issues you've reported
+                </p>
+
+            </div>
+
+            <span class="stat-decoration">
+                01
+            </span>
+
+        </div>
+
+
+
+        <div class="dashboard-stat-card">
+
+            <div class="stat-icon resolved-icon">
+                ✓
+            </div>
+
+            <div class="stat-info">
+
+                <span>
+                    RESOLVED
+                </span>
+
+                <h2>
+                    <span class="counter" id="resolvedReports" data-target="0">
+                    0   
+                    </span>
+                </h2>
+
+                <p>
+                    Successfully resolved
+                </p>
+
+            </div>
+
+            <span class="stat-decoration">
+                02
+            </span>
+
+        </div>
+
+
+
+        <div class="dashboard-stat-card">
+
+            <div class="stat-icon progress-icon">
+                ◷
+            </div>
+
+            <div class="stat-info">
+
+                <span>
+                    IN PROGRESS
+                </span>
+
+                <h2>
+                    <span class="counter" id="progressReports" data-target="0">
+                    0
+                </span>
+                </h2>
+
+                <p>
+                    Currently being handled
+                </p>
+
+            </div>
+
+            <span class="stat-decoration">
+                03
+            </span>
+
+        </div>
+
+
+
+        <div class="dashboard-stat-card">
+
+            <div class="stat-icon pending-icon">
+                !
+            </div>
+
+            <div class="stat-info">
+
+                <span>
+                    PENDING
+                </span>
+
+                <h2>
+                    <span class="counter" id="pendingReports" data-target="0">
+                        0
+                    </span>
+                </h2>
+
+                <p>
+                    Awaiting verification
+                </p>
+
+            </div>
+
+            <span class="stat-decoration">
+                04
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         QUICK ACTIONS
+    ================================================== -->
+
+    <section class="quick-section">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="section-label">
+                    GET THINGS DONE
+                </span>
+
+                <h2>
+                    Quick Actions
+                </h2>
+
+            </div>
+
+            <p>
+                Take action in your community
+            </p>
+
+        </div>
+
+
+        <div class="quick-grid">
+
+
+            <a href="report.html" class="quick-card report-card">
+
+                <div class="quick-card-top">
+
+                    <span class="quick-icon">
+                        +
+                    </span>
+
+                    <span class="quick-arrow">
+                        ↗
+                    </span>
+
+                </div>
+
+                <h3>
+                    Report an Issue
+                </h3>
+
+                <p>
+                    Tell your community about a
+                    problem that needs attention.
+                </p>
+
+                <span class="quick-link">
+                    Start Report →
+                </span>
+
+            </a>
+
+
+
+            <a href="browse.html" class="quick-card browse-card">
+
+                <div class="quick-card-top">
+
+                    <span class="quick-icon">
+                        ◈
+                    </span>
+
+                    <span class="quick-arrow">
+                        ↗
+                    </span>
+
+                </div>
+
+                <h3>
+                    Browse Issues
+                </h3>
+
+                <p>
+                    Discover problems reported by
+                    people in your community.
+                </p>
+
+                <span class="quick-link">
+                    Explore Issues →
+                </span>
+
+            </a>
+
+
+
+            <a href="track.html" class="quick-card track-card">
+
+                <div class="quick-card-top">
+
+                    <span class="quick-icon">
+                        ◷
+                    </span>
+
+                    <span class="quick-arrow">
+                        ↗
+                    </span>
+
+                </div>
+
+                <h3>
+                    Track an Issue
+                </h3>
+
+                <p>
+                    Check the latest progress of
+                    a submitted report.
+                </p>
+
+                <span class="quick-link">
+                    Track Report →
+                </span>
+
+            </a>
+
+
+
+            <a href="my-reports.html" class="quick-card reports-card">
+
+                <div class="quick-card-top">
+
+                    <span class="quick-icon">
+                        ☰
+                    </span>
+
+                    <span class="quick-arrow">
+                        ↗
+                    </span>
+
+                </div>
+
+                <h3>
+                    My Reports
+                </h3>
+
+                <p>
+                    View and manage all the issues
+                    you've submitted.
+                </p>
+
+                <span class="quick-link">
+                    View Reports →
+                </span>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         TWO COLUMN AREA
+    ================================================== -->
+
+    <section class="dashboard-content-grid">
+
+
+        <!-- =================================================
+             RECENT REPORTS
+        ================================================== -->
+
+        <div class="recent-reports-card">
+
+            <div class="card-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        YOUR ACTIVITY
+                    </span>
+
+                    <h2>
+                        Recent Reports
+                    </h2>
+
+                </div>
+
+
+                <a href="my-reports.html">
+                    View All →
+                </a>
+
+            </div>
+
+
+            <div class="reports-list">
+
+
+                <!-- REPORT 1 -->
+
+                <div class="report-row">
+
+                    <div class="report-image">
+
+                        <img
+                            src="roads.jpg"
+                            alt="Road issue"
+                        >
+
+                    </div>
+
+
+                    <div class="report-details">
+
+                        <h3>
+                            Pothole on Main Road
+                        </h3>
+
+                        <p>
+                            📍 Shivaji Nagar, Pune
+                        </p>
+
+                        <span class="report-id">
+                            #CVX-2026-1042
+                        </span>
+
+                    </div>
+
+
+                    <span class="report-status progress">
+                        In Progress
+                    </span>
+
+                </div>
+
+
+
+                <!-- REPORT 2 -->
+
+                <div class="report-row">
+
+                    <div class="report-image">
+
+                        <img
+                            src="streetlights.jpg"
+                            alt="Streetlight issue"
+                        >
+
+                    </div>
+
+
+                    <div class="report-details">
+
+                        <h3>
+                            Streetlight Not Working
+                        </h3>
+
+                        <p>
+                            📍 Baner, Pune
+                        </p>
+
+                        <span class="report-id">
+                            #CVX-2026-1035
+                        </span>
+
+                    </div>
+
+
+                    <span class="report-status resolved">
+                        Resolved
+                    </span>
+
+                </div>
+
+
+
+                <!-- REPORT 3 -->
+
+                <div class="report-row">
+
+                    <div class="report-image">
+
+                        <img
+                            src="waste.jpg"
+                            alt="Waste issue"
+                        >
+
+                    </div>
+
+
+                    <div class="report-details">
+
+                        <h3>
+                            Garbage Collection Delay
+                        </h3>
+
+                        <p>
+                            📍 Kothrud, Pune
+                        </p>
+
+                        <span class="report-id">
+                            #CVX-2026-1038
+                        </span>
+
+                    </div>
+
+
+                    <span class="report-status pending">
+                        Pending
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             ACTIVITY CARD
+        ================================================== -->
+
+        <div class="activity-card">
+
+            <div class="card-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        COMMUNITY
+                    </span>
+
+                    <h2>
+                        Your Impact
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="impact-main">
+
+                <div class="impact-circle">
+
+                    <div>
+
+                        <strong id="dashboardContributionPercent">
+    0%
+</strong>
+
+                        <span>
+                            contribution
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <p>
+                    You're making a meaningful
+                    contribution to your community.
+                </p>
+
+            </div>
+
+
+            <div class="impact-stats">
+
+
+                <div class="impact-stat">
+
+                    <span class="impact-symbol">
+                        ♡
+                    </span>
+
+                    <div>
+
+                        <strong id="dashboardSupportedCount">
+    0
+</strong>
+
+                        <small>
+                            Issues supported
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="impact-stat">
+
+                    <span class="impact-symbol">
+                        ✓
+                    </span>
+
+                    <div>
+                        
+                        <strong id="heroResolvedIssues">
+                           0
+                      </strong>
+
+<small>
+    Resolved
+</small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="impact-stat">
+
+                    <span class="impact-symbol">
+                        ◆
+                    </span>
+
+                    <div>
+
+                        <strong id="dashboardReportsCount">
+    0
+</strong>
+
+                        <small>
+                            Reports submitted
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="impact-message">
+
+                <span>
+                    ✦
+                </span>
+
+                <p>
+                    Every report helps make your
+                    community better.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         COMMUNITY UPDATE
+    ================================================== -->
+
+    <section class="community-update">
+
+        <div class="update-icon">
+            ✦
+        </div>
+
+
+        <div class="update-content">
+
+            <span>
+                COMMUNITY UPDATE
+            </span>
+
+            <h2>
+                124 issues have been resolved this month.
+            </h2>
+
+            <p>
+                Your participation helps CIVEXA identify
+                and prioritize problems that matter most.
+            </p>
+
+        </div>
+
+
+        <a href="browse.html" class="update-button">
+            See Community Issues →
+        </a>
+
+    </section>
+
+
+
+    <!-- =================================================
+         BOTTOM CTA
+    ================================================== -->
+
+    <section class="dashboard-cta">
+
+        <div>
+
+            <span class="section-label">
+                MAKE A DIFFERENCE
+            </span>
+
+            <h2>
+                See something that needs fixing?
+            </h2>
+
+            <p>
+                Report it today and help your community
+                move one step closer to a better place.
+            </p>
+
+        </div>
+
+
+        <a href="report.html" class="cta-button">
+            + Report an Issue
+        </a>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="dashboard-footer">
+
+    <div class="footer-main">
+
+
+        <div class="footer-brand">
+
+            <div class="footer-logo">
+
+                <span>◆</span>
+
+                CIVEXA
+
+            </div>
+
+
+            <p>
+                Report It. Support It. Track It. Fix It.
+            </p>
+
+
+            <small>
+                A community issue reporting, prioritization
+                and resolution system built as a Web Technology
+                microproject prototype.
+            </small>
+
+
+            <span class="prototype-status">
+                Prototype system active
+            </span>
+
+        </div>
+
+
+
+        <div class="footer-column">
+
+            <h4>
+                EXPLORE
+            </h4>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="report.html">
+                Report Issue
+            </a>
+
+            <a href="browse.html">
+                Browse Issues
+            </a>
+
+            <a href="track.html">
+                Track Issue
+            </a>
+
+        </div>
+
+
+
+        <div class="footer-column">
+
+            <h4>
+                ACCOUNT
+            </h4>
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="my-reports.html">
+                My Reports
+            </a>
+
+            <a href="profile.html">
+                Profile
+            </a>
+
+            <a href="feedback.html">
+                Feedback
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 CIVEXA
+        </span>
+
+        <span>
+            Community-powered issue resolution
+        </span>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     DASHBOARD JAVASCRIPT
+===================================================== -->
+<script>
+
+
+    /* ==========================================
+   LOAD CITIZEN DASHBOARD DATA
+========================================== */
+
+const storedUser =
+    localStorage.getItem("civexaUser");
+
+if (!storedUser) {
+
+    alert("Please login first.");
+
+    window.location.href = "login.html";
+
+} else {
+
+    const user =
+        JSON.parse(storedUser);
+
+    const userId =
+        user.user_id;
+
+
+    /* ================= USER NAME ================= */
+
+    const userName =
+        user.full_name || "Citizen";
+
+
+    document.getElementById(
+        "dashboardUserName"
+    ).textContent =
+        userName + ".";
+
+
+    document.getElementById(
+        "dashboardProfileName"
+    ).textContent =
+        userName;
+
+
+    document.getElementById(
+        "dashboardAvatar"
+    ).textContent =
+        userName.charAt(0).toUpperCase();
+
+
+    /* ================= FETCH REPORTS ================= */
+
+    fetch(
+        `http://localhost:3000/api/issues/my-reports/${userId}`
+    )
+
+    .then(response => response.json())
+
+    .then(data => {
+
+        console.log(
+            "Dashboard reports:",
+            data
+        );
+
+
+        const reports =
+            data.reports || [];
+
+
+        /* ================= COUNTS ================= */
+
+        const total =
+            reports.length;
+
+            document.getElementById(
+    "heroTotalReports"
+).textContent =
+    total;
+
+document.getElementById(
+    "dashboardReportsCount"
+).textContent =
+    total;
+
+    // Load supported issues count
+fetch(
+    `http://localhost:3000/api/issues/support/user/${userId}`
+)
+.then(response => response.json())
+.then(supportData => {
+
+    document.getElementById(
+        "heroSupportedIssues"
+    ).textContent =
+        supportData.total_supports || 0;
+
+        document.getElementById(
+    "dashboardSupportedCount"
+).textContent =
+    supportData.total_supports || 0;
+
+        const supported =
+    Number(supportData.total_supports) || 0;
+
+const contribution =
+    Math.min(
+        100,
+        (total * 40) +
+        (resolved * 30) +
+        (supported * 30)
+    );
+
+document.getElementById(
+    "dashboardContributionPercent"
+).textContent =
+    contribution + "%";
+
+
+})
+.catch(error => {
+
+    console.error(
+        "Supported issues error:",
+        error
+    );
+
+});
+
+        const resolved =
+            reports.filter(
+                issue =>
+                    issue.status === "resolved"
+            ).length;
+
+
+
+        document.getElementById(
+    "heroResolvedIssues"
+).textContent =
+    resolved;
+
+        const inProgress =
+            reports.filter(
+                issue =>
+                    issue.status === "in-progress"
+            ).length;
+
+
+         const pending =
+    reports.filter(
+        issue =>
+            issue.status === "pending" ||
+            issue.status === "verified"
+    ).length;
+
+
+        /* ================= SET COUNTERS ================= */
+
+        updateCounter(
+            "totalReports",
+            total
+        );
+
+
+        updateCounter(
+            "resolvedReports",
+            resolved
+        );
+
+
+        updateCounter(
+            "progressReports",
+            inProgress
+        );
+
+
+        updateCounter(
+            "pendingReports",
+            pending
+        );
+
+
+        /* ================= RECENT REPORTS ================= */
+
+        loadRecentReports(
+            reports
+        );
+
+    })
+
+    .catch(error => {
+
+        console.error(
+            "Dashboard error:",
+            error
+        );
+
+    });
+
+}
+
+
+/* ==========================================
+   COUNTER ANIMATION
+========================================== */
+
+function updateCounter(
+    elementId,
+    target
+) {
+
+    const counter =
+        document.getElementById(elementId);
+
+    if (!counter) {
+        return;
+    }
+
+
+    counter.dataset.target =
+        target;
+
+
+    let current = 0;
+
+    const duration = 900;
+
+    const startTime =
+        performance.now();
+
+
+    function animateCounter(
+        currentTime
+    ) {
+
+        const progress =
+            Math.min(
+                (currentTime - startTime) /
+                duration,
+                1
+            );
+
+
+        current =
+            Math.floor(
+                progress * target
+            );
+
+
+        counter.textContent =
+            current;
+
+
+        if (progress < 1) {
+
+            requestAnimationFrame(
+                animateCounter
+            );
+
+        } else {
+
+            counter.textContent =
+                target;
+
+        }
+
+    }
+
+
+    requestAnimationFrame(
+        animateCounter
+    );
+
+}
+
+
+/* ==========================================
+   RECENT REPORTS
+========================================== */
+
+function loadRecentReports(
+    reports
+) {
+
+    const reportsList =
+        document.querySelector(
+            ".reports-list"
+        );
+
+
+    if (!reportsList) {
+        return;
+    }
+
+
+    if (reports.length === 0) {
+
+        reportsList.innerHTML = `
+            <p>
+                You have not submitted any reports yet.
+            </p>
+        `;
+
+        return;
+
+    }
+
+
+    const recentReports =
+        reports.slice(0, 3);
+
+
+    reportsList.innerHTML = "";
+
+
+    recentReports.forEach(
+        issue => {
+
+            const row =
+                document.createElement("div");
+
+            row.className =
+                "report-row";
+
+
+            row.innerHTML = `
+
+                <div class="report-image">
+
+                    <img
+                        src="${getIssueImage(issue)}"
+                        alt="Issue"
+                    >
+
+                </div>
+
+
+                <div class="report-details">
+
+                    <h3>
+                        ${escapeHTML(issue.title)}
+                    </h3>
+
+                    <p>
+                        📍 ${escapeHTML(
+                            issue.location ||
+                            "Location not available"
+                        )}
+                    </p>
+
+                    <span class="report-id">
+                        #${escapeHTML(
+                            issue.report_code
+                        )}
+                    </span>
+
+                </div>
+
+
+                <span class="report-status ${getStatusClass(issue.status)}">
+                    ${formatStatus(issue.status)}
+                </span>
+
+            `;
+
+
+            reportsList.appendChild(row);
+
+        }
+    );
+
+}
+
+
+/* ==========================================
+   ISSUE IMAGE
+========================================== */
+
+function getIssueImage(issue) {
+
+    if (issue.image_path) {
+
+        return (
+            "http://localhost:3000" +
+            issue.image_path
+        );
+
+    }
+
+
+    const images = {
+
+        roads: "roads.jpg",
+
+        waste: "waste.jpg",
+
+        streetlight: "streetlights.jpg",
+
+        water: "water.jpg",
+
+        drainage: "drainage.jpg",
+
+        infrastructure:
+            "infrastructure.jpg"
+
+    };
+
+
+    return images[issue.category] ||
+           "other.jpg";
+
+}
+
+
+/* ==========================================
+   STATUS
+========================================== */
+
+function getStatusClass(status) {
+
+    if (status === "in-progress") {
+        return "progress";
+    }
+
+    if (status === "resolved") {
+        return "resolved";
+    }
+
+    return "pending";
+
+}
+
+
+function formatStatus(status) {
+
+    if (!status) {
+        return "Unknown";
+    }
+
+
+    return status
+        .split("-")
+        .map(word =>
+            word.charAt(0).toUpperCase() +
+            word.slice(1)
+        )
+        .join(" ");
+
+}
+
+
+/* ==========================================
+   SECURITY
+========================================== */
+
+function escapeHTML(value) {
+
+    const div =
+        document.createElement("div");
+
+    div.textContent =
+        value || "";
+
+    return div.innerHTML;
+
+}
+     
+    /* ==========================================
+       NOTIFICATION DEMO
+    ========================================== */
+
+    const notificationButton =
+        document.querySelector(".notification-button");
+
+
+    notificationButton.addEventListener(
+        "click",
+        function () {
+
+            alert(
+                "You have 3 new CIVEXA updates."
+            );
+
+        }
+    );
+
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Reports | CIVEXA</title>
+
+    <link rel="stylesheet" href="my-reports.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="reports-navbar">
+
+    <a href="index.html" class="logo">
+        <span>◆</span> CIVEXA
+    </a>
+
+    <nav class="reports-nav">
+        <a href="index.html">Home</a>
+        <a href="report.html">Report Issue</a>
+        <a href="browse.html">Browse Issues</a>
+        <a href="track.html">Track Issue</a>
+        <a href="dashboard.html">Dashboard</a>
+    </nav>
+
+    <div class="profile-mini">
+        <div class="profile-avatar">C</div>
+
+        <div>
+            <strong>Citizen</strong>
+            <span>My Account</span>
+        </div>
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="reports-hero">
+
+    <div class="hero-content">
+
+        <span class="eyebrow">CIVEXA • MY REPORTS</span>
+
+        <h1>
+            Your reports.<br>
+            <span>Our community.</span>
+        </h1>
+
+        <p>
+            Keep track of every issue you have reported,
+            from submission to resolution.
+        </p>
+
+        <div class="hero-actions">
+
+            <a href="report.html" class="primary-btn">
+                + Report New Issue
+            </a>
+
+            <a href="track.html" class="secondary-btn">
+                Track an Issue →
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- Decorative visual -->
+
+    <div class="reports-visual">
+
+        <div class="visual-circle circle-one"></div>
+        <div class="visual-circle circle-two"></div>
+
+        <div class="visual-card">
+
+            <div class="visual-top">
+                <span>REPORT STATUS</span>
+                <span class="live-dot"></span>
+            </div>
+
+            <div class="visual-progress">
+
+                <div class="progress-line">
+                    <span></span>
+                </div>
+
+                <div class="progress-labels">
+                    <span>Reported</span>
+                    <span>Resolved</span>
+                </div>
+
+            </div>
+
+            <div class="visual-info">
+                <strong id="heroReportsCount">0 Reports</strong>
+                <small>Being monitored</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STATISTICS ================= -->
+
+<section class="report-stats">
+
+    <div class="report-stat-card">
+
+        <div class="stat-icon">📋</div>
+
+        <div>
+            <strong class="counter" id="totalReportsCount">0</strong>
+            <span>Total Reports</span>
+        </div>
+
+    </div>
+
+
+    <div class="report-stat-card">
+
+        <div class="stat-icon resolved">✓</div>
+
+        <div>
+        <strong class="counter" id="resolvedReportsCount">0</strong>
+            <span>Resolved</span>
+        </div>
+
+    </div>
+
+
+    <div class="report-stat-card">
+
+        <div class="stat-icon progress">◷</div>
+
+        <div>
+            <strong class="counter" id="progressReportsCount">0</strong>
+            <span>In Progress</span>
+        </div>
+
+    </div>
+
+
+    <div class="report-stat-card">
+
+        <div class="stat-icon pending">!</div>
+
+        <div>
+            <strong class="counter" id="pendingReportsCount">0</strong>
+            <span>Pending</span>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= MY REPORTS ================= -->
+
+<!-- ================= MY REPORTS ================= -->
+
+<main class="reports-container">
+
+    <div class="section-heading">
+
+        <div>
+            <span class="section-label">YOUR ACTIVITY</span>
+
+            <h2>My Submitted Reports</h2>
+
+            <p>
+                View the current status and progress of issues
+                you have reported.
+            </p>
+        </div>
+
+        <div class="filter-area">
+
+            <label for="statusFilter">Filter:</label>
+
+            <select id="statusFilter">
+
+                <option value="all">All Reports</option>
+                <option value="resolved">Resolved</option>
+                <option value="progress">In Progress</option>
+                <option value="pending">Pending</option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= DYNAMIC REPORTS ================= -->
+
+    <div id="reportsContainer">
+
+        <!-- Reports will be loaded from MySQL here -->
+
+    </div>
+
+
+</main>
+
+<!-- ================= CTA ================= -->
+
+<section class="reports-cta">
+
+    <div>
+
+        <span>SEE SOMETHING THAT NEEDS ATTENTION?</span>
+
+        <h2>
+            Help make your community better.
+        </h2>
+
+        <p>
+            Report a local issue and help create a cleaner,
+            safer and better-connected community.
+        </p>
+
+    </div>
+
+    <a href="report.html" class="cta-button">
+        Report an Issue →
+    </a>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="reports-footer">
+
+    <div class="footer-brand">
+
+        <a href="index.html" class="footer-logo">
+            ◆ CIVEXA
+        </a>
+
+        <p>
+            Report It. Support It. Track It. Fix It.
+        </p>
+
+        <span>
+            A community issue reporting, prioritization and
+            resolution system.
+        </span>
+
+    </div>
+
+
+    <div class="footer-links">
+
+        <div>
+
+            <h4>EXPLORE</h4>
+
+            <a href="index.html">Home</a>
+            <a href="report.html">Report Issue</a>
+            <a href="browse.html">Browse Issues</a>
+            <a href="track.html">Track Issue</a>
+
+        </div>
+
+
+        <div>
+
+            <h4>ACCOUNT</h4>
+
+            <a href="dashboard.html">Dashboard</a>
+            <a href="my-reports.html">My Reports</a>
+            <a href="profile.html">Profile</a>
+            <a href="feedback.html">Feedback</a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+      /* ==========================================
+   COUNTER ANIMATION
+========================================== */
+
+
+    /* ==========================================
+       REPORT CONTAINER
+    ========================================== */
+
+    const reportsContainer =
+        document.getElementById(
+            "reportsContainer"
+        );
+
+
+    const statusFilter =
+        document.getElementById(
+            "statusFilter"
+        );
+
+
+    let allReports = [];
+
+
+    /* ==========================================
+       GET LOGGED-IN USER
+    ========================================== */
+
+    const savedUser =
+        localStorage.getItem(
+            "civexaUser"
+        );
+
+
+    if (!savedUser) {
+
+        reportsContainer.innerHTML = `
+            <p>
+                Please login to view your reports.
+            </p>
+        `;
+
+    } else {
+
+        const user =
+            JSON.parse(savedUser);
+
+        loadMyReports(
+            user.user_id
+        );
+
+    }
+
+
+    /* ==========================================
+       LOAD MY REPORTS
+    ========================================== */
+
+    async function loadMyReports(userId) {
+
+        try {
+
+            const response =
+                await fetch(
+                    `http://localhost:3000/api/issues/my-reports/${userId}`
+                );
+
+
+            const result =
+                await response.json();
+
+
+            if (!response.ok) {
+
+                reportsContainer.innerHTML = `
+                    <p>
+                        ${result.message ||
+                        "Unable to load reports."}
+                    </p>
+                `;
+
+                return;
+            }
+
+
+             allReports =
+    result.reports;
+
+updateReportStatistics();
+
+displayReports(
+    allReports
+);
+
+            console.log(
+                "My reports:",
+                allReports
+            );
+
+
+        } catch (error) {
+
+            console.error(
+                "Load reports error:",
+                error
+            );
+
+
+            reportsContainer.innerHTML = `
+                <p>
+                    Unable to connect to CIVEXA server.
+                </p>
+            `;
+
+        }
+
+    }
+
+// ==========================================
+// UPDATE REPORT STATISTICS
+// ==========================================
+
+function updateReportStatistics() {
+
+    const total =
+        allReports.length;
+
+    const resolved =
+        allReports.filter(
+            issue => issue.status === "resolved"
+        ).length;
+
+    const inProgress =
+        allReports.filter(
+            issue => issue.status === "in-progress"
+        ).length;
+
+    const pending =
+        allReports.filter(
+            issue =>
+                issue.status === "pending" ||
+                issue.status === "verified"
+        ).length;
+
+    document.getElementById(
+        "totalReportsCount"
+    ).textContent = total;
+
+    document.getElementById(
+    "heroReportsCount"
+).textContent =
+    total + " Reports";
+
+    document.getElementById(
+        "resolvedReportsCount"
+    ).textContent = resolved;
+
+    document.getElementById(
+        "progressReportsCount"
+    ).textContent = inProgress;
+
+    document.getElementById(
+        "pendingReportsCount"
+    ).textContent = pending;
+}
+    /* ==========================================
+       DISPLAY REPORTS
+    ========================================== */
+
+    function displayReports(reports) {
+
+        reportsContainer.innerHTML = "";
+
+
+        if (reports.length === 0) {
+
+            reportsContainer.innerHTML = `
+                <div class="no-reports">
+                    <h3>No reports found</h3>
+
+                    <p>
+                        You have not submitted any
+                        community issues yet.
+                    </p>
+                </div>
+            `;
+
+            return;
+        }
+
+
+        reports.forEach(issue => {
+
+            const card =
+                document.createElement("article");
+
+
+            card.className =
+                "my-report-card show-card";
+
+
+            card.dataset.status =
+                getFilterStatus(
+                    issue.status
+                );
+
+
+            const imageSource =
+                issue.image_path
+                    ? `http://localhost:3000${issue.image_path}`
+                    : getCategoryImage(
+                        issue.category
+                    );
+
+
+            const statusText =
+                formatStatus(
+                    issue.status
+                );
+
+
+            const categoryText =
+                formatCategory(
+                    issue.category
+                );
+
+
+            const priorityText =
+                formatPriority(
+                    issue.priority
+                );
+
+
+            const progress =
+                Number(issue.progress) || 0;
+
+
+            card.innerHTML = `
+
+                <div class="report-image">
+
+                    <img
+                        src="${imageSource}"
+                        alt="${categoryText} issue"
+                    >
+
+                    <span class="category-badge">
+                        ${categoryText}
+                    </span>
+
+                </div>
+
+
+                <div class="report-content">
+
+                    <div class="report-top">
+
+                        <div>
+
+                            <span class="report-id">
+                                #${issue.report_code}
+                            </span>
+
+                            <h3>
+                                ${issue.title}
+                            </h3>
+
+                        </div>
+
+
+                        <span class="status-badge status-${getStatusClass(issue.status)}">
+                            ${statusText}
+                        </span>
+
+                    </div>
+
+
+                    <p class="report-description">
+                        ${issue.description}
+                    </p>
+
+
+                    <div class="report-details">
+
+                        <div>
+
+                            <span>
+                                📍 Location
+                            </span>
+
+                            <strong>
+                                ${issue.location}
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                📅 Reported
+                            </span>
+
+                            <strong>
+                                ${formatDate(issue.created_at)}
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                ⚡ Priority
+                            </span>
+
+                            <strong class="${issue.priority === "high" ? "high-priority" : ""}">
+                                ${priorityText}
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="progress-section">
+
+                        <div class="progress-header">
+
+                            <span>
+                                Resolution Progress
+                            </span>
+
+                            <strong>
+                                ${progress}%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="progress-bar">
+
+                            <span
+                                style="width: ${progress}%;">
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="report-actions">
+
+                    <a 
+                     href="issue-details.html?report=${encodeURIComponent(issue.report_code)}"
+                     class="details-btn"
+                     >
+                     View Details →
+                    </a>
+
+
+                        <a
+                            href="track.html?report=${encodeURIComponent(issue.report_code)}"
+                            class="track-btn"
+                        >
+                            Track Issue
+                        </a>
+
+                    </div>
+
+                </div>
+
+            `;
+
+
+            reportsContainer.appendChild(
+                card
+            );
+
+        });
+
+    }
+
+
+    /* ==========================================
+       STATUS FILTER
+    ========================================== */
+
+    statusFilter.addEventListener(
+        "change",
+        function () {
+
+            const selectedStatus =
+                this.value;
+
+
+            const filteredReports =
+                selectedStatus === "all"
+
+                    ? allReports
+
+                    : allReports.filter(
+                        issue =>
+                            getFilterStatus(
+                                issue.status
+                            ) === selectedStatus
+                    );
+
+
+            displayReports(
+                filteredReports
+            );
+
+        }
+    );
+
+
+    /* ==========================================
+       STATUS HELPERS
+    ========================================== */
+
+    function getFilterStatus(status) {
+
+        if (status === "resolved") {
+            return "resolved";
+        }
+
+        if (status === "in-progress") {
+            return "progress";
+        }
+
+        return "pending";
+
+    }
+
+
+    function getStatusClass(status) {
+
+        if (status === "resolved") {
+            return "resolved";
+        }
+
+        if (status === "in-progress") {
+            return "progress";
+        }
+
+        return "pending";
+
+    }
+
+
+    function formatStatus(status) {
+
+        if (!status) {
+            return "Unknown";
+        }
+
+
+        return status
+            .split("-")
+            .map(word =>
+                word.charAt(0).toUpperCase() +
+                word.slice(1)
+            )
+            .join(" ");
+
+    }
+
+
+    function formatCategory(category) {
+
+        if (!category) {
+            return "Unknown";
+        }
+
+
+        return category
+            .split("-")
+            .map(word =>
+                word.charAt(0).toUpperCase() +
+                word.slice(1)
+            )
+            .join(" ");
+
+    }
+
+
+    function formatPriority(priority) {
+
+        if (!priority) {
+            return "Unknown";
+        }
+
+
+        return priority.charAt(0).toUpperCase() +
+            priority.slice(1);
+
+    }
+
+
+    /* ==========================================
+       DATE FORMAT
+    ========================================== */
+
+    function formatDate(dateValue) {
+
+        if (!dateValue) {
+            return "Not available";
+        }
+
+
+        const date =
+            new Date(dateValue);
+
+
+        return date.toLocaleDateString(
+            "en-IN",
+            {
+                day: "2-digit",
+                month: "short",
+                year: "numeric"
+            }
+        );
+
+    }
+
+
+    /* ==========================================
+       DEFAULT CATEGORY IMAGES
+    ========================================== */
+
+    function getCategoryImage(category) {
+
+        const images = {
+
+            roads: "roads.jpg",
+
+            waste: "waste.jpg",
+
+            streetlights: "streetlights.jpg",
+
+            water: "water.jpg",
+
+            drainage: "drainage.jpg",
+
+            infrastructure:
+                "infrastructure.jpg",
+
+            other: "other.jpg"
+
+        };
+
+
+        return images[category] ||
+            "other.jpg";
+
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Issue Details | CIVEXA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="issue-details.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar">
+
+    <div class="logo">
+
+        <span class="logo-mark">◆</span>
+
+        CIVEXA
+
+    </div>
+
+
+    <nav class="nav-links">
+
+        <a href="index.html">Home</a>
+
+        <a href="report.html">Report Issue</a>
+
+        <a href="browse.html">Browse Issues</a>
+
+        <a href="track.html">Track Issue</a>
+
+        <a href="about.html">About</a>
+
+        <a href="contact.html">Contact</a>
+
+    </nav>
+
+
+    <div class="nav-buttons">
+
+        <a href="login.html" class="login-btn">
+            Login
+        </a>
+
+        <a href="register.html" class="register-btn">
+            Register
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN PAGE
+===================================================== -->
+
+<main class="details-page">
+
+    <!-- PAGE HEADER -->
+
+    <section class="details-header">
+
+        <div class="header-eyebrow">
+            COMMUNITY ISSUE DETAILS
+        </div>
+
+        <h1>
+            Understand the issue.<br>
+            See what's being done.
+        </h1>
+
+        <p>
+            Explore detailed information about the community
+            issue reported through CIVEXA.
+        </p>
+
+    </section>
+
+
+    <!-- =================================================
+         DYNAMIC ISSUE CONTAINER
+    ================================================== -->
+
+    <div id="issueDetailsContainer">
+
+        <!-- Issue details will be loaded from MySQL -->
+
+    </div>
+
+
+    <!-- BACK -->
+
+    <div class="back-section">
+
+        <a href="browse.html" class="back-btn">
+            ← Back to Browse Issues
+        </a>
+
+    </div>
+
+</main>
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="footer-main">
+
+
+        <div class="footer-brand">
+
+            <div class="footer-logo">
+
+                <span>◆</span>
+
+                CIVEXA
+
+            </div>
+
+            <p>
+                Report It. Support It. Track It. Fix It.
+            </p>
+
+            <small>
+                A community issue reporting, prioritization
+                and resolution system built as a Web Technology
+                microproject prototype.
+            </small>
+
+            <span class="prototype-status">
+                Prototype system active
+            </span>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>EXPLORE</h4>
+
+            <a href="index.html">Home</a>
+
+            <a href="report.html">Report Issue</a>
+
+            <a href="browse.html">Browse Issues</a>
+
+            <a href="track.html">Track Issue</a>
+
+            <a href="about.html">About CIVEXA</a>
+
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>QUICK ACTIONS</h4>
+
+            <a href="report.html">
+                + Report a problem
+            </a>
+
+            <a href="browse.html">
+                → Find an issue
+            </a>
+
+            <a href="browse.html">
+                ♡ Support an issue
+            </a>
+
+            <a href="track.html">
+                ◷ Track a report
+            </a>
+
+            <a href="about.html">
+                ? How CIVEXA works
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 CIVEXA
+        </span>
+
+        <span>
+            Community-powered issue resolution
+        </span>
+
+    </div>
+
+</footer>
+
+<script>
+
+    const urlParams =
+        new URLSearchParams(window.location.search);
+
+    const reportCode =
+        urlParams.get("report");
+
+    const container =
+        document.getElementById("issueDetailsContainer");
+
+
+    if (!reportCode) {
+
+        container.innerHTML = `
+            <section class="issue-detail-card">
+
+                <div class="issue-detail-content">
+
+                    <h2>No Report Selected</h2>
+
+                    <p class="issue-description">
+                        Please select a report from My Reports
+                        to view its details.
+                    </p>
+
+                </div>
+
+            </section>
+        `;
+
+    } else {
+
+        fetch(
+            `http://localhost:3000/api/issues/track/${encodeURIComponent(reportCode)}`
+        )
+
+        .then(response => response.json())
+
+        .then(data => {
+
+            console.log("Issue details:", data);
+
+
+            if (!data.issue) {
+
+                container.innerHTML = `
+                    <section class="issue-detail-card">
+
+                        <div class="issue-detail-content">
+
+                            <h2>Issue Not Found</h2>
+
+                            <p class="issue-description">
+                                The requested report could not be found.
+                            </p>
+
+                        </div>
+
+                    </section>
+                `;
+
+                return;
+            }
+
+
+            const issue = data.issue;
+
+
+            // Load supporter count
+fetch(
+    `http://localhost:3000/api/issues/support/${issue.issue_id}`
+)
+    .then(response => response.json())
+    .then(supportData => {
+
+        document.getElementById(
+            "supportCount"
+        ).textContent =
+            supportData.total_supports || 0;
+
+    })
+    .catch(error => {
+
+        console.error(
+            "Support count error:",
+            error
+        );
+
+    });
+    
+            const progress =
+                Number(issue.progress) || 0;
+
+
+            /* IMAGE */
+
+            let imageSource = "other.jpg";
+
+            if (issue.image_path) {
+
+                imageSource =
+                    "http://localhost:3000" +
+                    issue.image_path;
+
+            } else {
+
+                if (issue.category === "roads") {
+                    imageSource = "roads.jpg";
+                }
+
+                else if (issue.category === "waste") {
+                    imageSource = "waste.jpg";
+                }
+
+                else if (issue.category === "streetlight") {
+                    imageSource = "streetlights.jpg";
+                }
+
+                else if (issue.category === "water") {
+                    imageSource = "water.jpg";
+                }
+
+                else if (issue.category === "drainage") {
+                    imageSource = "drainage.jpg";
+                }
+
+                else if (issue.category === "infrastructure") {
+                    imageSource = "infrastructure.jpg";
+                }
+
+            }
+
+
+            /* CREATE ISSUE CARD */
+
+            container.innerHTML = `
+
+                <section class="issue-detail-card">
+
+
+                    <!-- IMAGE -->
+
+                    <div class="issue-detail-image">
+
+                        <img
+                            src="${imageSource}"
+                            alt="Reported community issue"
+                        >
+
+                        <span class="image-category">
+                            ${formatCategory(issue.category)}
+                        </span>
+
+                    </div>
+
+
+                    <!-- CONTENT -->
+
+                    <div class="issue-detail-content">
+
+
+                        <!-- BADGES -->
+
+                        <div class="issue-badges">
+
+                            <span class="priority ${issue.priority}">
+                                ${formatPriority(issue.priority)}
+                                Priority
+                            </span>
+
+                            <span class="status ${getStatusClass(issue.status)}">
+                                ● ${formatStatus(issue.status)}
+                            </span>
+
+                        </div>
+
+
+                        <!-- TITLE -->
+
+                        <h2>
+                            ${escapeHTML(issue.title)}
+                        </h2>
+
+
+                        <!-- DESCRIPTION -->
+
+                        <p class="issue-description">
+                            ${escapeHTML(issue.description)}
+                        </p>
+
+
+                        <!-- INFORMATION -->
+
+                        <div class="detail-info-grid">
+
+
+                            <div>
+
+                                <small>
+                                    LOCATION
+                                </small>
+
+                                <strong>
+                                    ${escapeHTML(
+                                        issue.location ||
+                                        "Not available"
+                                    )}
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <small>
+                                    REPORTED
+                                </small>
+
+                                <strong>
+                                    ${formatDate(issue.created_at)}
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <small>
+                                    ISSUE ID
+                                </small>
+
+                                <strong>
+                                    #${escapeHTML(issue.report_code)}
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <small>
+                                    DEPARTMENT
+                                </small>
+
+                                <strong>
+    ${escapeHTML(
+        issue.department_name ||
+        "Not assigned"
+    )}
+</strong>
+
+                            </div>
+
+
+                        </div>
+
+
+                        <!-- PROGRESS -->
+
+                        <div class="issue-progress">
+
+
+                            <div class="progress-label">
+
+                                <span>
+                                    Resolution Progress
+                                </span>
+
+                                <strong>
+                                    ${progress}%
+                                </strong>
+
+                            </div>
+
+
+                            <div class="progress-bar">
+
+                                <span
+                                    style="width: ${progress}%;">
+                                </span>
+
+                            </div>
+
+
+                        </div>
+
+
+                        <!-- BOTTOM -->
+
+                        <div class="issue-bottom">
+
+
+                            <button
+                           type="button"
+                        class="support-btn"
+                           onclick="supportIssue('${issue.issue_id}')"
+                          >
+                            ♡ Support Issue
+                          </button>
+
+                          <span class="support-info">
+                           <strong id="supportCount">0</strong>
+                            supporters
+                            </span>
+                        
+
+
+                            <a
+                                href="track.html?report=${encodeURIComponent(issue.report_code)}"
+                                class="track-link"
+                            >
+                                Track Issue →
+                            </a>
+
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+            `;
+
+        })
+
+
+        .catch(error => {
+
+            console.error(
+                "Error loading issue:",
+                error
+            );
+
+
+            container.innerHTML = `
+
+                <section class="issue-detail-card">
+
+                    <div class="issue-detail-content">
+
+                        <h2>
+                            Unable to Load Issue
+                        </h2>
+
+                        <p class="issue-description">
+                            Please make sure the CIVEXA
+                            backend server is running.
+                        </p>
+
+                    </div>
+
+                </section>
+
+            `;
+
+        });
+
+    }
+
+
+    /* ==========================================
+       FORMAT STATUS
+    ========================================== */
+
+    function formatStatus(status) {
+
+        if (!status) {
+            return "Unknown";
+        }
+
+        return status
+            .split("-")
+            .map(word =>
+                word.charAt(0).toUpperCase() +
+                word.slice(1)
+            )
+            .join(" ");
+
+    }
+
+
+    /* ==========================================
+       STATUS CSS CLASS
+    ========================================== */
+
+    function getStatusClass(status) {
+
+        if (status === "in-progress") {
+            return "progress";
+        }
+
+        if (status === "verified") {
+            return "verified";
+        }
+
+        if (status === "resolved") {
+            return "resolved";
+        }
+
+        return "pending";
+
+    }
+
+
+    /* ==========================================
+       FORMAT PRIORITY
+    ========================================== */
+
+    function formatPriority(priority) {
+
+        if (!priority) {
+            return "Unknown";
+        }
+
+        return priority.charAt(0).toUpperCase() +
+            priority.slice(1);
+
+    }
+
+
+    /* ==========================================
+       FORMAT CATEGORY
+    ========================================== */
+
+    function formatCategory(category) {
+
+        if (!category) {
+            return "Unknown";
+        }
+
+        return category
+            .split("-")
+            .map(word =>
+                word.charAt(0).toUpperCase() +
+                word.slice(1)
+            )
+            .join(" ");
+
+    }
+
+
+    /* ==========================================
+       FORMAT DATE
+    ========================================== */
+
+    function formatDate(dateValue) {
+
+        if (!dateValue) {
+            return "Not available";
+        }
+
+        return new Date(dateValue)
+            .toLocaleDateString(
+                "en-IN",
+                {
+                    day: "2-digit",
+                    month: "short",
+                    year: "numeric"
+                }
+            );
+
+    }
+
+
+    /* ==========================================
+       SECURITY / TEXT CLEANING
+    ========================================== */
+
+    function escapeHTML(value) {
+
+        const div =
+            document.createElement("div");
+
+        div.textContent =
+            value || "";
+
+        return div.innerHTML;
+
+    }
+
+async function supportIssue(issueId) {
+    try {
+        const user = JSON.parse(localStorage.getItem("civexaUser"));
+
+        if (!user) {
+            alert("Please login to support an issue.");
+            return;
+        }
+
+        const response = await fetch(
+            `http://localhost:3000/api/issues/support/${issueId}`,
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    user_id: user.user_id
+                })
+            }
+        );
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            alert(data.message);
+            return;
+        }
+
+        alert("Thank you for supporting this issue!");
+
+        location.reload();
+
+    } catch (error) {
+        console.error("Support error:", error);
+        alert("Unable to support this issue.");
+    }
+}
+
+</script>
+</body>
+
+</html>

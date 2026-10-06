@@ -1,0 +1,1740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Browse Issues | CIVEXA</title>
+
+    <link rel="stylesheet" href="browse.css">
+    <link rel="stylesheet" href="navbar.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+    <a href="index.html" class="logo">
+        <span class="logo-icon">◆</span>
+        CIVEXA
+    </a>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="report.html">Report Issue</a>
+        <a href="browse.html" class="active">Browse Issues</a>
+        <a href="track.html">Track Issue</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="nav-buttons">
+    <a href="login.html" class="login-btn">Login</a>
+    <a href="register.html" class="register-btn">Register</a>
+</div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="issues-hero">
+
+    <div class="hero-content">
+
+        <div class="hero-badge">
+            <span class="badge-dot"></span>
+            COMMUNITY ISSUES
+        </div>
+
+        <h1>
+            See what your
+            <span>community needs.</span>
+        </h1>
+
+        <p>
+            Explore reported community issues, support problems
+            that matter to you and follow their progress toward resolution.
+        </p>
+
+        <div class="hero-points">
+
+            <div>
+                <span>✓</span>
+                Verified reports
+            </div>
+
+            <div>
+                <span>✓</span>
+                Community support
+            </div>
+
+            <div>
+                <span>✓</span>
+                Transparent progress
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- HERO VISUAL -->
+
+    <div class="hero-visual">
+
+        <div class="floating-circle circle-one"></div>
+        <div class="floating-circle circle-two"></div>
+
+        <div class="hero-issue-card">
+
+            <div class="hero-card-top">
+
+                <div>
+                    <span class="small-label">TRENDING ISSUE</span>
+                    <strong id="heroIssueTitle">Road Damage</strong>
+                </div>
+
+                <span class="hero-status" id="heroIssueStatus">
+    In Progress
+</span>
+
+            </div>
+
+            <div class="hero-road">
+
+                <div class="road-line"></div>
+
+                <div class="issue-pin">
+                    !
+                </div>
+
+            </div>
+
+            <div class="hero-card-bottom">
+
+                <div>
+                    <span>SUPPORTERS</span>
+                    <strong id="heroIssueSupporters">42</strong>
+                </div>
+
+                <div>
+                    <span>PRIORITY</span>
+                    <strong class="orange" id="heroIssuePriority">
+    High
+</strong>
+                </div>
+
+                <div>
+                    <span>PROGRESS</span>
+                <strong id="heroIssueProgress">65%</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="issues-container">
+
+
+    <!-- PAGE INTRO -->
+
+    <section class="page-intro">
+
+        <div>
+
+            <span class="section-label">BROWSE COMMUNITY REPORTS</span>
+
+            <h2>Issues that need attention.</h2>
+
+            <p>
+                Discover problems reported by citizens and support
+                the issues that affect your community.
+            </p>
+
+        </div>
+
+         <div class="issue-total">
+    <strong id="activeIssuesCount">0</strong>
+    <span>Active Issues</span>
+</div>
+
+    </section>
+
+
+    <!-- ================= SEARCH ================= -->
+
+    <section class="search-area">
+
+        <div class="search-box">
+
+            <span class="search-icon">⌕</span>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search issues by title, location or category..."
+                autocomplete="off"
+            >
+
+        </div>
+
+        <button class="filter-button" id="filterButton">
+            <span>☷</span>
+            Filters
+        </button>
+
+    </section>
+
+
+    <!-- ================= FILTERS ================= -->
+
+    <section class="filters" id="filters">
+
+        <button class="filter active" data-filter="all">
+            All Issues
+        </button>
+
+        <button class="filter" data-filter="roads">
+            🛣️ Roads
+        </button>
+
+        <button class="filter" data-filter="waste">
+            🗑️ Waste
+        </button>
+
+        <button class="filter" data-filter="streetlights">
+            💡 Streetlights
+        </button>
+
+        <button class="filter" data-filter="water">
+            💧 Water
+        </button>
+
+        <button class="filter" data-filter="drainage">
+            🌊 Drainage
+        </button>
+
+        <button class="filter" data-filter="infrastructure">
+            🏗️ Infrastructure
+        </button>
+
+
+        <select id="statusFilter">
+
+    <option value="all">All Status</option>
+    <option value="pending">Pending</option>
+    <option value="verified">Verified</option>
+    <option value="in-progress">In Progress</option>
+    <option value="resolved">Resolved</option>
+
+</select>
+
+    </section>
+
+  <!-- ================= ISSUE GRID ================= -->
+
+    <section class="issues-grid" id="issuesGrid">
+
+
+        <!-- ISSUE 1 -->
+
+        <article
+            class="issue-card"
+            data-category="roads"
+            data-status="progress"
+        >
+
+            <div class="issue-image">
+
+                <img
+                    src="roads.jpg"
+                    alt="Road damage issue"
+                >
+
+                <span class="category-tag">
+                    🛣️ Roads
+                </span>
+
+                <span class="priority high">
+                    High Priority
+                </span>
+
+            </div>
+
+            <div class="issue-content">
+
+                <div class="issue-status">
+                    <span class="status-dot progress"></span>
+                    In Progress
+                </div>
+
+                <h3>Pothole on Main Road</h3>
+
+                <p class="location">
+                    📍 Shivaji Nagar, Pune
+                </p>
+
+                <p class="description">
+                    Large pothole causing difficulty for vehicles
+                    and creating a safety concern for commuters.
+                </p>
+
+                <div class="issue-meta">
+
+                    <div>
+                        <span>SUPPORT</span>
+                        <strong>42</strong>
+                    </div>
+
+                    <div>
+                        <span>REPORTED</span>
+                        <strong>2 days ago</strong>
+                    </div>
+
+                    <div>
+                        <span>ID</span>
+                        <strong>#1042</strong>
+                    </div>
+
+                </div>
+
+                <div class="issue-actions">
+
+                    <button class="support-btn">
+                        ♡ Support Issue
+                    </button>
+
+                   <a href="issue-details.html#pothole" class="view-btn">
+                    View Details →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- ISSUE 2 -->
+
+        <article
+            class="issue-card"
+            data-category="waste"
+            data-status="verified"
+        >
+
+            <div class="issue-image">
+
+                <img
+                    src="waste.jpg"
+                    alt="Waste management issue"
+                >
+
+                <span class="category-tag">
+                    🗑️ Waste
+                </span>
+
+                <span class="priority medium">
+                    Medium Priority
+                </span>
+
+            </div>
+
+            <div class="issue-content">
+
+                <div class="issue-status">
+                    <span class="status-dot verified"></span>
+                    Verified
+                </div>
+
+                <h3>Garbage Collection Delay</h3>
+
+                <p class="location">
+                    📍 Kothrud, Pune
+                </p>
+
+                <p class="description">
+                    Waste has not been collected regularly in
+                    the residential area for the past few days.
+                </p>
+
+                <div class="issue-meta">
+
+                    <div>
+                        <span>SUPPORT</span>
+                        <strong>31</strong>
+                    </div>
+
+                    <div>
+                        <span>REPORTED</span>
+                        <strong>3 days ago</strong>
+                    </div>
+
+                    <div>
+                        <span>ID</span>
+                        <strong>#1038</strong>
+                    </div>
+
+                </div>
+
+                <div class="issue-actions">
+
+                    <button class="support-btn">
+                        ♡ Support Issue
+                    </button>
+                    <a href="issue-details.html#garbage" class="view-btn">
+    View Details →
+</a>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- ISSUE 3 -->
+
+        <article
+            class="issue-card"
+            data-category="streetlights"
+            data-status="progress"
+        >
+
+            <div class="issue-image">
+
+                <img
+                    src="streetlights.jpg"
+                    alt="Streetlight issue"
+                >
+
+                <span class="category-tag">
+                    💡 Streetlights
+                </span>
+
+                <span class="priority high">
+                    High Priority
+                </span>
+
+            </div>
+
+            <div class="issue-content">
+
+                <div class="issue-status">
+                    <span class="status-dot progress"></span>
+                    In Progress
+                </div>
+
+                <h3>Streetlight Not Working</h3>
+
+                <p class="location">
+                    📍 Baner, Pune
+                </p>
+
+                <p class="description">
+                    Multiple streetlights are not functioning,
+                    making the road difficult to use at night.
+                </p>
+
+                <div class="issue-meta">
+
+                    <div>
+                        <span>SUPPORT</span>
+                        <strong>28</strong>
+                    </div>
+
+                    <div>
+                        <span>REPORTED</span>
+                        <strong>4 days ago</strong>
+                    </div>
+
+                    <div>
+                        <span>ID</span>
+                        <strong>#1035</strong>
+                    </div>
+
+                </div>
+
+                <div class="issue-actions">
+
+                    <button class="support-btn">
+                        ♡ Support Issue
+                    </button>
+
+                    <a href="issue-details.html#streetlight" class="view-btn">
+    View Details →
+</a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- ISSUE 4 -->
+
+        <article
+            class="issue-card"
+            data-category="water"
+            data-status="reported"
+        >
+
+            <div class="issue-image">
+
+                <img
+                    src="water.jpg"
+                    alt="Water supply issue"
+                >
+
+                <span class="category-tag">
+                    💧 Water
+                </span>
+
+                <span class="priority high">
+                    High Priority
+                </span>
+
+            </div>
+
+            <div class="issue-content">
+
+                <div class="issue-status">
+                    <span class="status-dot reported"></span>
+                    Reported
+                </div>
+
+                <h3>Water Supply Leakage</h3>
+
+                <p class="location">
+                    📍 Aundh, Pune
+                </p>
+
+                <p class="description">
+                    Water leakage has been reported near the
+                    main residential supply line.
+                </p>
+
+                <div class="issue-meta">
+
+                    <div>
+                        <span>SUPPORT</span>
+                        <strong>19</strong>
+                    </div>
+
+                    <div>
+                        <span>REPORTED</span>
+                        <strong>1 day ago</strong>
+                    </div>
+
+                    <div>
+                        <span>ID</span>
+                        <strong>#1047</strong>
+                    </div>
+
+                </div>
+
+                <div class="issue-actions">
+
+                    <button class="support-btn">
+                        ♡ Support Issue
+                    </button>
+                     <a href="issue-details.html#water" class="view-btn">
+    View Details →
+</a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- ISSUE 5 -->
+
+        <article
+            class="issue-card"
+            data-category="drainage"
+            data-status="progress"
+        >
+
+            <div class="issue-image">
+
+                <img
+                    src="drainage.jpg"
+                    alt="Drainage issue"
+                >
+
+                <span class="category-tag">
+                    🌊 Drainage
+                </span>
+
+                <span class="priority medium">
+                    Medium Priority
+                </span>
+
+            </div>
+
+            <div class="issue-content">
+
+                <div class="issue-status">
+                    <span class="status-dot progress"></span>
+                    In Progress
+                </div>
+
+                <h3>Blocked Storm Drain</h3>
+
+                <p class="location">
+                    📍 Wakad, Pune
+                </p>
+
+                <p class="description">
+                    A blocked drain is causing water accumulation
+                    near the roadside during rainfall.
+                </p>
+
+                <div class="issue-meta">
+
+                    <div>
+                        <span>SUPPORT</span>
+                        <strong>24</strong>
+                    </div>
+
+                    <div>
+                        <span>REPORTED</span>
+                        <strong>5 days ago</strong>
+                    </div>
+
+                    <div>
+                        <span>ID</span>
+                        <strong>#1029</strong>
+                    </div>
+
+                </div>
+
+                <div class="issue-actions">
+
+                    <button class="support-btn">
+                        ♡ Support Issue
+                    </button>
+
+                    <a href="issue-details.html#drainage" class="view-btn">
+    View Details →
+</a>
+          </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- ISSUE 6 -->
+
+        <article
+            class="issue-card"
+            data-category="infrastructure"
+            data-status="resolved"
+        >
+
+            <div class="issue-image">
+
+                <img
+                    src="infrastructure.jpg"
+                    alt="Infrastructure issue"
+                >
+
+                <span class="category-tag">
+                    🏗️ Infrastructure
+                </span>
+
+                <span class="priority low">
+                    Low Priority
+                </span>
+
+            </div>
+
+            <div class="issue-content">
+
+                <div class="issue-status">
+                    <span class="status-dot resolved"></span>
+                    Resolved
+                </div>
+
+                <h3>Damaged Public Bench</h3>
+
+                <p class="location">
+                    📍 Viman Nagar, Pune
+                </p>
+
+                <p class="description">
+                    A damaged public seating area was reported
+                    in the community park.
+                </p>
+
+                <div class="issue-meta">
+
+                    <div>
+                        <span>SUPPORT</span>
+                        <strong>14</strong>
+                    </div>
+
+                    <div>
+                        <span>REPORTED</span>
+                        <strong>8 days ago</strong>
+                    </div>
+
+                    <div>
+                        <span>ID</span>
+                        <strong>#1017</strong>
+                    </div>
+
+                </div>
+
+                <div class="issue-actions">
+
+                    <button class="support-btn">
+                        ♡ Support Issue
+                    </button>
+                    <a href="issue-details.html#infrastructure" class="view-btn">
+    View Details →
+</a>
+                </div>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <!-- NO RESULTS -->
+
+    <div class="no-results" id="noResults">
+
+        <div class="no-results-icon">⌕</div>
+
+        <h3>No issues found</h3>
+
+        <p>
+            Try another search or choose a different category.
+        </p>
+
+    </div>
+
+
+    <!-- ================= LOAD MORE ================= -->
+
+    <div class="load-more">
+
+        <button id="loadMore">
+            Load More Issues
+            <span>↓</span>
+        </button>
+
+        <p id="issueDisplayCount">
+    Showing 0 issues
+</p>
+
+    </div>
+
+
+    <!-- ================= COMMUNITY CTA ================= -->
+
+    <section class="issues-cta">
+
+        <div class="cta-content">
+
+            <span class="section-label">MAKE AN IMPACT</span>
+
+            <h2>
+                Don't see your issue?
+                <span>Report it.</span>
+            </h2>
+
+            <p>
+                Help your community by reporting problems
+                that need attention.
+            </p>
+
+            <a href="report.html" class="cta-button">
+                Report an Issue
+                <span>→</span>
+            </a>
+
+        </div>
+
+        <div class="cta-visual">
+
+            <div class="cta-ring ring-one"></div>
+            <div class="cta-ring ring-two"></div>
+
+            <div class="cta-center">
+                <span>+</span>
+                <small>REPORT</small>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-main">
+
+        <div class="footer-brand">
+
+            <div class="footer-logo">
+                <span>◆</span>
+                CIVEXA
+            </div>
+
+            <p>
+                Report It. Support It. Track It. Fix It.
+                A community issue reporting, prioritization
+                and resolution system.
+            </p>
+
+            <div class="footer-status">
+                <span></span>
+                Prototype system active
+            </div>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>EXPLORE</h4>
+
+            <a href="index.html">Home</a>
+            <a href="report.html">Report Issue</a>
+            <a href="browse.html">Browse Issues</a>
+            <a href="track.html">Track Issue</a>
+            <a href="about.html">About CIVEXA</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>QUICK ACTIONS</h4>
+
+            <a href="report.html">+ Report a problem</a>
+             <a href="browse.html">→ Find an issue</a>
+<a href="browse.html">♡ Support an issue</a>
+            <a href="track.html">◷ Track a report</a>
+            <a href="about.html">? How CIVEXA works</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>© 2026 CIVEXA. Web Technology Microproject.</span>
+
+        <span>Built for better communities.</span>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+const searchInput =
+    document.getElementById("searchInput");
+
+const filters =
+    document.querySelectorAll(".filter");
+
+const statusFilter =
+    document.getElementById("statusFilter");
+
+const noResults =
+    document.getElementById("noResults");
+
+const issuesContainer =
+    document.querySelector(".issues-grid");
+
+let allIssues = [];
+let selectedCategory = "all";
+let visibleIssueCount = 6;
+let supportedIssueIds = [];
+
+
+function updateActiveIssueCount() {
+
+    const activeIssues =
+        allIssues.filter(issue =>
+            issue.status !== "resolved"
+        ).length;
+
+    document.getElementById(
+        "activeIssuesCount"
+    ).textContent = activeIssues;
+
+    document.getElementById(
+        "issueDisplayCount"
+    ).textContent =
+        `Showing ${activeIssues} active issues`;
+}
+
+
+
+/* ==========================================
+   LOAD ISSUES FROM BACKEND
+========================================== */
+
+async function loadIssues() {
+
+    try {
+
+        const response =
+            await fetch(
+                "http://localhost:3000/api/issues"
+            );
+
+        const data =
+            await response.json();
+
+        if (!response.ok) {
+            throw new Error(
+                data.message ||
+                "Failed to load issues."
+            );
+        }
+
+allIssues = data.issues || [];
+
+updateActiveIssueCount();
+
+updateTrendingIssue();
+
+displayIssues(allIssues);
+
+    } catch (error) {
+
+        console.error(
+            "Browse issues error:",
+            error
+        );
+
+        issuesContainer.innerHTML = `
+            <div class="no-results show">
+                Unable to load community issues.
+                Please make sure the CIVEXA
+                backend server is running.
+            </div>
+        `;
+
+    }
+
+}
+
+
+/* ==========================================
+   DISPLAY ISSUES
+========================================== */
+
+function displayIssues(issues) {
+
+issuesContainer.innerHTML = "";
+
+const issueDisplayCount =
+    document.getElementById("issueDisplayCount");
+
+if (issueDisplayCount) {
+    issueDisplayCount.textContent =
+    `Showing ${Math.min(
+    visibleIssueCount,
+    issues.length
+)} issues`;
+}
+
+const visibleIssues =
+    issues.slice(0, visibleIssueCount);
+
+visibleIssues.forEach((issue, index) => {
+
+        const card =
+            document.createElement("article");
+
+        card.className =
+            "issue-card card-show";
+
+        card.dataset.category =
+            issue.category || "";
+
+        card.dataset.status =
+            issue.status || "";
+
+        card.style.animationDelay =
+            `${index * 0.08}s`;
+
+
+        /* IMAGE */
+
+        const imageSource =
+            issue.image_path
+                ? "http://localhost:3000" +
+                  issue.image_path
+                : getCategoryImage(
+                    issue.category
+                  );
+
+
+        /* SUPPORT COUNT */
+
+        const supporterCount =
+            Number(
+                issue.supporter_count
+            ) || 0;
+
+
+        /* REPORTED DATE */
+
+        const reportedDate =
+            issue.created_at
+                ? new Date(
+                    issue.created_at
+                  ).toLocaleDateString(
+                    "en-IN",
+                    {
+                        day: "2-digit",
+                        month: "short",
+                        year: "numeric"
+                    }
+                  )
+                : "Unknown";
+
+
+        /* STATUS CLASS */
+
+        const statusClass =
+            getStatusClass(
+                issue.status
+            );
+
+
+        card.innerHTML = `
+
+            <!-- IMAGE -->
+
+            <div class="issue-image">
+
+                <img
+                    src="${imageSource}"
+                    alt="${escapeHTML(
+                        issue.title
+                    )}"
+                >
+
+                <span class="category-tag">
+                    ${formatCategory(
+                        issue.category
+                    )}
+                </span>
+
+                <span class="priority ${issue.priority}">
+                    ${formatPriority(
+                        issue.priority
+                    )} Priority
+                </span>
+
+            </div>
+
+
+            <!-- CONTENT -->
+
+            <div class="issue-content">
+
+                <div class="issue-status">
+
+                    <span
+                        class="status-dot ${statusClass}">
+                    </span>
+
+                    ${formatStatus(
+                        issue.status
+                    )}
+
+                </div>
+
+
+                <h3>
+                    ${escapeHTML(
+                        issue.title
+                    )}
+                </h3>
+
+
+                <p class="location">
+                    📍
+                    ${escapeHTML(
+                        issue.location ||
+                        "Location not available"
+                    )}
+                </p>
+
+
+                <p class="description">
+                    ${escapeHTML(
+                        issue.description
+                    )}
+                </p>
+
+
+                <!-- META -->
+
+                <div class="issue-meta">
+
+                    <div>
+
+                        <span>
+                            SUPPORT
+                        </span>
+
+                        <strong>
+                            ${supporterCount}
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            REPORTED
+                        </span>
+
+                        <strong>
+                            ${reportedDate}
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            ID
+                        </span>
+
+                        <strong>
+                            #${escapeHTML(
+                                issue.report_code
+                            )}
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ACTIONS -->
+
+                <div class="issue-actions">
+
+                    
+                    <button
+    class="support-btn ${
+        supportedIssueIds.includes(
+            Number(issue.issue_id)
+        )
+            ? "supported"
+            : ""
+    }"
+    data-issue-id="${issue.issue_id}"
+>
+    ${
+        supportedIssueIds.includes(
+            Number(issue.issue_id)
+        )
+            ? "♥ Supported"
+            : "♡ Support Issue"
+    }
+</button>
+
+
+                    <a
+                        href="issue-details.html?report=${encodeURIComponent(
+                            issue.report_code
+                        )}"
+                        class="view-btn"
+                    >
+                        View Details →
+                    </a>
+
+                </div>
+
+            </div>
+
+        `;
+
+
+        issuesContainer.appendChild(card);
+
+    });
+
+
+    /* NO RESULTS */
+
+    if (issues.length === 0) {
+
+    noResults.classList.add("show");
+
+} else {
+
+    noResults.classList.remove("show");
+
+}
+
+const loadMoreButton =
+    document.getElementById("loadMore");
+
+if (loadMoreButton) {
+
+    if (visibleIssueCount >= issues.length) {
+        loadMoreButton.style.display = "none";
+    } else {
+        loadMoreButton.style.display = "inline-flex";
+    }
+
+}
+
+
+    /* SUPPORT BUTTONS */
+
+    const supportButtons =
+        document.querySelectorAll(
+            ".support-btn"
+        );
+
+
+    supportButtons.forEach(button => {
+
+        button.addEventListener(
+            "click",
+            async function() {
+
+                const userData =
+                    localStorage.getItem(
+                        "civexaUser"
+                    );
+
+
+                if (!userData) {
+
+                    alert(
+                        "Please login to support an issue."
+                    );
+
+                    return;
+                }
+
+
+                const user =
+                    JSON.parse(userData);
+
+
+                const issueId =
+                    this.dataset.issueId;
+
+
+                try {
+
+                    const response =
+                        await fetch(
+                            `http://localhost:3000/api/issues/support/${issueId}`,
+                            {
+                                method: "POST",
+
+                                headers: {
+                                    "Content-Type":
+                                        "application/json"
+                                },
+
+                                body: JSON.stringify({
+                                    user_id:
+                                        user.user_id
+                                })
+                            }
+                        );
+
+
+                    const result =
+                        await response.json();
+
+
+                    if (!response.ok) {
+
+                        alert(
+                            result.message ||
+                            "Unable to support issue."
+                        );
+
+                        return;
+                    }
+
+
+                    this.classList.add(
+                        "supported"
+                    );
+
+                    this.innerHTML =
+                        "♥ Supported";
+
+
+                    /* UPDATE SUPPORT COUNT */
+
+                    const card =
+                        this.closest(
+                            ".issue-card"
+                        );
+
+
+                    const supportCount =
+                        card.querySelector(
+                            ".issue-meta div:first-child strong"
+                        );
+
+
+                    if (supportCount) {
+
+                        supportCount.textContent =
+                            Number(
+                                supportCount.textContent
+                            ) + 1;
+
+                    }
+
+                } catch (error) {
+
+                    console.error(
+                        "Support issue error:",
+                        error
+                    );
+
+                    alert(
+                        "Unable to connect to CIVEXA server."
+                    );
+
+                }
+
+            }
+        );
+
+    });
+
+}
+
+/* ==========================================
+   CATEGORY FILTER
+========================================== */
+
+filters.forEach(filter => {
+
+    filter.addEventListener(
+        "click",
+        () => {
+
+            filters.forEach(item => {
+
+                item.classList.remove(
+                    "active"
+                );
+
+            });
+
+            filter.classList.add(
+                "active"
+            );
+
+            selectedCategory =
+                filter.dataset.filter;
+
+            filterIssues();
+
+        }
+    );
+
+});
+
+
+/* ==========================================
+   SEARCH
+========================================== */
+
+searchInput.addEventListener(
+    "input",
+    filterIssues
+);
+
+
+/* ==========================================
+   STATUS FILTER
+========================================== */
+
+statusFilter.addEventListener(
+    "change",
+    filterIssues
+);
+
+
+/* ==========================================
+   FILTER ISSUES
+========================================== */
+
+function filterIssues() {
+
+    const searchValue =
+        searchInput.value
+            .toLowerCase()
+            .trim();
+
+    const selectedStatus =
+        statusFilter.value;
+
+
+    const filteredIssues =
+        allIssues.filter(issue => {
+
+            const category =
+                issue.category || "";
+
+            const status =
+                issue.status || "";
+
+
+            const searchText = (
+
+                (issue.title || "") +
+                " " +
+                (issue.description || "") +
+                " " +
+                (issue.location || "") +
+                " " +
+                (issue.category || "")
+
+            ).toLowerCase();
+
+
+            const categoryMatch =
+                selectedCategory === "all" ||
+                category === selectedCategory;
+
+
+            const statusMatch =
+                selectedStatus === "all" ||
+                status === selectedStatus;
+
+
+            const searchMatch =
+                searchValue === "" ||
+                searchText.includes(
+                    searchValue
+                );
+
+
+            return (
+                categoryMatch &&
+                statusMatch &&
+                searchMatch
+            );
+
+        });
+
+
+    displayIssues(
+        filteredIssues
+    );
+
+}
+
+
+/* ==========================================
+   MOBILE FILTER BUTTON
+========================================== */
+
+const filterButton =
+    document.getElementById(
+        "filterButton"
+    );
+
+const filtersBox =
+    document.getElementById(
+        "filters"
+    );
+
+
+if (filterButton && filtersBox) {
+
+    filterButton.addEventListener(
+        "click",
+        () => {
+
+            filtersBox.classList.toggle(
+                "open"
+            );
+
+        }
+    );
+
+}
+
+
+/* ==========================================
+   CATEGORY IMAGE
+========================================== */
+
+function getCategoryImage(category) {
+
+    if (category === "roads") {
+        return "roads.jpg";
+    }
+
+    if (category === "waste") {
+        return "waste.jpg";
+    }
+
+    if (category === "streetlights") {
+        return "streetlights.jpg";
+    }
+
+    if (category === "water") {
+        return "water.jpg";
+    }
+
+    if (category === "drainage") {
+        return "drainage.jpg";
+    }
+
+    if (category === "infrastructure") {
+        return "infrastructure.jpg";
+    }
+
+    return "other.jpg";
+
+}
+
+
+/* ==========================================
+   FORMAT STATUS
+========================================== */
+
+function formatStatus(status) {
+
+    if (!status) {
+        return "Unknown";
+    }
+
+    return status
+        .split("-")
+        .map(word =>
+            word.charAt(0).toUpperCase() +
+            word.slice(1)
+        )
+        .join(" ");
+
+}
+
+
+/* ==========================================
+   STATUS CSS CLASS
+========================================== */
+
+function getStatusClass(status) {
+
+    if (status === "in-progress") {
+        return "progress";
+    }
+
+    if (status === "verified") {
+        return "verified";
+    }
+
+    if (status === "resolved") {
+        return "resolved";
+    }
+
+    return "pending";
+
+}
+
+
+/* ==========================================
+   FORMAT PRIORITY
+========================================== */
+
+function formatPriority(priority) {
+
+    if (!priority) {
+        return "Unknown";
+    }
+
+    return priority.charAt(0).toUpperCase() +
+        priority.slice(1);
+
+}
+
+
+/* ==========================================
+   FORMAT CATEGORY
+========================================== */
+
+function formatCategory(category) {
+
+    if (!category) {
+        return "Unknown";
+    }
+
+    return category
+        .split("-")
+        .map(word =>
+            word.charAt(0).toUpperCase() +
+            word.slice(1)
+        )
+        .join(" ");
+
+}
+
+
+/* ==========================================
+   SECURITY / TEXT CLEANING
+========================================== */
+
+function escapeHTML(value) {
+
+    const div =
+        document.createElement("div");
+
+    div.textContent =
+        value || "";
+
+    return div.innerHTML;
+
+}
+
+const loadMoreButton =
+    document.getElementById("loadMore");
+
+loadMoreButton.addEventListener("click", () => {
+
+    visibleIssueCount += 6;
+
+    filterIssues();
+});
+
+function updateTrendingIssue() {
+
+    if (!allIssues || allIssues.length === 0) {
+        return;
+    }
+
+    // Select the issue with the highest supporter count
+    const trendingIssue =
+        [...allIssues].sort(
+            (a, b) =>
+                Number(b.supporter_count || 0) -
+                Number(a.supporter_count || 0)
+        )[0];
+
+    document.getElementById(
+        "heroIssueTitle"
+    ).textContent =
+        trendingIssue.title || "Community Issue";
+
+    document.getElementById(
+        "heroIssueStatus"
+    ).textContent =
+        formatStatus(trendingIssue.status);
+
+    document.getElementById(
+        "heroIssueSupporters"
+    ).textContent =
+        Number(trendingIssue.supporter_count || 0);
+
+    document.getElementById(
+        "heroIssuePriority"
+    ).textContent =
+        formatPriority(trendingIssue.priority);
+
+    document.getElementById(
+        "heroIssueProgress"
+    ).textContent =
+        `${Number(trendingIssue.progress || 0)}%`;
+}
+
+async function loadSupportedIssues() {
+
+    const userData =
+        localStorage.getItem("civexaUser");
+
+    if (!userData) {
+        supportedIssueIds = [];
+        return;
+    }
+
+    try {
+
+        const user =
+            JSON.parse(userData);
+
+        const response =
+            await fetch(
+                `http://localhost:3000/api/issues/support/user/${user.user_id}`
+            );
+
+        const data =
+            await response.json();
+
+        if (response.ok) {
+
+            supportedIssueIds =
+                data.supported_issue_ids || [];
+
+        }
+
+    } catch (error) {
+
+        console.error(
+            "Supported issues error:",
+            error
+        );
+
+        supportedIssueIds = [];
+    }
+}
+/* ==========================================
+   LOAD PAGE
+========================================== */
+
+loadSupportedIssues().then(() => {
+    loadIssues();
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<civexaObjectives>
+
+    <objective>
+        <number>01</number>
+        <title>Simplify Reporting</title>
+        <description>
+            Make it easy for citizens to report
+            community problems in minutes.
+        </description>
+    </objective>
+
+    <objective>
+        <number>02</number>
+        <title>Reduce Duplicates</title>
+        <description>
+            Identify similar reports so community
+            effort is combined instead of scattered.
+        </description>
+    </objective>
+
+    <objective>
+        <number>03</number>
+        <title>Prioritize Impact</title>
+        <description>
+            Help important and widely supported
+            issues rise to the top.
+        </description>
+    </objective>
+
+    <objective>
+        <number>04</number>
+        <title>Improve Communication</title>
+        <description>
+            Keep citizens informed about the
+            progress of their reported issues.
+        </description>
+    </objective>
+
+</civexaObjectives>

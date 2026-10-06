@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CIVEXA | Community Issue Reporting</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+
+    <!-- ==================================================
+         NAVBAR
+    =================================================== -->
+
+    <header class="navbar">
+
+        <!-- LOGO -->
+        <a href="index.html" class="logo">
+
+            <div class="logo-icon">
+                <span>◆</span>
+            </div>
+
+            <span class="logo-text">CIVEXA</span>
+
+        </a>
+
+
+      
+
+            <!-- ==================================================
+     NAVIGATION
+================================================== -->
+
+<nav class="nav-links" id="navLinks">
+
+    <a href="index.html" class="active">
+        Home
+    </a>
+
+    <a href="report.html">
+        Report Issue
+    </a>
+
+    <a href="browse.html">
+        Browse Issues
+    </a>
+
+    <a href="track.html">
+        Track Issue
+    </a>
+
+    <a href="about.html">
+        About
+    </a>
+
+    <a href="contact.html">
+        Contact
+    </a>
+
+</nav>
+
+        
+
+
+        <!-- NAVIGATION ACTIONS -->
+        <div class="nav-actions">
+
+            <button class="login-btn">
+            <a href="login.html" class="login-btn">Login</a>
+    
+                
+            </button>
+
+            <button class="register-btn">
+                 <a href="register.html" class="register-btn">Register</a>
+                
+            </button>
+
+        </div>
+
+
+        <!-- MOBILE MENU -->
+        <button class="menu-btn" id="menuBtn">
+            ☰
+        </button>
+
+    </header>
+
+
+
+    <!-- ==================================================
+         MAIN
+    =================================================== -->
+
+    <main>
+
+
+        <!-- ==================================================
+             HERO SECTION
+        =================================================== -->
+
+        <section class="hero">
+
+            <!-- LEFT CONTENT -->
+            <div class="hero-content">
+
+                <!-- SMALL BADGE -->
+                <div class="hero-badge">
+
+                    <span class="badge-icon">♡</span>
+
+                    <span>
+                        Community issue reporting & resolution
+                    </span>
+
+                </div>
+
+
+                <!-- MAIN HEADING -->
+                <h1>
+
+                    Report It. Support It.
+
+                    <br>
+
+                    Track It. Fix It.
+
+                </h1>
+
+
+                <!-- DESCRIPTION -->
+                <p class="hero-description">
+
+                    CIVEXA makes it easier for communities to report
+                    local problems, support important issues, track
+                    progress, and make resolution more transparent.
+
+                </p>
+
+
+                <!-- BUTTONS -->
+                <div class="hero-buttons">
+
+                    <button
+                        class="primary-btn"
+                        onclick="goToReport()"
+                    >
+
+                        Report an Issue
+
+                        <span class="arrow">→</span>
+
+                    </button>
+
+
+                    <button
+                        class="secondary-btn"
+                        onclick="goToIssues()"
+                    >
+
+                        Explore Community Issues
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 HERO VISUAL
+            =================================================== -->
+
+            <div class="hero-visual">
+
+                <div class="city-card">
+
+
+                    <!-- ILLUSTRATION AREA -->
+                    <div class="city-scene">
+
+
+                        <!-- SKY -->
+                        <div class="sky-cloud cloud-one"></div>
+                        <div class="sky-cloud cloud-two"></div>
+
+
+                        <!-- SUN -->
+                        <div class="sun"></div>
+
+
+                        <!-- BACK BUILDINGS -->
+                        <div class="buildings">
+
+                            <div class="building building-one">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <div class="building building-two">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <div class="building building-three">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <div class="building building-four">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                        </div>
+
+
+                        <!-- TREES -->
+                        <div class="tree tree-one">🌳</div>
+                        <div class="tree tree-two">🌳</div>
+                        <div class="tree tree-three">🌳</div>
+
+
+                        <!-- ROAD -->
+                        <div class="road">
+
+                            <div class="road-line"></div>
+
+                        </div>
+
+
+                        <!-- HOUSE -->
+                        <div class="house">
+
+                            <div class="roof"></div>
+
+                            <div class="house-body">
+
+                                <div class="window"></div>
+                                <div class="window second-window"></div>
+
+                                <div class="door"></div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- STREETLIGHT -->
+                        <div class="street-light">
+
+                            <div class="light-pole"></div>
+
+                            <div class="light-head"></div>
+
+                            <div class="light-glow"></div>
+
+                        </div>
+
+
+                        <!-- ISSUE MARKERS -->
+
+                        <div class="issue-marker marker-light">
+
+                            <div class="marker-icon">
+                                💡
+                            </div>
+
+                            <span>Streetlight</span>
+
+                            <small>Not Working</small>
+
+                        </div>
+
+
+                        <div class="issue-marker marker-road">
+
+                            <div class="marker-icon">
+                                🛣️
+                            </div>
+
+                            <span>Pothole</span>
+
+                            <small>on Road</small>
+
+                        </div>
+
+
+                        <div class="issue-marker marker-garbage">
+
+                            <div class="marker-icon">
+                                🗑️
+                            </div>
+
+                            <span>Garbage</span>
+
+                            <small>Overflowing</small>
+
+                        </div>
+
+
+                        <!-- PERSON -->
+                        <div class="person person-one">
+                            🧑
+                        </div>
+
+                        <div class="person person-two">
+                            👨
+                        </div>
+
+
+                        <!-- REPORT MINI CARD -->
+                        <div class="mini-report-card">
+
+                            <div class="mini-title">
+                                Report an issue
+                            </div>
+
+                            <div class="mini-categories">
+
+                                <span>🛣️</span>
+                                <span>💡</span>
+                                <span>🗑️</span>
+                                <span>💧</span>
+
+                            </div>
+
+                            <div class="mini-location">
+                                📍 Near Main Road
+                            </div>
+
+                            <button>
+                                SUBMIT
+                            </button>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- CARD BOTTOM -->
+                    <div class="city-card-footer">
+
+
+                        <div class="footer-feature">
+
+                            <div class="feature-icon">
+                                ✓
+                            </div>
+
+                            <div>
+
+                                <strong>REPORT</strong>
+
+                                <small>
+                                    See something? Report it.
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="footer-feature">
+
+                            <div class="feature-icon">
+                                !
+                            </div>
+
+                            <div>
+
+                                <strong>TRACK</strong>
+
+                                <small>
+                                    Watch your issue progress.
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="footer-feature">
+
+                            <div class="feature-icon">
+                                👥
+                            </div>
+
+                            <div>
+
+                                <strong>SUPPORT</strong>
+
+                                <small>
+                                    Make your voice count.
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="footer-feature">
+
+                            <div class="feature-icon">
+                                ★
+                            </div>
+
+                            <div>
+
+                                <strong>IMPACT</strong>
+
+                                <small>
+                                    Help build a better community.
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             STATISTICS SECTION
+        =================================================== -->
+
+        <section class="statistics">
+
+
+            <div class="stat-card">
+
+                <h2>
+                    <span class="counter" data-target="12458">
+                        0
+                    </span>+
+                </h2>
+
+                <p>
+                    Issues reported
+                </p>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <h2>
+                    <span class="counter" data-target="9832">
+                        0
+                    </span>+
+                </h2>
+
+                <p>
+                    Issues resolved
+                </p>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <h2>
+                    <span class="counter" data-target="1246">
+                        0
+                    </span>
+                </h2>
+
+                <p>
+                    Active issues
+                </p>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <h2>
+                    <span class="counter" data-target="6500">
+                        0
+                    </span>+
+                </h2>
+
+                <p>
+                    Community members
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- ==================================================
+     HOW CIVEXA WORKS
+================================================== -->
+
+<section class="how-it-works" id="how-it-works">
+
+    <div class="section-heading">
+
+        <h2>How CIVEXA works</h2>
+
+        <p>
+            Five clear steps from the first report to the final feedback.
+        </p>
+
+    </div>
+
+
+    <div class="steps-container">
+
+
+        <!-- STEP 01 -->
+
+        <div class="step-card">
+
+            <span class="step-number">01</span>
+
+            <h3>Report</h3>
+
+            <p>
+                A citizen reports the problem with a description,
+                location and photo.
+            </p>
+
+        </div>
+
+
+        <!-- STEP 02 -->
+
+        <div class="step-card">
+
+            <span class="step-number">02</span>
+
+            <h3>Verify</h3>
+
+            <p>
+                The report is reviewed and verified by
+                the concerned authority.
+            </p>
+
+        </div>
+
+
+        <!-- STEP 03 -->
+
+        <div class="step-card">
+
+            <span class="step-number">03</span>
+
+            <h3>Support</h3>
+
+            <p>
+                Other citizens can support the same issue
+                to increase its community impact.
+            </p>
+
+        </div>
+
+
+        <!-- STEP 04 -->
+
+        <div class="step-card">
+
+            <span class="step-number">04</span>
+
+            <h3>Prioritize & Resolve</h3>
+
+            <p>
+                CIVEXA calculates the priority and the
+                right department takes action.
+            </p>
+
+        </div>
+
+
+        <!-- STEP 05 -->
+
+        <div class="step-card">
+
+            <span class="step-number">05</span>
+
+            <h3>Track & Feedback</h3>
+
+            <p>
+                Citizens follow the progress and rate
+                the resolution afterwards.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==================================================
+     ISSUE CATEGORIES
+================================================== -->
+
+<section class="issue-categories" id="categories">
+
+    <div class="categories-header">
+
+        <div>
+            <span class="section-label">
+                EXPLORE COMMUNITY ISSUES
+            </span>
+
+            <h2>Issue categories</h2>
+
+            <p>
+                Pick a category to browse everything reported in it.
+            </p>
+        </div>
+
+        <a href="#issues" class="view-all-link">
+            View all issues
+            <span>→</span>
+        </a>
+
+    </div>
+
+
+    <!-- CATEGORY GRID -->
+
+    <div class="category-grid">
+
+
+        <!-- ================= ROADS ================= -->
+
+        <article class="category-card">
+
+            <div class="category-image">
+
+                <img
+                    src="roads.jpg"
+                    alt="Road and pothole issues"
+                >
+
+                <div class="image-overlay"></div>
+
+                <div class="category-icon">
+                    🛣️
+                </div>
+
+                <span class="issue-count">
+                    2,458 issues
+                </span>
+
+            </div>
+
+
+            <div class="category-content">
+
+                <h3>Roads</h3>
+
+                <p>
+                    Potholes, damaged roads and broken
+                    footpaths.
+                </p>
+
+                <a href="#issues" class="category-link">
+                    Explore roads
+                    <span>→</span>
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- ================= WASTE ================= -->
+
+        <article class="category-card">
+
+            <div class="category-image">
+
+                <img
+                    src="waste.jpg"
+                    alt="Waste and garbage issues"
+                >
+
+                <div class="image-overlay"></div>
+
+                <div class="category-icon">
+                    ♻️
+                </div>
+
+                <span class="issue-count">
+                    1,832 issues
+                </span>
+
+            </div>
+
+
+            <div class="category-content">
+
+                <h3>Waste</h3>
+
+                <p>
+                    Garbage accumulation and overflowing
+                    community bins.
+                </p>
+
+                <a href="#issues" class="category-link">
+                    Explore waste
+                    <span>→</span>
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- ================= STREETLIGHTS ================= -->
+
+        <article class="category-card">
+
+            <div class="category-image">
+
+                <img
+                    src="streetlights.jpg"
+                    alt="Streetlight issues"
+                >
+
+                <div class="image-overlay"></div>
+
+                <div class="category-icon">
+                    💡
+                </div>
+
+                <span class="issue-count">
+                    1,246 issues
+                </span>
+
+            </div>
+
+
+            <div class="category-content">
+
+                <h3>Streetlights</h3>
+
+                <p>
+                    Broken or non-functional streetlights
+                    in your area.
+                </p>
+
+                <a href="#issues" class="category-link">
+                    Explore streetlights
+                    <span>→</span>
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- ================= WATER ================= -->
+
+        <article class="category-card">
+
+            <div class="category-image">
+
+                <img
+                    src="water.jpg"
+                    alt="Water supply and leakage issues"
+                >
+
+                <div class="image-overlay"></div>
+
+                <div class="category-icon">
+                    💧
+                </div>
+
+                <span class="issue-count">
+                    924 issues
+                </span>
+
+            </div>
+
+
+            <div class="category-content">
+
+                <h3>Water</h3>
+
+                <p>
+                    Water leakage, supply problems and
+                    damaged pipelines.
+                </p>
+
+                <a href="#issues" class="category-link">
+                    Explore water
+                    <span>→</span>
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- ================= DRAINAGE ================= -->
+
+        <article class="category-card">
+
+            <div class="category-image">
+
+                <img
+                    src="drainage.jpg"
+                    alt="Drainage issues"
+                >
+
+                <div class="image-overlay"></div>
+
+                <div class="category-icon">
+                    🌊
+                </div>
+
+                <span class="issue-count">
+                    718 issues
+                </span>
+
+            </div>
+
+
+            <div class="category-content">
+
+                <h3>Drainage</h3>
+
+                <p>
+                    Blocked drains, flooding and drainage
+                    overflow.
+                </p>
+
+                <a href="#issues" class="category-link">
+                    Explore drainage
+                    <span>→</span>
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- ================= INFRASTRUCTURE ================= -->
+
+        <article class="category-card">
+
+            <div class="category-image">
+
+                <img
+                    src="infrastructure.jpg"
+                    alt="Public infrastructure issues"
+                >
+
+                <div class="image-overlay"></div>
+
+                <div class="category-icon">
+                    🏗️
+                </div>
+
+                <span class="issue-count">
+                    635 issues
+                </span>
+
+            </div>
+
+
+            <div class="category-content">
+
+                <h3>Infrastructure</h3>
+
+                <p>
+                    Damaged buildings, parks, benches and
+                    public facilities.
+                </p>
+
+                <a href="#issues" class="category-link">
+                    Explore infrastructure
+                    <span>→</span>
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- ================= OTHER ================= -->
+
+        <article class="category-card category-other">
+
+            <div class="category-image">
+
+                <img
+                    src="other.jpg"
+                    alt="Other community issues"
+                >
+
+                <div class="image-overlay"></div>
+
+                <div class="category-icon">
+                    ✦
+                </div>
+
+                <span class="issue-count">
+                    412 issues
+                </span>
+
+            </div>
+
+
+            <div class="category-content">
+
+                <h3>Other</h3>
+
+                <p>
+                    Any other community problem that needs
+                    attention.
+                </p>
+
+                <a href="#issues" class="category-link">
+                    Explore other
+                    <span>→</span>
+                </a>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+<!-- ==================================================
+     CIVEXA CTA SECTION
+================================================== -->
+
+<section class="civexa-cta">
+
+    <div class="cta-content">
+
+        <div class="cta-text">
+
+            <span class="cta-badge">
+                ✦ Make your community better
+            </span>
+
+            <h2>
+                Something broken<br>
+                in your street?
+            </h2>
+
+            <p>
+                It takes two minutes to report.
+                Every supporter pushes it further up the queue.
+            </p>
+
+        </div>
+
+
+        <div class="cta-actions">
+
+            <button class="cta-primary" onclick="goToReport()">
+                Report an issue
+                <span>→</span>
+            </button>
+
+            <a href="#issues" class="cta-secondary">
+                Browse issues
+                <span>↗</span>
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- CTA Bottom Features -->
+
+    <div class="cta-features">
+
+        <div class="cta-feature">
+
+            <div class="feature-icon">
+                📍
+            </div>
+
+            <div>
+                <strong>Report locally</strong>
+                <span>Tell us what needs attention</span>
+            </div>
+
+        </div>
+
+
+        <div class="cta-feature">
+
+            <div class="feature-icon">
+                🤝
+            </div>
+
+            <div>
+                <strong>Support together</strong>
+                <span>Increase community priority</span>
+            </div>
+
+        </div>
+
+
+        <div class="cta-feature">
+
+            <div class="feature-icon">
+                📊
+            </div>
+
+            <div>
+                <strong>Track progress</strong>
+                <span>Follow every update</span>
+            </div>
+
+        </div>
+
+
+        <div class="cta-feature">
+
+            <div class="feature-icon">
+                ✓
+            </div>
+
+            <div>
+                <strong>See the impact</strong>
+                <span>Know when it gets resolved</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     FOOTER
+================================================== -->
+
+<footer class="civexa-footer">
+
+    <div class="footer-main">
+
+
+        <!-- BRAND -->
+
+        <div class="footer-brand">
+
+            <a href="#" class="footer-logo">
+
+                <span class="footer-logo-icon">
+                    ◆
+                </span>
+
+                <span>
+                    CIVEXA
+                </span>
+
+            </a>
+
+
+            <h3>
+                Report It. Support It.
+                Track It. Fix It.
+            </h3>
+
+
+            <p>
+                A community issue reporting, prioritization
+                and resolution system built as a
+                Web Technology microproject prototype.
+            </p>
+
+
+            <!-- Status -->
+
+            <div class="footer-status">
+
+                <span class="status-dot"></span>
+
+                Prototype system active
+
+            </div>
+
+        </div>
+
+
+
+        <!-- EXPLORE -->
+
+        <div class="footer-column">
+
+            <h4>
+                EXPLORE
+            </h4>
+
+            <a href="#">
+                Home
+            </a>
+
+            <a href="#report">
+                Report Issue
+            </a>
+
+            <a href="#issues">
+                Browse Issues
+            </a>
+
+            <a href="#track">
+                Track Issue
+            </a>
+
+            <a href="#about">
+                About CIVEXA
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </div>
+
+
+
+        <!-- QUICK ACTIONS -->
+
+        <div class="footer-column">
+
+            <h4>
+                QUICK ACTIONS
+            </h4>
+
+            <a href="#report">
+                + Report a problem
+            </a>
+
+            <a href="#issues">
+                → Find an issue
+            </a>
+
+            <a href="#issues">
+                ♡ Support an issue
+            </a>
+
+            <a href="#track">
+                ◷ Track a report
+            </a>
+
+            <a href="#how-it-works">
+                ? How CIVEXA works
+            </a>
+
+        </div>
+
+
+
+        <!-- CONTACT -->
+
+        <div class="footer-column footer-contact">
+
+            <h4>
+                CONTACT
+            </h4>
+
+
+            <a href="mailto:support@civexa.app">
+
+                <span class="contact-icon">
+                    ✉
+                </span>
+
+                support@civexa.app
+
+            </a>
+
+
+            <a href="tel:+912040001200">
+
+                <span class="contact-icon">
+                    ☎
+                </span>
+
+                +91 20 4000 1200
+
+            </a>
+
+
+            <p>
+
+                <span class="contact-icon">
+                    ◷
+                </span>
+
+                Mon–Sat, 10:00–18:00
+
+            </p>
+
+
+            <div class="footer-social">
+
+                <a href="#" aria-label="Instagram">
+                    ◎
+                </a>
+
+                <a href="#" aria-label="LinkedIn">
+                    in
+                </a>
+
+                <a href="#" aria-label="Twitter">
+                    𝕏
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 CIVEXA
+            <span>•</span>
+            Sample data prototype
+            <span>•</span>
+            Not an official government service.
+        </p>
+
+
+        <div class="footer-bottom-links">
+
+            <a href="#">
+                Privacy
+            </a>
+
+            <a href="#">
+                Terms
+            </a>
+
+            <a href="#">
+                Accessibility
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+    </main>
+
+
+
+    <!-- ==================================================
+         JAVASCRIPT
+    =================================================== -->
+
+   
+
+    <script>
+
+const counters =
+    document.querySelectorAll(".counter");
+
+counters.forEach(counter => {
+
+    const target =
+        Number(counter.dataset.target);
+
+    let current = 0;
+
+    const duration = 1800;
+
+    const startTime =
+        performance.now();
+
+
+    function updateCounter(currentTime) {
+
+        const elapsed =
+            currentTime - startTime;
+
+        const progress =
+            Math.min(
+                elapsed / duration,
+                1
+            );
+
+        const easedProgress =
+            1 - Math.pow(
+                1 - progress,
+                3
+            );
+
+        current =
+            Math.floor(
+                target * easedProgress
+            );
+
+        counter.textContent =
+            current.toLocaleString();
+
+
+        if (progress < 1) {
+
+            requestAnimationFrame(
+                updateCounter
+            );
+
+        } else {
+
+            counter.textContent =
+                target.toLocaleString();
+
+        }
+
+    }
+
+
+    requestAnimationFrame(
+        updateCounter
+    );
+
+});
+
+</script>
+
+<!-- External JavaScript -->
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Feedback | CIVEXA</title>
+
+    <link rel="stylesheet"
+          href="my-feedback.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+        <span class="logo-mark">◆</span>
+        CIVEXA
+    </a>
+
+    <nav class="nav-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="report.html">
+            Report Issue
+        </a>
+
+        <a href="browse.html">
+            Browse Issues
+        </a>
+
+        <a href="track.html">
+            Track Issue
+        </a>
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="my-reports.html">
+            My Reports
+        </a>
+
+        <a href="my-feedback.html"
+           class="active">
+            My Feedback
+        </a>
+
+    </nav>
+
+    <a href="profile.html"
+       class="profile-button">
+        T
+    </a>
+
+</header>
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="feedback-hero">
+
+        <div class="hero-content">
+
+            <span class="section-label">
+                CITIZEN FEEDBACK
+            </span>
+
+            <h1>
+                My Feedback
+            </h1>
+
+            <p>
+                View the feedback you have submitted
+                and see your contribution to improving
+                the CIVEXA community experience.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="feedback-container">
+
+
+        <!-- =========================
+             STATISTICS
+        ========================== -->
+
+        <section class="feedback-stats">
+
+            <div class="stat-card">
+
+                <span class="stat-label">
+                    TOTAL FEEDBACK
+                </span>
+
+                <h2 id="totalFeedback">
+                    0
+                </h2>
+
+                <p>
+                    Feedback submitted
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span class="stat-label">
+                    AVERAGE RATING
+                </span>
+
+                <h2 id="averageRating">
+                    0.0 ⭐
+                </h2>
+
+                <p>
+                    Your average rating
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span class="stat-label">
+                    LATEST FEEDBACK
+                </span>
+
+                <h2 id="latestFeedback">
+                    —
+                </h2>
+
+                <p>
+                    Most recent submission
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FEEDBACK HISTORY
+        ========================== -->
+
+        <section class="feedback-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        YOUR SUBMISSIONS
+                    </span>
+
+                    <h2>
+                        Feedback History
+                    </h2>
+
+                    <p>
+                        Here you can view all the feedback
+                        you have submitted to CIVEXA.
+                    </p>
+
+                </div>
+
+
+                <a href="feedback.html"
+                   class="give-feedback-btn">
+                    + Give Feedback
+                </a>
+
+            </div>
+
+
+            <!-- =========================
+                 LOADING
+            ========================== -->
+
+            <div id="loadingState"
+                 class="loading-state">
+
+                <div class="loading-spinner"></div>
+
+                <p>
+                    Loading your feedback...
+                </p>
+
+            </div>
+
+
+            <!-- =========================
+                 FEEDBACK LIST
+            ========================== -->
+
+            <div id="feedbackList"
+                 class="feedback-list">
+            </div>
+
+
+            <!-- =========================
+                 EMPTY STATE
+            ========================== -->
+
+            <div id="emptyState"
+                 class="empty-state"
+                 style="display: none;">
+
+                <div class="empty-icon">
+                    💬
+                </div>
+
+                <span class="section-label">
+                    NO SUBMISSIONS
+                </span>
+
+                <h3>
+                    No feedback yet
+                </h3>
+
+                <p>
+                    You haven't submitted any feedback
+                    to CIVEXA yet.
+                </p>
+
+                <a href="feedback.html"
+                   class="primary-button">
+                    Give Feedback
+                </a>
+
+            </div>
+
+
+            <!-- =========================
+                 ERROR STATE
+            ========================== -->
+
+            <div id="errorState"
+                 class="error-state"
+                 style="display: none;">
+
+                <div class="error-icon">
+                    !
+                </div>
+
+                <h3>
+                    Unable to load feedback
+                </h3>
+
+                <p id="errorMessage">
+                    Something went wrong while loading
+                    your feedback.
+                </p>
+
+                <button
+                    type="button"
+                    id="retryButton"
+                    class="primary-button">
+                    Try Again
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        // ========================================
+        // CIVEXA - MY FEEDBACK
+        // ========================================
+
+
+        // ========================================
+        // LOGIN CHECK
+        // ========================================
+
+        const storedUser =
+            localStorage.getItem("civexaUser");
+
+
+        if (!storedUser) {
+
+            alert("Please login first.");
+
+            window.location.href =
+                "login.html";
+
+        }
+
+
+        // ========================================
+        // DOM ELEMENTS
+        // ========================================
+
+        const loadingState =
+            document.getElementById(
+                "loadingState"
+            );
+
+        const feedbackList =
+            document.getElementById(
+                "feedbackList"
+            );
+
+        const emptyState =
+            document.getElementById(
+                "emptyState"
+            );
+
+        const errorState =
+            document.getElementById(
+                "errorState"
+            );
+
+        const errorMessage =
+            document.getElementById(
+                "errorMessage"
+            );
+
+        const retryButton =
+            document.getElementById(
+                "retryButton"
+            );
+
+
+        // ========================================
+        // LOAD FEEDBACK
+        // ========================================
+
+        async function loadMyFeedback() {
+
+            try {
+
+                loadingState.style.display =
+                    "block";
+
+                feedbackList.style.display =
+                    "none";
+
+                emptyState.style.display =
+                    "none";
+
+                errorState.style.display =
+                    "none";
+
+
+                const user =
+                    JSON.parse(storedUser);
+
+
+                if (!user.user_id) {
+
+                    throw new Error(
+                        "User information is missing."
+                    );
+
+                }
+
+
+                // =================================
+                // API REQUEST
+                // =================================
+
+                const response =
+                    await fetch(
+                        `http://localhost:3000/api/issues/feedback/user/${user.user_id}`
+                    );
+
+
+                const result =
+                    await response.json();
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        result.message ||
+                        "Failed to load feedback."
+                    );
+
+                }
+
+
+                const feedback =
+                    Array.isArray(result.feedback)
+                        ? result.feedback
+                        : [];
+
+
+                // =================================
+                // UPDATE STATISTICS
+                // =================================
+
+                updateStatistics(
+                    feedback
+                );
+
+
+                // =================================
+                // HIDE LOADING
+                // =================================
+
+                loadingState.style.display =
+                    "none";
+
+
+                // =================================
+                // EMPTY
+                // =================================
+
+                if (feedback.length === 0) {
+
+                    emptyState.style.display =
+                        "block";
+
+                    return;
+
+                }
+
+
+                // =================================
+                // DISPLAY FEEDBACK
+                // =================================
+
+                feedbackList.innerHTML =
+                    "";
+
+                feedbackList.style.display =
+                    "flex";
+
+
+                feedback.forEach(
+                    (item, index) => {
+
+                        const card =
+                            createFeedbackCard(
+                                item,
+                                index
+                            );
+
+                        feedbackList.appendChild(
+                            card
+                        );
+
+                    }
+                );
+
+
+            } catch (error) {
+
+                console.error(
+                    "My Feedback Error:",
+                    error
+                );
+
+
+                loadingState.style.display =
+                    "none";
+
+                feedbackList.style.display =
+                    "none";
+
+                errorState.style.display =
+                    "block";
+
+
+                errorMessage.textContent =
+                    error.message ||
+                    "Unable to load your feedback.";
+
+            }
+
+        }
+
+
+        // ========================================
+        // UPDATE STATISTICS
+        // ========================================
+
+        function updateStatistics(
+            feedback
+        ) {
+
+            const total =
+                feedback.length;
+
+
+            document.getElementById(
+                "totalFeedback"
+            ).textContent =
+                total;
+
+
+            if (total === 0) {
+
+                document.getElementById(
+                    "averageRating"
+                ).textContent =
+                    "0.0 ⭐";
+
+
+                document.getElementById(
+                    "latestFeedback"
+                ).textContent =
+                    "—";
+
+                return;
+
+            }
+
+
+            // =================================
+            // AVERAGE RATING
+            // =================================
+
+            const totalRating =
+                feedback.reduce(
+                    (
+                        sum,
+                        item
+                    ) => {
+
+                        return sum +
+                            Number(
+                                item.rating || 0
+                            );
+
+                    },
+                    0
+                );
+
+
+            const averageRating =
+                totalRating / total;
+
+
+            document.getElementById(
+                "averageRating"
+            ).textContent =
+                averageRating.toFixed(1) +
+                " ⭐";
+
+
+            // =================================
+            // LATEST FEEDBACK
+            // =================================
+
+            const latestDate =
+                new Date(
+                    feedback[0].created_at
+                );
+
+
+            document.getElementById(
+                "latestFeedback"
+            ).textContent =
+                formatDate(
+                    latestDate
+                );
+
+        }
+
+
+        // ========================================
+        // CREATE FEEDBACK CARD
+        // ========================================
+
+        function createFeedbackCard(
+            item,
+            index
+        ) {
+
+            const card =
+                document.createElement(
+                    "article"
+                );
+
+
+            card.className =
+                "feedback-card";
+
+
+            card.style.animationDelay =
+                `${index * 0.08}s`;
+
+
+            const rating =
+                Number(
+                    item.rating || 0
+                );
+
+
+            const feedbackType =
+                escapeHTML(
+                    item.feedback_type ||
+                    "General Feedback"
+                );
+
+
+            const message =
+                escapeHTML(
+                    item.message ||
+                    ""
+                );
+
+
+            const date =
+                formatDate(
+                    new Date(
+                        item.created_at
+                    )
+                );
+
+
+            card.innerHTML = `
+
+                <div class="feedback-top">
+
+                    <div class="feedback-heading">
+
+                        <h3>
+                            ${feedbackType}
+                        </h3>
+
+                        <p>
+                            Submitted on ${date}
+                        </p>
+
+                    </div>
+
+
+                    <div class="rating">
+
+                        ${createStars(rating)}
+
+                        <span class="rating-number">
+                            ${rating}/5
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="feedback-message">
+
+                    ${message}
+
+                </div>
+
+
+                <div class="feedback-meta">
+
+                    <span class="meta-pill">
+                        CIVEXA Feedback
+                    </span>
+
+                    <span class="meta-pill">
+                        ${rating} Star Rating
+                    </span>
+
+                </div>
+
+            `;
+
+
+            return card;
+
+        }
+
+
+        // ========================================
+        // CREATE STARS
+        // ========================================
+
+        function createStars(
+            rating
+        ) {
+
+            let stars = "";
+
+
+            for (
+                let i = 1;
+                i <= 5;
+                i++
+            ) {
+
+                if (i <= rating) {
+
+                    stars += "★";
+
+                } else {
+
+                    stars += "☆";
+
+                }
+
+            }
+
+
+            return stars;
+
+        }
+
+
+        // ========================================
+        // FORMAT DATE
+        // ========================================
+
+        function formatDate(
+            date
+        ) {
+
+            if (
+                !date ||
+                isNaN(
+                    date.getTime()
+                )
+            ) {
+
+                return "—";
+
+            }
+
+
+            return date.toLocaleDateString(
+                "en-IN",
+                {
+                    day: "2-digit",
+                    month: "short",
+                    year: "numeric"
+                }
+            );
+
+        }
+
+
+        // ========================================
+        // ESCAPE HTML
+        // ========================================
+
+        function escapeHTML(
+            value
+        ) {
+
+            const div =
+                document.createElement(
+                    "div"
+                );
+
+
+            div.textContent =
+                value;
+
+
+            return div.innerHTML;
+
+        }
+
+
+        // ========================================
+        // RETRY
+        // ========================================
+
+        retryButton.addEventListener(
+            "click",
+            loadMyFeedback
+        );
+
+
+        // ========================================
+        // START
+        // ========================================
+
+        if (storedUser) {
+
+            loadMyFeedback();
+
+        }
+
+    </script>
+
+</body>
+
+</html>

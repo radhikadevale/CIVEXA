@@ -1,0 +1,207 @@
+/* =====================================================
+   CIVEXA SHARED NAVBAR
+===================================================== */
+
+.navbar {
+    height: 112px;
+    padding: 0 8.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fffefa;
+    border-bottom: 1px solid #e5e7e3;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    text-decoration: none;
+    color: #102c38;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #087b7c;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+}
+
+.logo-text {
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #617078;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 13px 15px;
+    border-radius: 14px;
+    transition: all 0.25s ease;
+}
+
+.nav-links a:hover {
+    color: #087b7c;
+    background: #edf7f6;
+}
+
+.nav-links a.active {
+    color: #087b7c;
+    background: #e2f3f2;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 21px;
+}
+
+.login-btn {
+    border: none;
+    background: transparent;
+    color: #243b44;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.register-btn {
+    border: none;
+    background: #087b7c;
+    color: white;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 13px 19px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.register-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 18px rgba(8, 123, 124, 0.18);
+}
+
+.menu-btn {
+    display: none;
+    border: none;
+    background: transparent;
+    color: #102c38;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+/* =====================================================
+   NAVBAR RESPONSIVE
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .nav-links {
+        gap: 0;
+    }
+
+    .nav-links a {
+        padding: 11px 8px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 850px) {
+
+    .navbar {
+        height: 80px;
+    }
+
+    .nav-links,
+    .nav-actions {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links.mobile-open {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        padding: 15px 25px 20px;
+        border-bottom: 1px solid #e0e5e3;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+
+    .nav-links.mobile-open a {
+        width: 100%;
+        text-align: center;
+        padding: 13px;
+    }
+}
+
+
+/* =====================================================
+   NAVBAR ANIMATIONS
+===================================================== */
+
+.navbar {
+    animation: navbarDrop 0.7s ease-out both;
+}
+
+@keyframes navbarDrop {
+
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo {
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: translateY(-2px);
+}
+
+.logo-icon {
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.logo:hover .logo-icon {
+    transform: rotate(-8deg) scale(1.08);
+    box-shadow: 0 7px 20px rgba(8, 123, 124, 0.25);
+}

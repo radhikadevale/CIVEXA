@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CIVEXA | Admin Feedback</title>
+
+    <link rel="stylesheet" href="feedback.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         ADMIN NAVBAR
+    ====================================================== -->
+
+    <header class="admin-navbar">
+
+
+        <!-- LOGO -->
+
+        <div class="nav-brand">
+
+            <a href="admin.html">
+                ◆ CIVEXA
+            </a>
+
+            <span>
+                Admin Panel
+            </span>
+
+        </div>
+
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="nav-links">
+
+            <a href="admin.html">
+                Dashboard
+            </a>
+
+            <a href="manage-issues.html">
+                Manage Issues
+            </a>
+
+            <a href="departments.html">
+                Departments
+            </a>
+
+            <a href="analytics.html">
+                Analytics
+            </a>
+
+            <a href="feedback.html" class="active">
+                Feedback
+            </a>
+             <a href="contact-messages.html" class="active">
+                Contact Messages
+            </a>
+
+        </nav>
+
+
+
+        <!-- ADMIN ACCOUNT -->
+
+        <button
+            type="button"
+            class="admin-profile"
+            id="adminProfileButton"
+        >
+
+            <div class="admin-avatar">
+                A
+            </div>
+
+            <div class="admin-profile-text">
+
+                <strong id="adminName">
+                    Admin
+                </strong>
+
+                <small>
+                    Administrator
+                </small>
+
+            </div>
+
+        </button>
+
+
+    </header>
+
+
+
+    <!-- =====================================================
+         ADMIN PROFILE POPUP
+    ====================================================== -->
+
+    <div
+        class="admin-profile-popup"
+        id="adminProfilePopup"
+    >
+
+        <button
+            type="button"
+            class="profile-close"
+            id="closeAdminProfile"
+        >
+            ×
+        </button>
+
+
+        <div class="popup-avatar">
+            A
+        </div>
+
+
+        <h3 id="adminProfileName">
+            CIVEXA Admin
+        </h3>
+
+
+        <p id="adminProfileEmail">
+            civexa.admin@example.com
+        </p>
+
+
+        <div class="profile-info">
+
+
+            <div>
+
+                <span>
+                    Role
+                </span>
+
+                <strong>
+                    Administrator
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Phone
+                </span>
+
+                <strong id="adminProfilePhone">
+                    Not available
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+        <button
+            type="button"
+            class="admin-logout-button"
+            id="adminLogoutButton"
+        >
+            Logout
+        </button>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="feedback-page">
+
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="feedback-hero">
+
+
+            <div>
+
+                <span class="eyebrow">
+                    ADMIN • CITIZEN FEEDBACK
+                </span>
+
+
+                <h1>
+                    Listen to the community.
+                </h1>
+
+
+                <p>
+                    Review feedback submitted by citizens
+                    and understand their experience with
+                    the CIVEXA platform.
+                </p>
+
+            </div>
+
+
+            <div class="hero-status">
+
+                <span class="status-dot"></span>
+
+                Live Feedback
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             STATISTICS
+        ================================================== -->
+
+        <section class="feedback-stats">
+
+
+            <!-- TOTAL -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    #
+                </div>
+
+                <div>
+
+                    <span>
+                        Total Feedback
+                    </span>
+
+                    <strong id="totalFeedback">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- AVERAGE -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ★
+                </div>
+
+                <div>
+
+                    <span>
+                        Average Rating
+                    </span>
+
+                    <strong id="averageRating">
+                        0.0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- POSITIVE -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <span>
+                        Positive Feedback
+                    </span>
+
+                    <strong id="positiveFeedback">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- NEEDS IMPROVEMENT -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    !
+                </div>
+
+                <div>
+
+                    <span>
+                        Needs Improvement
+                    </span>
+
+                    <strong id="needsImprovement">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             FEEDBACK SECTION
+        ================================================== -->
+
+        <section class="feedback-section">
+
+
+            <!-- HEADER -->
+
+            <div class="section-header">
+
+
+                <div>
+
+                    <span class="eyebrow">
+                        CITIZEN RESPONSES
+                    </span>
+
+
+                    <h2>
+                        Feedback received
+                    </h2>
+
+
+                    <p>
+                        Feedback submitted through the
+                        CIVEXA feedback system.
+                    </p>
+
+                </div>
+
+
+                <span class="live-badge">
+                    ● LIVE DATA
+                </span>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 FILTERS
+            ================================================== -->
+
+            <div class="feedback-filters">
+
+
+                <!-- SEARCH -->
+
+                <div class="search-box">
+
+                    <span>
+                        ⌕
+                    </span>
+
+                    <input
+                        type="text"
+                        id="feedbackSearch"
+                        placeholder="Search name, email or message..."
+                    >
+
+                </div>
+
+
+
+                <!-- TYPE -->
+
+                <select id="feedbackTypeFilter">
+
+                    <option value="all">
+                        All Feedback Types
+                    </option>
+
+                    <option value="Issue Reporting">
+                        Issue Reporting
+                    </option>
+
+                    <option value="Website Experience">
+                        Website Experience
+                    </option>
+
+                    <option value="Suggestion">
+                        Suggestion
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+
+
+                <!-- RATING -->
+
+                <select id="feedbackRatingFilter">
+
+                    <option value="all">
+                        All Ratings
+                    </option>
+
+                    <option value="5">
+                        ★★★★★ Excellent
+                    </option>
+
+                    <option value="4">
+                        ★★★★ Good
+                    </option>
+
+                    <option value="3">
+                        ★★★ Average
+                    </option>
+
+                    <option value="2">
+                        ★★ Needs Improvement
+                    </option>
+
+                    <option value="1">
+                        ★ Very Poor
+                    </option>
+
+                </select>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 FEEDBACK LIST
+            ================================================== -->
+
+            <div
+                id="adminFeedbackList"
+                class="admin-feedback-list"
+            >
+
+                <div class="feedback-loading">
+
+                    <div class="loading-spinner"></div>
+
+                    <p>
+                        Loading feedback...
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- EMPTY -->
+
+            <div
+                id="feedbackEmpty"
+                class="feedback-empty"
+            >
+
+                <div class="empty-icon">
+                    ♡
+                </div>
+
+                <h3>
+                    No feedback found
+                </h3>
+
+                <p>
+                    Try changing your search or filter.
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="admin-footer">
+
+        <p>
+            © 2026 CIVEXA. Admin Management System.
+        </p>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         Everything is inside feedback.html
+    ====================================================== -->
+
+    <script>
+
+
+        /* =====================================================
+           1. GET LOGGED-IN USER
+        ====================================================== */
+
+        const storedUser =
+            localStorage.getItem("civexaUser");
+
+
+        /*
+         * If nobody is logged in,
+         * send them to login page.
+         */
+
+        if (!storedUser) {
+
+            window.location.href =
+                "../login.html";
+
+        }
+
+
+        let currentUser = null;
+
+
+        try {
+
+            currentUser =
+                JSON.parse(storedUser);
+
+        } catch (error) {
+
+            console.error(
+                "Invalid CIVEXA user data:",
+                error
+            );
+
+            localStorage.removeItem(
+                "civexaUser"
+            );
+
+            window.location.href =
+                "../login.html";
+
+        }
+
+
+
+        /* =====================================================
+           2. ADMIN ACCESS CHECK
+        ====================================================== */
+
+        if (
+            currentUser &&
+            currentUser.role !== "admin"
+        ) {
+
+            alert(
+                "Admin access required."
+            );
+
+            window.location.href =
+                "../dashboard.html";
+
+        }
+
+
+
+        /* =====================================================
+           3. ADMIN PROFILE DATA
+        ====================================================== */
+
+        if (currentUser) {
+
+
+            document.getElementById(
+                "adminName"
+            ).textContent =
+                currentUser.full_name ||
+                "Admin";
+
+
+            document.getElementById(
+                "adminProfileName"
+            ).textContent =
+                currentUser.full_name ||
+                "CIVEXA Admin";
+
+
+            document.getElementById(
+                "adminProfileEmail"
+            ).textContent =
+                currentUser.email ||
+                "civexa.admin@example.com";
+
+
+            document.getElementById(
+                "adminProfilePhone"
+            ).textContent =
+                currentUser.phone ||
+                "Not available";
+
+        }
+
+
+
+        /* =====================================================
+           4. PROFILE POPUP
+        ====================================================== */
+
+        const adminProfileButton =
+            document.getElementById(
+                "adminProfileButton"
+            );
+
+
+        const adminProfilePopup =
+            document.getElementById(
+                "adminProfilePopup"
+            );
+
+
+        const closeAdminProfile =
+            document.getElementById(
+                "closeAdminProfile"
+            );
+
+
+        adminProfileButton.addEventListener(
+            "click",
+            function () {
+
+                adminProfilePopup.classList.toggle(
+                    "show"
+                );
+
+            }
+        );
+
+
+        closeAdminProfile.addEventListener(
+            "click",
+            function () {
+
+                adminProfilePopup.classList.remove(
+                    "show"
+                );
+
+            }
+        );
+
+
+        document.addEventListener(
+            "click",
+            function (event) {
+
+                if (
+                    !adminProfilePopup.contains(
+                        event.target
+                    ) &&
+                    !adminProfileButton.contains(
+                        event.target
+                    )
+                ) {
+
+                    adminProfilePopup.classList.remove(
+                        "show"
+                    );
+
+                }
+
+            }
+        );
+
+
+
+        /* =====================================================
+           5. LOGOUT
+        ====================================================== */
+
+        document.getElementById(
+            "adminLogoutButton"
+        ).addEventListener(
+            "click",
+            function () {
+
+                localStorage.removeItem(
+                    "civexaUser"
+                );
+
+                window.location.href =
+                    "../login.html";
+
+            }
+        );
+
+
+
+        /* =====================================================
+           6. FEEDBACK ELEMENTS
+        ====================================================== */
+
+        const feedbackList =
+            document.getElementById(
+                "adminFeedbackList"
+            );
+
+
+        const feedbackEmpty =
+            document.getElementById(
+                "feedbackEmpty"
+            );
+
+
+        const feedbackSearch =
+            document.getElementById(
+                "feedbackSearch"
+            );
+
+
+        const feedbackTypeFilter =
+            document.getElementById(
+                "feedbackTypeFilter"
+            );
+
+
+        const feedbackRatingFilter =
+            document.getElementById(
+                "feedbackRatingFilter"
+            );
+
+
+        let allFeedback = [];
+
+
+
+        /* =====================================================
+           7. LOAD FEEDBACK FROM BACKEND
+        ====================================================== */
+
+        async function loadFeedback() {
+
+
+            /*
+             * IMPORTANT:
+             *
+             * This is your existing backend route:
+             *
+             * GET /api/issues/admin/feedback
+             */
+
+            const API_URL =
+                "http://localhost:3000/api/issues/admin/feedback";
+
+
+            try {
+
+
+                feedbackList.innerHTML = `
+
+                    <div class="feedback-loading">
+
+                        <div class="loading-spinner"></div>
+
+                        <p>
+                            Loading feedback...
+                        </p>
+
+                    </div>
+
+                `;
+
+
+                const response =
+                    await fetch(API_URL);
+
+
+                const result =
+                    await response.json();
+
+
+                console.log(
+                    "Feedback API response:",
+                    result
+                );
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        result.message ||
+                        "Failed to load feedback."
+                    );
+
+                }
+
+
+                /*
+                 * Backend returns:
+                 *
+                 * {
+                 *   message: "...",
+                 *   feedback: [...]
+                 * }
+                 */
+
+                allFeedback =
+                    Array.isArray(
+                        result.feedback
+                    )
+                        ? result.feedback
+                        : [];
+
+
+                updateStatistics(
+                    allFeedback
+                );
+
+
+                displayFeedback(
+                    allFeedback
+                );
+
+
+            } catch (error) {
+
+
+                console.error(
+                    "Feedback API error:",
+                    error
+                );
+
+
+                feedbackList.innerHTML = `
+
+                    <div class="feedback-error">
+
+                        <div class="error-icon">
+                            !
+                        </div>
+
+                        <h3>
+                            Unable to load feedback
+                        </h3>
+
+                        <p>
+                            Make sure the CIVEXA backend
+                            is running at
+                            localhost:3000.
+                        </p>
+
+                        <button
+                            type="button"
+                            onclick="loadFeedback()"
+                        >
+                            Try Again
+                        </button>
+
+                    </div>
+
+                `;
+
+            }
+
+        }
+
+
+
+        /* =====================================================
+           8. UPDATE STATISTICS
+        ====================================================== */
+
+        function updateStatistics(
+            feedback
+        ) {
+
+
+            const total =
+                feedback.length;
+
+
+            document.getElementById(
+                "totalFeedback"
+            ).textContent =
+                total;
+
+
+            if (total === 0) {
+
+                document.getElementById(
+                    "averageRating"
+                ).textContent =
+                    "0.0";
+
+
+                document.getElementById(
+                    "positiveFeedback"
+                ).textContent =
+                    "0";
+
+
+                document.getElementById(
+                    "needsImprovement"
+                ).textContent =
+                    "0";
+
+
+                return;
+
+            }
+
+
+            /* Average */
+
+            let totalRating = 0;
+
+
+            feedback.forEach(
+                function (item) {
+
+                    totalRating +=
+                        Number(item.rating) || 0;
+
+                }
+            );
+
+
+            const average =
+                totalRating / total;
+
+
+            document.getElementById(
+                "averageRating"
+            ).textContent =
+                average.toFixed(1);
+
+
+
+            /* Positive = 4 or 5 */
+
+            const positive =
+                feedback.filter(
+                    function (item) {
+
+                        return (
+                            Number(item.rating) >= 4
+                        );
+
+                    }
+                ).length;
+
+
+            document.getElementById(
+                "positiveFeedback"
+            ).textContent =
+                positive;
+
+
+
+            /* Needs improvement = 1 or 2 */
+
+            const needsImprovement =
+                feedback.filter(
+                    function (item) {
+
+                        return (
+                            Number(item.rating) <= 2
+                        );
+
+                    }
+                ).length;
+
+
+            document.getElementById(
+                "needsImprovement"
+            ).textContent =
+                needsImprovement;
+
+        }
+
+
+
+        /* =====================================================
+           9. DISPLAY FEEDBACK
+        ====================================================== */
+
+        function displayFeedback(
+            feedback
+        ) {
+
+
+            feedbackList.innerHTML = "";
+
+
+            if (feedback.length === 0) {
+
+                feedbackEmpty.style.display =
+                    "block";
+
+                return;
+
+            }
+
+
+            feedbackEmpty.style.display =
+                "none";
+
+
+            feedback.forEach(
+                function (item, index) {
+
+
+                    const card =
+                        document.createElement(
+                            "article"
+                        );
+
+
+                    card.className =
+                        "feedback-card";
+
+
+                    card.style.animationDelay =
+                        `${index * 0.05}s`;
+
+
+                    const name =
+                        item.name ||
+                        "Anonymous Citizen";
+
+
+                    const email =
+                        item.email ||
+                        "No email available";
+
+
+                    const rating =
+                        Number(item.rating) || 0;
+
+
+                    const type =
+                        item.feedback_type ||
+                        "General Feedback";
+
+
+                    const message =
+                        item.message ||
+                        "No message provided.";
+
+
+                    const date =
+                        formatDate(
+                            item.created_at
+                        );
+
+
+                    const initial =
+                        name
+                            .trim()
+                            .charAt(0)
+                            .toUpperCase();
+
+
+                    card.innerHTML = `
+
+                        <div class="feedback-card-header">
+
+
+                            <div class="feedback-user">
+
+                                <div class="feedback-avatar">
+                                    ${escapeHTML(initial)}
+                                </div>
+
+
+                                <div>
+
+                                    <h3>
+                                        ${escapeHTML(name)}
+                                    </h3>
+
+                                    <p>
+                                        ${escapeHTML(email)}
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="feedback-rating">
+
+                                <span class="stars">
+                                    ${createStars(rating)}
+                                </span>
+
+                                <span class="rating-number">
+                                    ${rating}/5
+                                </span>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <span class="feedback-type">
+
+                            ${escapeHTML(type)}
+
+                        </span>
+
+
+
+                        <p class="feedback-message">
+
+                            ${escapeHTML(message)}
+
+                        </p>
+
+
+
+                        <div class="feedback-card-footer">
+
+                            <span class="feedback-date">
+
+                                Submitted ${date}
+
+                            </span>
+
+
+                            <span class="feedback-id">
+
+                                Feedback #${item.feedback_id}
+
+                            </span>
+
+                        </div>
+
+                    `;
+
+
+                    feedbackList.appendChild(
+                        card
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        /* =====================================================
+           10. CREATE STARS
+        ====================================================== */
+
+        function createStars(
+            rating
+        ) {
+
+
+            let stars = "";
+
+
+            for (
+                let i = 1;
+                i <= 5;
+                i++
+            ) {
+
+                if (i <= rating) {
+
+                    stars += "★";
+
+                } else {
+
+                    stars += "☆";
+
+                }
+
+            }
+
+
+            return stars;
+
+        }
+
+
+
+        /* =====================================================
+           11. FORMAT DATE
+        ====================================================== */
+
+        function formatDate(
+            dateValue
+        ) {
+
+
+            if (!dateValue) {
+
+                return "Date unavailable";
+
+            }
+
+
+            const date =
+                new Date(dateValue);
+
+
+            if (
+                Number.isNaN(
+                    date.getTime()
+                )
+            ) {
+
+                return "Date unavailable";
+
+            }
+
+
+            return date.toLocaleDateString(
+                "en-IN",
+                {
+                    day: "2-digit",
+                    month: "short",
+                    year: "numeric"
+                }
+            );
+
+        }
+
+
+
+        /* =====================================================
+           12. SEARCH + FILTER
+        ====================================================== */
+
+        function filterFeedback() {
+
+
+            const search =
+                feedbackSearch.value
+                    .trim()
+                    .toLowerCase();
+
+
+            const selectedType =
+                feedbackTypeFilter.value;
+
+
+            const selectedRating =
+                feedbackRatingFilter.value;
+
+
+            const filtered =
+                allFeedback.filter(
+                    function (item) {
+
+
+                        const name =
+                            String(
+                                item.name || ""
+                            ).toLowerCase();
+
+
+                        const email =
+                            String(
+                                item.email || ""
+                            ).toLowerCase();
+
+
+                        const message =
+                            String(
+                                item.message || ""
+                            ).toLowerCase();
+
+
+                        const type =
+                            String(
+                                item.feedback_type || ""
+                            );
+
+
+                        const rating =
+                            Number(
+                                item.rating
+                            );
+
+
+
+                        const matchesSearch =
+                            !search ||
+                            name.includes(search) ||
+                            email.includes(search) ||
+                            message.includes(search);
+
+
+
+                        const matchesType =
+                            selectedType === "all" ||
+                            type === selectedType;
+
+
+
+                        const matchesRating =
+                            selectedRating === "all" ||
+                            rating ===
+                            Number(selectedRating);
+
+
+
+                        return (
+                            matchesSearch &&
+                            matchesType &&
+                            matchesRating
+                        );
+
+                    }
+                );
+
+
+            displayFeedback(
+                filtered
+            );
+
+        }
+
+
+        feedbackSearch.addEventListener(
+            "input",
+            filterFeedback
+        );
+
+
+        feedbackTypeFilter.addEventListener(
+            "change",
+            filterFeedback
+        );
+
+
+        feedbackRatingFilter.addEventListener(
+            "change",
+            filterFeedback
+        );
+
+
+
+        /* =====================================================
+           13. SECURITY
+        ====================================================== */
+
+        function escapeHTML(
+            value
+        ) {
+
+            return String(value)
+                .replace(
+                    /&/g,
+                    "&amp;"
+                )
+                .replace(
+                    /</g,
+                    "&lt;"
+                )
+                .replace(
+                    />/g,
+                    "&gt;"
+                )
+                .replace(
+                    /"/g,
+                    "&quot;"
+                )
+                .replace(
+                    /'/g,
+                    "&#039;"
+                );
+
+        }
+
+
+
+        /* =====================================================
+           14. START
+        ====================================================== */
+
+        loadFeedback();
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profile | CIVEXA</title>
+
+    <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <header class="profile-navbar">
+
+        <a href="index.html" class="profile-logo">
+            <span>◆</span> CIVEXA
+        </a>
+
+        <nav class="profile-nav">
+
+            <a href="index.html">Home</a>
+
+            <a href="report.html">Report Issue</a>
+
+            <a href="browse.html">Browse Issues</a>
+
+            <a href="track.html">Track Issue</a>
+
+            <a href="dashboard.html">Dashboard</a>
+
+            <a href="my-reports.html">My Reports</a>
+
+            <a href="my-feedback.html"> My Feedback</a>
+
+        </nav>
+
+        <a href="profile.html" class="profile-avatar">
+            C
+        </a>
+
+    </header>
+
+
+    <!-- =====================================================
+         PROFILE HERO
+    ====================================================== -->
+
+    <section class="profile-hero">
+
+        <div class="profile-hero-content">
+
+            <span class="eyebrow">
+                CIVEXA • YOUR ACCOUNT
+            </span>
+
+            <h1>
+                Your profile.<br>
+                <span>Your CIVEXA journey.</span>
+            </h1>
+
+            <p>
+                Manage your account information and see your
+                contribution to the community.
+            </p>
+
+        </div>
+
+
+        <div class="profile-hero-card">
+
+            <div class="large-avatar">
+                C
+            </div>
+
+            <div class="hero-user-info">
+
+                <span>COMMUNITY MEMBER</span>
+
+                <h2>Citizen</h2>
+
+                <p>Active CIVEXA member</p>
+
+            </div>
+
+            <div class="active-indicator">
+                <span></span>
+                Active
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         MAIN PROFILE AREA
+    ====================================================== -->
+
+    <main class="profile-container">
+
+
+        <!-- =================================================
+             LEFT COLUMN
+        ================================================== -->
+
+        <div class="profile-main-column">
+
+
+            <!-- ================= PERSONAL INFORMATION ================= -->
+
+            <section class="profile-card personal-card">
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            ACCOUNT INFORMATION
+                        </span>
+
+                        <h2>
+                            Personal Information
+                        </h2>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="edit-button"
+                        id="editProfile">
+                        Edit Profile
+                    </button>
+
+                </div>
+
+
+                <div class="profile-information-grid">
+
+
+                    <div class="information-item">
+
+                        <span class="information-label">
+                            FULL NAME
+                        </span>
+
+                        <strong id="userName">
+                            Citizen
+                        </strong>
+
+                    </div>
+
+
+                    <div class="information-item">
+
+                        <span class="information-label">
+                            EMAIL ADDRESS
+                        </span>
+
+                        <strong id="userEmail">
+                            citizen@example.com
+                        </strong>
+
+                    </div>
+
+
+                    <div class="information-item">
+
+                        <span class="information-label">
+                            PHONE NUMBER
+                        </span>
+
+                        <strong id="userPhone">
+                            +91 XXXXX XXXXX
+                        </strong>
+
+                    </div>
+
+
+                    <div class="information-item">
+
+                        <span class="information-label">
+                            ACCOUNT TYPE
+                        </span>
+
+                        <strong>
+                            Citizen
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 EDIT PROFILE FORM
+            ================================================== -->
+
+            <section
+                class="profile-card edit-card"
+                id="editProfileCard">
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            UPDATE DETAILS
+                        </span>
+
+                        <h2>
+                            Edit Profile
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <form id="profileForm">
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="name">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                value="Citizen"
+                                placeholder="Enter your name"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                value="citizen@example.com"
+                                placeholder="Enter your email"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="phone">
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                value=""
+                                placeholder="Enter your phone number">
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <button
+                            type="submit"
+                            class="save-button">
+                            Save Changes
+                        </button>
+
+                        <button
+                            type="button"
+                            class="cancel-button"
+                            id="cancelEdit">
+                            Cancel
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <!-- =================================================
+                 COMMUNITY CONTRIBUTION
+            ================================================== -->
+
+            <section class="profile-card contribution-card">
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            COMMUNITY
+                        </span>
+
+                        <h2>
+                            Your Contribution
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="contribution-content">
+
+
+                    <div class="contribution-circle">
+
+                        <div>
+
+                             <strong id="contributionPercent">
+    0%
+</strong>
+
+                            <span>
+                                contribution
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contribution-text">
+
+                        <h3>
+                            You're making an impact.
+                        </h3>
+
+                        <p>
+                            Every report and every supported issue
+                            helps CIVEXA connect community problems
+                            with the people who can resolve them.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="contribution-stats">
+
+
+                    <div class="contribution-stat">
+
+                        <strong id="profileReportsCount">
+                           0
+                             </strong>
+
+                        <span>
+                            Reports submitted
+                        </span>
+
+                    </div>
+
+
+                    <div class="contribution-stat">
+
+                        <strong id="profileResolvedCount">
+                           0
+                        </strong>
+
+                        <span>
+                            Issues resolved
+                        </span>
+
+                    </div>
+
+
+                    <div class="contribution-stat">
+
+                        <strong id="profileSupportedCount">
+    0
+</strong>
+
+                        <span>
+                            Issues supported
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SECURITY
+            ================================================== -->
+
+            <section class="profile-card security-card">
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            ACCOUNT SECURITY
+                        </span>
+
+                        <h2>
+                            Password & Security
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="security-row">
+
+                    <div class="security-icon">
+                        🔒
+                    </div>
+
+                    <div class="security-text">
+
+                        <h3>
+                            Password
+                        </h3>
+
+                        <p>
+                            Keep your account protected with
+                            a strong password.
+                        </p>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="security-button"
+                        id="changePassword">
+                        Change Password
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="security-message"
+                    id="securityMessage">
+
+                    Password change is a demonstration feature
+                    in this prototype.
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- =================================================
+             RIGHT COLUMN
+        ================================================== -->
+
+        <aside class="profile-sidebar">
+
+
+            <!-- ================= ACCOUNT CARD ================= -->
+
+            <section class="sidebar-card account-summary">
+
+                <div class="sidebar-avatar">
+                    C
+                </div>
+
+                <h2>
+                    Citizen
+                </h2>
+
+                <p>
+                    CIVEXA Community Member
+                </p>
+
+                <div class="account-status">
+                    <span></span>
+                    Account Active
+                </div>
+
+            </section>
+
+
+            <!-- ================= QUICK LINKS ================= -->
+
+            <section class="sidebar-card">
+
+                <span class="section-label">
+                    QUICK ACCESS
+                </span>
+
+                <h3 class="sidebar-title">
+                    Account
+                </h3>
+
+
+                <div class="quick-links">
+
+                    <a href="dashboard.html">
+                        <span>⌂</span>
+                        Dashboard
+                        <b>→</b>
+                    </a>
+
+                    <a href="my-reports.html">
+                        <span>▣</span>
+                        My Reports
+                        <b>→</b>
+                    </a>
+
+                    <a href="feedback.html">
+                        <span>♡</span>
+                        Give Feedback
+                        <b>→</b>
+                    </a>
+
+                    <a href="contact.html">
+                        <span>?</span>
+                        Contact CIVEXA
+                        <b>→</b>
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= ACCOUNT INFO ================= -->
+
+            <section class="sidebar-card account-info">
+
+                <span class="section-label">
+                    ACCOUNT DETAILS
+                </span>
+
+                <h3 class="sidebar-title">
+                    Overview
+                </h3>
+
+
+                <div class="account-detail">
+
+                    <span>
+                        Member Since
+                    </span>
+
+                    <strong>
+                        September 2026
+                    </strong>
+
+                </div>
+
+
+                <div class="account-detail">
+
+                    <span>
+                        Account Type
+                    </span>
+
+                    <strong>
+                        Citizen
+                    </strong>
+
+                </div>
+
+
+                <div class="account-detail">
+
+                    <span>
+                        Reports
+                    </span>
+
+                    <strong id="profileSidebarReports">
+                         0
+                    </strong>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= LOGOUT ================= -->
+
+            <a href="login.html"
+   class="logout-button"
+   id="logoutButton">
+    Log Out
+</a>
+
+
+        </aside>
+
+    </main>
+
+
+    <!-- =====================================================
+         BOTTOM CTA
+    ====================================================== -->
+
+    <section class="profile-cta">
+
+        <div>
+
+            <span>
+                MAKE YOUR COMMUNITY BETTER
+            </span>
+
+            <h2>
+                Have something to report?
+            </h2>
+
+            <p>
+                Turn a local problem into a community solution.
+            </p>
+
+        </div>
+
+        <a href="report.html">
+            Report an Issue →
+        </a>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="profile-footer">
+
+        <div class="footer-brand">
+
+            <a href="index.html">
+                ◆ CIVEXA
+            </a>
+
+            <p>
+                Report It. Support It. Track It. Fix It.
+            </p>
+
+            <span>
+                A community issue reporting, prioritization and
+                resolution system built as a Web Technology
+                microproject prototype.
+            </span>
+
+        </div>
+
+
+        <div class="footer-links">
+
+
+            <div>
+
+                <h4>
+                    EXPLORE
+                </h4>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="report.html">
+                    Report Issue
+                </a>
+
+                <a href="browse.html">
+                    Browse Issues
+                </a>
+
+                <a href="track.html">
+                    Track Issue
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    ACCOUNT
+                </h4>
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="my-reports.html">
+                    My Reports
+                </a>
+
+                <a href="profile.html">
+                    Profile
+                </a>
+
+                <a href="feedback.html">
+                    Feedback
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+<script>
+
+    /* ================= LOAD LOGGED-IN USER ================= */
+
+    const storedUser =
+        localStorage.getItem("civexaUser");
+
+
+    if (!storedUser) {
+
+        alert("Please login first.");
+
+        window.location.href =
+            "login.html";
+
+    } else {
+
+        const user =
+            JSON.parse(storedUser);
+ 
+                loadProfileStatistics(user.user_id);
+
+        /* ================= USER INFORMATION ================= */
+
+        const userName =
+            user.full_name || "Citizen";
+
+        const userEmail =
+            user.email || "Not available";
+
+        const userPhone =
+            user.phone || "Not available";
+
+
+        /* ================= DISPLAY NAME ================= */
+
+        document.getElementById("userName")
+            .textContent = userName;
+
+
+        /* ================= DISPLAY EMAIL ================= */
+
+        document.getElementById("userEmail")
+            .textContent = userEmail;
+
+
+        /* ================= DISPLAY PHONE ================= */
+
+        document.getElementById("userPhone")
+            .textContent = userPhone;
+
+
+        /* ================= PROFILE AVATARS ================= */
+
+        const firstLetter =
+            userName.charAt(0).toUpperCase();
+
+
+        document.querySelectorAll(
+            ".profile-avatar, .large-avatar, .sidebar-avatar"
+        ).forEach(avatar => {
+
+            avatar.textContent =
+                firstLetter;
+
+        });
+
+
+        /* ================= HERO NAME ================= */
+
+        document.querySelector(
+            ".hero-user-info h2"
+        ).textContent = userName;
+
+
+        /* ================= SIDEBAR NAME ================= */
+
+        document.querySelector(
+            ".account-summary h2"
+        ).textContent = userName;
+
+
+        /* ================= EDIT FORM ================= */
+
+        document.getElementById("name")
+            .value = userName;
+
+
+        document.getElementById("email")
+            .value = userEmail;
+
+
+        document.getElementById("phone")
+            .value =
+            user.phone || "";
+
+
+        /* ================= EDIT PROFILE ================= */
+
+        const editButton =
+            document.getElementById("editProfile");
+
+        const editCard =
+            document.getElementById("editProfileCard");
+
+        const cancelEdit =
+            document.getElementById("cancelEdit");
+
+
+        editButton.addEventListener("click", () => {
+
+            editCard.classList.add("active");
+
+            editCard.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        });
+
+
+        cancelEdit.addEventListener("click", () => {
+
+            editCard.classList.remove("active");
+
+        });
+
+
+      /* ================= SAVE PROFILE ================= */
+
+const profileForm =
+    document.getElementById("profileForm");
+
+profileForm.addEventListener(
+    "submit",
+    async function(event) {
+
+        event.preventDefault();
+
+        const name =
+            document.getElementById("name")
+                .value.trim();
+
+        const email =
+            document.getElementById("email")
+                .value.trim();
+
+        const phone =
+            document.getElementById("phone")
+                .value.trim();
+
+        if (!name || !email) {
+
+            alert(
+                "Name and email are required."
+            );
+
+            return;
+        }
+
+        try {
+
+            const response =
+                await fetch(
+                    `http://localhost:3000/api/auth/profile/${user.user_id}`,
+                    {
+                        method: "PUT",
+
+                        headers: {
+                            "Content-Type":
+                                "application/json"
+                        },
+
+                        body: JSON.stringify({
+                            full_name: name,
+                            email: email,
+                            phone: phone
+                        })
+                    }
+                );
+
+            const result =
+                await response.json();
+
+            if (!response.ok) {
+
+                alert(
+                    result.message ||
+                    "Profile update failed."
+                );
+
+                return;
+            }
+
+            /* =================
+               UPDATE LOCAL USER
+            ================= */
+
+            user.full_name =
+                result.user.full_name;
+
+            user.email =
+                result.user.email;
+
+            user.phone =
+                result.user.phone;
+
+            localStorage.setItem(
+                "civexaUser",
+                JSON.stringify(user)
+            );
+
+            /* =================
+               UPDATE DISPLAY
+            ================= */
+
+            document.getElementById(
+                "userName"
+            ).textContent =
+                user.full_name;
+
+            document.getElementById(
+                "userEmail"
+            ).textContent =
+                user.email;
+
+            document.getElementById(
+                "userPhone"
+            ).textContent =
+                user.phone || "Not available";
+
+            document.querySelector(
+                ".hero-user-info h2"
+            ).textContent =
+                user.full_name;
+
+            document.querySelector(
+                ".account-summary h2"
+            ).textContent =
+                user.full_name;
+
+            /* =================
+               UPDATE AVATARS
+            ================= */
+
+            const firstLetter =
+                user.full_name
+                    .charAt(0)
+                    .toUpperCase();
+
+            document.querySelectorAll(
+                ".profile-avatar, .large-avatar, .sidebar-avatar"
+            ).forEach(avatar => {
+
+                avatar.textContent =
+                    firstLetter;
+
+            });
+
+            editCard.classList.remove(
+                "active"
+            );
+
+            alert(
+                "Profile updated successfully!"
+            );
+
+        } catch (error) {
+
+            console.error(
+                "Profile update error:",
+                error
+            );
+
+            alert(
+                "Unable to update profile. Please check that the CIVEXA server is running."
+            );
+        }
+    }
+);
+
+/* ================= PROFILE STATISTICS ================= */
+
+async function loadProfileStatistics(userId) {
+
+    try {
+
+        const response =
+            await fetch(
+                `http://localhost:3000/api/issues/my-reports/${userId}`
+            );
+
+        const result =
+            await response.json();
+
+        if (!response.ok) {
+            throw new Error(
+                result.message ||
+                "Failed to load reports."
+            );
+        }
+
+        const reports =
+            result.reports || [];
+
+        document.getElementById(
+            "profileReportsCount"
+        ).textContent =
+            reports.length;
+
+
+            document.getElementById(
+    "profileSidebarReports"
+).textContent =
+    reports.length;
+
+        const resolved =
+    reports.filter(
+        issue => issue.status === "resolved"
+    ).length;
+
+document.getElementById(
+    "profileResolvedCount"
+).textContent =
+    resolved;
+
+
+// Get supported issues count
+const supportResponse =
+    await fetch(
+        `http://localhost:3000/api/issues/support/user/${userId}`
+    );
+
+const supportResult =
+    await supportResponse.json();
+
+if (supportResponse.ok) {
+
+    document.getElementById(
+        "profileSupportedCount"
+    ).textContent =
+        supportResult.total_supports;
+}
+
+
+// Calculate contribution percentage
+const supported =
+    Number(supportResult.total_supports);
+
+const contribution =
+    Math.min(
+        100,
+        (reports.length * 40) +
+        (resolved * 30) +
+        (supported * 30)
+    );
+
+document.getElementById(
+    "contributionPercent"
+).textContent =
+    contribution + "%";
+    
+
+    } catch (error) {
+
+        console.error(
+            "Profile statistics error:",
+            error
+        );
+
+    }
+}
+
+/* ================= CHANGE PASSWORD ================= */
+
+const changePassword =
+    document.getElementById("changePassword");
+
+changePassword.addEventListener(
+    "click",
+    () => {
+
+        window.location.href =
+            "change-password.html";
+
+    }
+);
+}
+
+/* ================= LOGOUT ================= */
+
+const logoutButton =
+    document.getElementById("logoutButton");
+
+logoutButton.addEventListener(
+    "click",
+    function () {
+
+        localStorage.removeItem(
+            "civexaUser"
+        );
+
+    }
+);
+
+
+</script>
+</body>
+
+</html>

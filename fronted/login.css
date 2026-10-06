@@ -1,0 +1,996 @@
+/* =========================================================
+   CIVEXA LOGIN PAGE
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    font-family: "Poppins", sans-serif;
+
+    color: #102c38;
+    background: #fbfaf5;
+
+    overflow-x: hidden;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    min-height: 78px;
+
+    padding: 17px 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #e3e9e6;
+
+    background: rgba(251,250,245,0.95);
+
+    backdrop-filter: blur(14px);
+
+    animation: navDrop 0.7s ease both;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    color: #102c38;
+
+    text-decoration: none;
+
+    font-size: 23px;
+    font-weight: 800;
+
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    transform: translateY(-2px);
+}
+
+.logo-icon {
+    color: #087b7c;
+    font-size: 18px;
+}
+
+.back-home {
+    color: #65767d;
+
+    text-decoration: none;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.back-home:hover {
+    color: #087b7c;
+    transform: translateX(-3px);
+}
+
+
+/* ================= AUTH PAGE ================= */
+
+.auth-page {
+    flex: 1;
+
+    min-height: 700px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    position: relative;
+}
+
+
+/* ================= LEFT INTRO ================= */
+
+.auth-intro {
+    padding: 80px 10%;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(8,123,124,0.13),
+            transparent 35%
+        ),
+        #edf7f5;
+}
+
+.intro-content {
+    max-width: 570px;
+
+    position: relative;
+    z-index: 2;
+
+    animation: introReveal 0.9s ease both;
+}
+
+.hero-badge {
+    width: fit-content;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 25px;
+    padding: 9px 15px;
+
+    border: 1px solid #cfe6e3;
+    border-radius: 30px;
+
+    color: #087b7c;
+    background: #e4f3f1;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    animation: badgeReveal 0.8s 0.15s ease both;
+}
+
+.hero-badge span {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #087b7c;
+
+    animation: pulse 2s infinite;
+}
+
+.intro-content h1 {
+    margin-bottom: 20px;
+
+    font-size: clamp(48px, 6vw, 72px);
+
+    line-height: 1.02;
+
+    letter-spacing: -2.5px;
+
+    animation: headingReveal 0.9s 0.25s ease both;
+}
+
+.intro-content h1 span {
+    display: block;
+    color: #087b7c;
+}
+
+.intro-content p {
+    max-width: 520px;
+
+    color: #65767d;
+
+    font-size: 14px;
+
+    line-height: 1.85;
+
+    animation: paragraphReveal 0.9s 0.4s ease both;
+}
+
+
+/* POINTS */
+
+.intro-points {
+    margin-top: 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 13px;
+
+    animation: paragraphReveal 0.9s 0.55s ease both;
+}
+
+.intro-points div {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    color: #53666d;
+
+    font-size: 11px;
+
+    transition: 0.3s ease;
+}
+
+.intro-points div:hover {
+    transform: translateX(5px);
+    color: #087b7c;
+}
+
+.intro-points span {
+    width: 23px;
+    height: 23px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: white;
+    background: #087b7c;
+
+    font-size: 10px;
+}
+
+
+/* ================= DECORATION ================= */
+
+.intro-decoration {
+    width: 330px;
+    height: 330px;
+
+    position: absolute;
+
+    right: -100px;
+    bottom: -80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ring {
+    position: absolute;
+
+    border: 1px solid rgba(8,123,124,0.18);
+
+    border-radius: 50%;
+}
+
+.ring-one {
+    width: 310px;
+    height: 310px;
+
+    animation: rotate 18s linear infinite;
+}
+
+.ring-two {
+    width: 220px;
+    height: 220px;
+
+    animation: rotate 12s linear infinite reverse;
+}
+
+.decoration-center {
+    width: 90px;
+    height: 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    border-radius: 50%;
+
+    color: #087b7c;
+    background: #fffefa;
+
+    box-shadow:
+        0 15px 35px rgba(16,44,56,0.10);
+
+    animation: centerFloat 4s ease-in-out infinite;
+}
+
+.decoration-center span {
+    font-size: 22px;
+}
+
+.decoration-center small {
+    margin-top: 4px;
+
+    font-size: 7px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+/* ================= RIGHT SIDE ================= */
+
+.auth-card-section {
+    padding: 60px 8%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ================= CARD ================= */
+
+.auth-card {
+    width: min(100%, 470px);
+
+    padding: 42px;
+
+    border: 1px solid #dce5e2;
+    border-radius: 25px;
+
+    background: #fffefa;
+
+    box-shadow:
+        0 25px 60px rgba(16,44,56,0.09);
+
+    animation: cardReveal 0.8s 0.15s ease both;
+}
+
+
+/* HEADING */
+
+.card-heading {
+    margin-bottom: 30px;
+}
+
+.card-icon {
+    width: 45px;
+    height: 45px;
+
+    margin-bottom: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    color: #087b7c;
+    background: #e4f3f1;
+
+    font-size: 20px;
+
+    transition: 0.3s ease;
+}
+
+.auth-card:hover .card-icon {
+    transform: rotate(-5deg) scale(1.05);
+}
+
+.section-label {
+    color: #087b7c;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+}
+
+.card-heading h2 {
+    margin: 8px 0;
+
+    font-size: 27px;
+
+    letter-spacing: -0.7px;
+}
+
+.card-heading p {
+    color: #65767d;
+
+    font-size: 10px;
+
+    line-height: 1.7;
+}
+
+
+/* ================= FORM ================= */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #334e58;
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.label-row a {
+    color: #087b7c;
+
+    text-decoration: none;
+
+    font-size: 9px;
+    font-weight: 600;
+}
+
+.label-row a:hover {
+    text-decoration: underline;
+}
+
+
+/* INPUT */
+
+.input-box {
+    min-height: 50px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 0 14px;
+
+    border: 1px solid #dce5e2;
+    border-radius: 12px;
+
+    background: #fbfaf5;
+
+    transition: 0.3s ease;
+}
+
+.input-box:focus-within {
+    border-color: #087b7c;
+
+    background: white;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(8,123,124,0.08);
+}
+
+.input-box > span {
+    color: #087b7c;
+
+    font-size: 13px;
+}
+
+.input-box input {
+    flex: 1;
+
+    min-width: 0;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #102c38;
+
+    font-family: inherit;
+
+    font-size: 11px;
+}
+
+.input-box input::placeholder {
+    color: #9ba8ab;
+}
+
+
+/* PASSWORD BUTTON */
+
+.show-password {
+    padding: 4px 0;
+
+    border: none;
+
+    color: #087b7c;
+    background: transparent;
+
+    font-family: inherit;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+/* ================= REMEMBER ================= */
+
+.remember {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 22px;
+
+    color: #65767d;
+
+    font-size: 9px;
+
+    cursor: pointer;
+}
+
+.remember input {
+    display: none;
+}
+
+.custom-check {
+    width: 16px;
+    height: 16px;
+
+    border: 1px solid #cddbd8;
+    border-radius: 4px;
+
+    background: white;
+
+    position: relative;
+
+    transition: 0.3s ease;
+}
+
+.remember input:checked + .custom-check {
+    border-color: #087b7c;
+
+    background: #087b7c;
+}
+
+.remember input:checked + .custom-check::after {
+    content: "✓";
+
+    position: absolute;
+
+    left: 3px;
+    top: -1px;
+
+    color: white;
+
+    font-size: 11px;
+}
+
+
+/* ================= LOGIN BUTTON ================= */
+
+.login-button {
+    width: 100%;
+    min-height: 51px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    border: none;
+    border-radius: 12px;
+
+    color: white;
+    background: #087b7c;
+
+    font-family: inherit;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    position: relative;
+    overflow: hidden;
+
+    transition: 0.3s ease;
+}
+
+.login-button::before {
+    content: "";
+
+    width: 80px;
+    height: 100%;
+
+    position: absolute;
+
+    left: -100px;
+    top: 0;
+
+    background: rgba(255,255,255,0.18);
+
+    transform: skewX(-20deg);
+
+    transition: 0.5s ease;
+}
+
+.login-button:hover::before {
+    left: 110%;
+}
+
+.login-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 14px 28px rgba(8,123,124,0.23);
+}
+
+.login-button span {
+    font-size: 17px;
+
+    transition: 0.3s ease;
+}
+
+.login-button:hover span {
+    transform: translateX(5px);
+}
+
+
+/* ================= MESSAGE ================= */
+
+.login-message {
+    display: none;
+
+    margin-top: 15px;
+
+    padding: 11px;
+
+    text-align: center;
+
+    border-radius: 9px;
+
+    color: #087b7c;
+
+    background: #e4f3f1;
+
+    font-size: 9px;
+}
+
+.login-message.show {
+    display: block;
+
+    animation: messageReveal 0.4s ease both;
+}
+
+
+/* ================= SWITCH ================= */
+
+.auth-switch {
+    margin-top: 25px;
+
+    padding-top: 22px;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 5px;
+
+    border-top: 1px solid #e5ebe9;
+
+    color: #65767d;
+
+    font-size: 9px;
+}
+
+.auth-switch a {
+    color: #087b7c;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+.auth-switch a:hover {
+    text-decoration: underline;
+}
+
+
+/* ================= SECURITY ================= */
+
+.security-note {
+    margin-top: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    color: #9aa7aa;
+
+    font-size: 8px;
+}
+
+
+/* ================= FOOTER ================= */
+
+.footer {
+    padding: 25px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    color: #9db0b3;
+
+    background: #102c38;
+
+    font-size: 8px;
+}
+
+.footer strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: white;
+
+    font-size: 13px;
+}
+
+.footer strong span {
+    color: #72c9c3;
+}
+
+.footer p {
+    color: #82989c;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes navDrop {
+
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes introReveal {
+
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes badgeReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes headingReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes paragraphReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes cardReveal {
+
+    from {
+        opacity: 0;
+        transform: translateX(30px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+
+}
+
+@keyframes pulse {
+
+    0%,100% {
+        box-shadow:
+            0 0 0 0 rgba(8,123,124,0.35);
+    }
+
+    50% {
+        box-shadow:
+            0 0 0 8px rgba(8,123,124,0);
+    }
+
+}
+
+@keyframes rotate {
+
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+@keyframes centerFloat {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+@keyframes messageReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+    .auth-page {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-intro {
+        min-height: 430px;
+
+        padding: 65px 8%;
+    }
+
+    .intro-decoration {
+        right: -80px;
+        bottom: -100px;
+    }
+
+    .auth-card-section {
+        padding: 60px 7%;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .back-home {
+        font-size: 9px;
+    }
+
+    .auth-intro {
+        min-height: 390px;
+
+        padding: 55px 7%;
+    }
+
+    .intro-content h1 {
+        font-size: 48px;
+    }
+
+    .intro-decoration {
+        opacity: 0.6;
+    }
+
+    .auth-card-section {
+        padding: 45px 5%;
+    }
+
+    .auth-card {
+        padding: 28px 22px;
+
+        border-radius: 20px;
+    }
+
+    .footer {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+}
+
+
+/* ================= ACCESSIBILITY ================= */
+
+:focus-visible {
+    outline: 3px solid rgba(8,123,124,0.25);
+    outline-offset: 3px;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+    }
+
+}

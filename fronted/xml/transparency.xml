@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<transparency>
+
+    <section>
+
+        <type>citizens</type>
+
+        <title>For citizens</title>
+
+        <description>
+            CIVEXA gives citizens a clearer way to
+            report problems, support existing reports
+            and understand their progress.
+        </description>
+
+        <points>
+
+            <point>Easy reporting</point>
+            <point>Issue status visibility</point>
+            <point>Community support</point>
+            <point>Feedback after resolution</point>
+
+        </points>
+
+    </section>
+
+
+    <section>
+
+        <type>authorities</type>
+
+        <title>For authorities</title>
+
+        <description>
+            A structured issue list can help authorities
+            understand which problems require attention
+            and where community impact is highest.
+        </description>
+
+        <points>
+
+            <point>Prioritized issue queue</point>
+            <point>Reduced duplicate reports</point>
+            <point>Organized issue information</point>
+            <point>Resolution tracking</point>
+
+        </points>
+
+    </section>
+
+</transparency>

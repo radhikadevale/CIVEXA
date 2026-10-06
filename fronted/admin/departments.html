@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CIVEXA | Departments</title>
+
+    <link rel="stylesheet" href="departments.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="admin-navbar">
+
+        <div class="nav-brand">
+            <a href="admin.html">◆ CIVEXA</a>
+            <span>Admin Panel</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="admin.html">Dashboard</a>
+            <a href="manage-issues.html">Manage Issues</a>
+            <a href="departments.html" class="active">Departments</a>
+            <a href="analytics.html">Analytics</a>
+               <a href="feedback.html">
+    Feedback
+</a>
+
+        <a href="contact-messages.html">
+             Contact-messages
+            </a>
+        </div>
+
+        <a href="../login.html" class="admin-profile">
+            <div class="admin-avatar">A</div>
+            <div>
+                <strong>Admin</strong>
+                <small>Administrator</small>
+            </div>
+        </a>
+
+    </nav>
+
+
+    <!-- ================= MAIN ================= -->
+    <main class="departments-page">
+
+        <!-- HERO -->
+        <section class="page-hero">
+
+            <div>
+                <span class="eyebrow">ADMIN • DEPARTMENTS</span>
+
+                <h1>Manage community departments.</h1>
+
+                <p>
+                    View department responsibilities, active issues,
+                    workload and current performance across CIVEXA.
+                </p>
+            </div>
+
+            <div class="hero-status">
+                <span class="status-dot"></span>
+                System Active
+            </div>
+
+        </section>
+
+<!-- ================= OVERVIEW STATS ================= -->
+
+    <section class="department-stats">
+
+        <div class="stat-card">
+            <div class="stat-icon">▦</div>
+
+            <div>
+                <span>Total Departments</span>
+
+                <strong id="totalDepartments">
+                    0
+                </strong>
+            </div>
+        </div>
+
+
+        <div class="stat-card">
+            <div class="stat-icon">!</div>
+
+            <div>
+                <span>Active Issues</span>
+
+                <strong id="activeIssues">
+                    0
+                </strong>
+            </div>
+        </div>
+
+
+        <div class="stat-card">
+            <div class="stat-icon">✓</div>
+
+            <div>
+                <span>Resolved Issues</span>
+
+                <strong id="resolvedIssues">
+                    0
+                </strong>
+            </div>
+        </div>
+
+
+        <div class="stat-card">
+            <div class="stat-icon">%</div>
+
+            <div>
+                <span>Resolution Rate</span>
+
+                <strong id="resolutionRate">
+                    0%
+                </strong>
+            </div>
+        </div>
+
+    </section>
+
+
+
+        <!-- ================= DEPARTMENT LIST ================= -->
+
+            <section class="departments-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            DEPARTMENT DIRECTORY
+                        </span>
+
+                        <h2>
+                            Department workload
+                        </h2>
+
+                    </div>
+
+                  <span class="section-note" id="departmentCountNote">
+                       0 departments active
+                   </span>
+
+                </div>
+
+
+                <div class="department-grid">
+
+
+                    <!-- ================= ROAD ================= -->
+
+                    <article class="department-card">
+
+                        <div class="department-top">
+
+                            <div class="department-icon">
+                                ⌁
+                            </div>
+
+                            <span class="department-status active-status">
+                                Active
+                            </span>
+
+                        </div>
+
+
+                        <h3>
+                            Road Department
+                        </h3>
+
+
+                        <p>
+                            Handles potholes, damaged roads, road maintenance
+                            and other transportation-related issues.
+                        </p>
+
+
+                        <div class="department-meta">
+
+                            <div>
+
+                                <span>
+                                    Active Issues
+                                </span>
+
+                                <strong id="active-1">
+                                    0
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Resolved
+                                </span>
+
+                                <strong id="resolved-1">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="workload">
+
+                            <div class="workload-header">
+
+                                <span>
+                                    Workload
+                                </span>
+
+                                <strong id="workload-1">
+                                    0%
+                                </strong>
+
+                            </div>
+
+
+                            <div class="progress-bar">
+
+                                <span
+                                    id="bar-1"
+                                    style="width: 0%;">
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <a
+                            href="manage-issues.html"
+                            class="department-link"
+                        >
+                            View Issues →
+                        </a>
+
+                    </article>
+
+
+
+                    <!-- ================= WASTE ================= -->
+
+                    <article class="department-card">
+
+                        <div class="department-top">
+
+                            <div class="department-icon">
+                                ♻
+                            </div>
+
+                            <span class="department-status active-status">
+                                Active
+                            </span>
+
+                        </div>
+
+
+                        <h3>
+                            Waste Management
+                        </h3>
+
+
+                        <p>
+                            Handles garbage collection, waste disposal,
+                            cleanliness and sanitation-related complaints.
+                        </p>
+
+
+                        <div class="department-meta">
+
+                            <div>
+
+                                <span>
+                                    Active Issues
+                                </span>
+
+                                <strong id="active-2">
+                                    0
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Resolved
+                                </span>
+
+                                <strong id="resolved-2">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="workload">
+
+                            <div class="workload-header">
+
+                                <span>
+                                    Workload
+                                </span>
+
+                                <strong id="workload-2">
+                                    0%
+                                </strong>
+
+                            </div>
+
+
+                            <div class="progress-bar">
+
+                                <span
+                                    id="bar-2"
+                                    style="width: 0%;">
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <a
+                            href="manage-issues.html"
+                            class="department-link"
+                        >
+                            View Issues →
+                        </a>
+
+                    </article>
+
+
+
+                    <!-- ================= WATER ================= -->
+
+                    <article class="department-card">
+
+                        <div class="department-top">
+
+                            <div class="department-icon">
+                                ≈
+                            </div>
+
+                            <span class="department-status active-status">
+                                Active
+                            </span>
+
+                        </div>
+
+
+                        <h3>
+                            Water Department
+                        </h3>
+
+
+                        <p>
+                            Handles water supply, leakage, pipeline damage
+                            and other public water service issues.
+                        </p>
+
+
+                        <div class="department-meta">
+
+                            <div>
+
+                                <span>
+                                    Active Issues
+                                </span>
+
+                                <strong id="active-3">
+                                    0
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Resolved
+                                </span>
+
+                                <strong id="resolved-3">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="workload">
+
+                            <div class="workload-header">
+
+                                <span>
+                                    Workload
+                                </span>
+
+                                <strong id="workload-3">
+                                    0%
+                                </strong>
+
+                            </div>
+
+
+                            <div class="progress-bar">
+
+                                <span
+                                    id="bar-3"
+                                    style="width: 0%;">
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <a
+                            href="manage-issues.html"
+                            class="department-link"
+                        >
+                            View Issues →
+                        </a>
+
+                    </article>
+
+
+
+                    <!-- ================= STREETLIGHT ================= -->
+
+                    <article class="department-card">
+
+                        <div class="department-top">
+
+                            <div class="department-icon">
+                                ✦
+                            </div>
+
+                            <span class="department-status active-status">
+                                Active
+                            </span>
+
+                        </div>
+
+
+                        <h3>
+                            Streetlight Department
+                        </h3>
+
+
+                        <p>
+                            Handles non-working streetlights, damaged lighting
+                            equipment and public lighting issues.
+                        </p>
+
+
+                        <div class="department-meta">
+
+                            <div>
+
+                                <span>
+                                    Active Issues
+                                </span>
+
+                                <strong id="active-4">
+                                    0
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Resolved
+                                </span>
+
+                                <strong id="resolved-4">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="workload">
+
+                            <div class="workload-header">
+
+                                <span>
+                                    Workload
+                                </span>
+
+                                <strong id="workload-4">
+                                    0%
+                                </strong>
+
+                            </div>
+
+
+                            <div class="progress-bar">
+
+                                <span
+                                    id="bar-4"
+                                    style="width: 0%;">
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <a
+                            href="manage-issues.html"
+                            class="department-link"
+                        >
+                            View Issues →
+                        </a>
+
+                    </article>
+
+
+
+                    <!-- ================= DRAINAGE ================= -->
+
+                    <article class="department-card">
+
+                        <div class="department-top">
+
+                            <div class="department-icon">
+                                ⌇
+                            </div>
+
+                            <span class="department-status active-status">
+                                Active
+                            </span>
+
+                        </div>
+
+
+                        <h3>
+                            Drainage Department
+                        </h3>
+
+
+                        <p>
+                            Handles blocked drains, drainage maintenance,
+                            flooding and water-flow related complaints.
+                        </p>
+
+
+                        <div class="department-meta">
+
+                            <div>
+
+                                <span>
+                                    Active Issues
+                                </span>
+
+                                <strong id="active-5">
+                                    0
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Resolved
+                                </span>
+
+                                <strong id="resolved-5">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="workload">
+
+                            <div class="workload-header">
+
+                                <span>
+                                    Workload
+                                </span>
+
+                                <strong id="workload-5">
+                                    0%
+                                </strong>
+
+                            </div>
+
+
+                            <div class="progress-bar">
+
+                                <span
+                                    id="bar-5"
+                                    style="width: 0%;">
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <a
+                            href="manage-issues.html"
+                            class="department-link"
+                        >
+                            View Issues →
+                        </a>
+
+                    </article>
+
+
+
+                    <!-- ================= INFRASTRUCTURE ================= -->
+
+                    <article class="department-card">
+
+                        <div class="department-top">
+
+                            <div class="department-icon">
+                                ⌂
+                            </div>
+
+                            <span class="department-status active-status">
+                                Active
+                            </span>
+
+                        </div>
+
+
+                        <h3>
+                            Infrastructure Department
+                        </h3>
+
+
+                        <p>
+                            Handles damaged public infrastructure, facilities,
+                            public spaces and community assets.
+                        </p>
+
+
+                        <div class="department-meta">
+
+                            <div>
+
+                                <span>
+                                    Active Issues
+                                </span>
+
+                                <strong id="active-6">
+                                    0
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Resolved
+                                </span>
+
+                                <strong id="resolved-6">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="workload">
+
+                            <div class="workload-header">
+
+                                <span>
+                                    Workload
+                                </span>
+
+                                <strong id="workload-6">
+                                    0%
+                                </strong>
+
+                            </div>
+
+
+                            <div class="progress-bar">
+
+                                <span
+                                    id="bar-6"
+                                    style="width: 0%;">
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <a
+                            href="manage-issues.html"
+                            class="department-link"
+                        >
+                            View Issues →
+                        </a>
+
+                    </article>
+
+
+                </div>
+
+            </section>
+
+        <!-- ================= WORKFLOW ================= -->
+        <section class="workflow-section">
+
+            <div class="workflow-content">
+
+                <span class="section-label">HOW IT WORKS</span>
+
+                <h2>From citizen report to department action.</h2>
+
+                <p>
+                    CIVEXA connects every verified community issue with
+                    the department responsible for resolving it.
+                </p>
+
+            </div>
+
+
+            <div class="workflow-steps">
+
+                <div class="workflow-step">
+                    <span>01</span>
+                    <h3>Report</h3>
+                    <p>
+                        Citizen submits a community issue.
+                    </p>
+                </div>
+
+                <div class="workflow-arrow">→</div>
+
+                <div class="workflow-step">
+                    <span>02</span>
+                    <h3>Verify</h3>
+                    <p>
+                        Admin reviews and verifies the report.
+                    </p>
+                </div>
+
+                <div class="workflow-arrow">→</div>
+
+                <div class="workflow-step">
+                    <span>03</span>
+                    <h3>Assign</h3>
+                    <p>
+                        Issue is assigned to the appropriate department.
+                    </p>
+                </div>
+
+                <div class="workflow-arrow">→</div>
+
+                <div class="workflow-step">
+                    <span>04</span>
+                    <h3>Resolve</h3>
+                    <p>
+                        Department works on the issue and updates progress.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CTA ================= -->
+        <section class="admin-cta">
+
+            <div>
+                <span class="section-label">ADMIN ACTION</span>
+
+                <h2>Need to manage an issue?</h2>
+
+                <p>
+                    Review reports, assign departments and update
+                    issue status from the Manage Issues panel.
+                </p>
+            </div>
+
+            <a href="manage-issues.html" class="cta-button">
+                Manage Issues →
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="admin-footer">
+
+        <div class="footer-brand">
+            <strong>◆ CIVEXA</strong>
+            <p>
+                Community issue reporting, prioritization
+                and resolution system.
+            </p>
+        </div>
+
+        <div class="footer-links">
+            <a href="admin.html">Dashboard</a>
+            <a href="manage-issues.html">Manage Issues</a>
+            <a href="departments.html">Departments</a>
+            <a href="analytics.html">Analytics</a>
+            <a href="../index.html">Citizen Website</a>
+        </div>
+
+        <div class="footer-status">
+            <span class="status-dot"></span>
+            Prototype System Active
+        </div>
+
+    </footer>
+
+
+<script>
+    // =========================
+// ADMIN AUTHENTICATION
+// =========================
+
+const savedUser =
+    JSON.parse(
+        localStorage.getItem("civexaUser")
+    );
+
+if (!savedUser) {
+
+    alert("Please login as an administrator.");
+
+    window.location.href =
+        "../login.html";
+
+}
+else if (savedUser.role !== "admin") {
+
+    alert("Access denied. Administrator access required.");
+
+    window.location.href =
+        "../index.html";
+
+}
+
+async function loadDepartmentStats() {
+
+    try {
+
+        const response = await fetch(
+            "http://localhost:3000/api/issues/admin/departments"
+        );
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.message);
+        }
+
+
+        const departments = data.departments;
+
+
+        // =========================
+        // TOTAL DEPARTMENTS
+        // =========================
+
+        document.getElementById(
+            "totalDepartments"
+        ).textContent = departments.length;
+
+        document.getElementById(
+    "departmentCountNote"
+).textContent =
+    departments.length + " departments active";
+
+
+        // =========================
+        // TOTAL ACTIVE ISSUES
+        // =========================
+
+        let totalActive = 0;
+        let totalResolved = 0;
+
+
+        departments.forEach(function(department) {
+
+            totalActive += Number(
+                department.active_issues
+            );
+
+            totalResolved += Number(
+                department.resolved_issues
+            );
+
+        });
+
+
+        document.getElementById(
+            "activeIssues"
+        ).textContent = totalActive;
+
+
+        // =========================
+        // TOTAL RESOLVED ISSUES
+        // =========================
+
+        document.getElementById(
+            "resolvedIssues"
+        ).textContent = totalResolved;
+
+
+        // =========================
+        // RESOLUTION RATE
+        // =========================
+
+        const totalIssues =
+            totalActive + totalResolved;
+
+
+        let resolutionRate = 0;
+
+
+        if (totalIssues > 0) {
+
+            resolutionRate =
+                Math.round(
+                    (totalResolved / totalIssues) * 100
+                );
+
+        }
+
+
+        document.getElementById(
+            "resolutionRate"
+        ).textContent =
+            resolutionRate + "%";
+
+
+    } catch (error) {
+
+        console.error(
+            "Failed to load department statistics:",
+            error
+        );
+
+    }
+
+}
+
+
+async function loadDepartmentWorkload() {
+
+    try {
+
+        const response = await fetch(
+            "http://localhost:3000/api/issues/admin/departments"
+        );
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.message);
+        }
+
+        const departments = data.departments;
+
+
+        // Calculate total active issues
+        let totalActive = 0;
+
+        departments.forEach(function(department) {
+
+            totalActive += Number(
+                department.active_issues
+            );
+
+        });
+
+
+        // Update each department card
+        departments.forEach(function(department) {
+
+            const id = department.department_id;
+
+            const active =
+                Number(department.active_issues);
+
+            const resolved =
+                Number(department.resolved_issues);
+
+
+            // Active Issues
+            document.getElementById(
+                `active-${id}`
+            ).textContent = active;
+
+
+            // Resolved Issues
+            document.getElementById(
+                `resolved-${id}`
+            ).textContent = resolved;
+
+
+            // Workload = department's share
+            // of all active issues
+            let workload = 0;
+
+            if (totalActive > 0) {
+
+                workload = Math.round(
+                    (active / totalActive) * 100
+                );
+
+            }
+
+
+            // Workload percentage
+            document.getElementById(
+                `workload-${id}`
+            ).textContent = workload + "%";
+
+
+            // Progress bar
+            document.getElementById(
+                `bar-${id}`
+            ).style.width = workload + "%";
+
+        });
+
+
+    } catch (error) {
+
+        console.error(
+            "Failed to load department workload:",
+            error
+        );
+
+    }
+
+}
+
+// Load statistics when page opens
+
+loadDepartmentStats();
+
+loadDepartmentWorkload();
+</script>
+
+</body>
+</html>

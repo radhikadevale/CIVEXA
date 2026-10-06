@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Track Issue | CIVEXA</title>
+
+    <link rel="stylesheet" href="track.css">
+    <link rel="stylesheet" href="navbar.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav class="navbar">
+
+    <a href="index.html" class="logo">
+        <span class="logo-icon">◆</span>
+        CIVEXA
+    </a>
+
+    <div class="nav-links">
+
+        <a href="index.html">Home</a>
+
+        <a href="report.html">Report Issue</a>
+
+        <a href="browse.html">Browse Issues</a>
+
+        <a href="track.html" class="active">
+            Track Issue
+        </a>
+
+        <a href="about.html">About</a>
+
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+   <div class="nav-buttons">
+    <a href="login.html" class="login-btn">Login</a>
+    <a href="register.html" class="register-btn">Register</a>
+</div>
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="track-hero">
+
+    <div class="hero-content">
+
+        <div class="hero-badge">
+
+            <span class="badge-dot"></span>
+
+            ISSUE TRACKING
+
+        </div>
+
+        <h1>
+            Know where your
+            <span>report stands.</span>
+        </h1>
+
+        <p>
+            Enter your CIVEXA Report ID to view the current
+            status, priority, progress and resolution details
+            of your community issue.
+        </p>
+
+        <div class="hero-points">
+
+            <div>
+                <span>✓</span>
+                Live status
+            </div>
+
+            <div>
+                <span>✓</span>
+                Clear progress
+            </div>
+
+            <div>
+                <span>✓</span>
+                Transparent updates
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- HERO TRACK CARD -->
+
+    <div class="hero-track-card">
+
+        <div class="track-card-top">
+
+            <div>
+                <span class="small-label">
+                    CIVEXA REPORT
+                </span>
+
+                <strong>
+                    #CVX-2026-1042
+                </strong>
+            </div>
+
+            <span class="status-pill">
+                In Progress
+            </span>
+
+        </div>
+
+
+        <div class="mini-progress">
+
+            <div class="mini-progress-line">
+
+                <span class="completed"></span>
+                <span class="completed"></span>
+                <span class="current"></span>
+                <span></span>
+
+            </div>
+
+            <div class="mini-progress-labels">
+
+                <span>Reported</span>
+                <span>Verified</span>
+                <span>In Progress</span>
+                <span>Resolved</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-report-info">
+
+            <div>
+
+                <span>
+                    CATEGORY
+                </span>
+
+                <strong>
+                    Roads
+                </strong>
+
+            </div>
+
+            <div>
+
+                <span>
+                    PRIORITY
+                </span>
+
+                <strong class="priority-high">
+                    High
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     TRACK SEARCH
+===================================================== -->
+
+<main class="track-container">
+
+    <section class="search-section">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                FIND YOUR REPORT
+            </span>
+
+            <h2>
+                Track your issue
+            </h2>
+
+            <p>
+                Enter the Report ID you received after submitting
+                your issue on CIVEXA.
+            </p>
+
+        </div>
+
+
+        <form class="track-form" id="trackForm">
+
+            <div class="track-input-wrapper">
+
+                <span class="input-icon">
+                    #
+                </span>
+
+                <input
+                    type="text"
+                    id="reportId"
+                    placeholder="Enter Report ID e.g. CVX-2026-1042"
+                    autocomplete="off"
+                    required
+                >
+
+            </div>
+
+            <button
+                type="submit"
+                class="track-button"
+            >
+
+                Track Issue
+
+                <span>→</span>
+
+            </button>
+
+        </form>
+
+
+        <div class="search-hint">
+
+            <span>💡</span>
+
+            Your Report ID can be found in the confirmation
+            message after submitting an issue.
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         TRACKING RESULT
+    ================================================== -->
+
+  <!-- =================================================
+     TRACKING RESULT
+================================================== -->
+
+<section
+    class="tracking-result"
+    id="trackingResult"
+>
+
+    <!-- RESULT HEADER -->
+
+    <div class="result-header">
+
+        <div>
+
+    <span class="result-label">
+        REPORT DETAILS
+    </span>
+
+    <h2 id="resultTitle">
+        Pothole on Main Road
+    </h2>
+
+    <p class="report-location" id="resultLocation">
+        📍 Shivaji Nagar, Pune
+    </p>
+
+    <p class="report-location" id="resultDepartment">
+        🏢 Department: Not assigned
+    </p>
+
+</div>
+
+
+        <div class="result-status">
+
+            <span class="live-dot"></span>
+
+            <span id="resultStatus">
+                In Progress
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- RESULT DETAILS -->
+
+    <div class="result-details">
+
+        <div class="detail-card">
+
+            <span class="detail-icon">
+                🛣️
+            </span>
+
+            <div>
+
+                <small>
+                    CATEGORY
+                </small>
+
+                <strong id="resultCategory">
+                    Roads
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="detail-card">
+
+            <span class="detail-icon">
+                🔥
+            </span>
+
+            <div>
+
+                <small>
+                    PRIORITY
+                </small>
+
+                <strong
+                    class="high-text"
+                    id="resultPriority"
+                >
+                    High
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="detail-card">
+
+            <span class="detail-icon">
+                🤝
+            </span>
+
+            <div>
+
+                <small>
+                    COMMUNITY SUPPORT
+                </small>
+
+                <strong>
+                    42 supporters
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="detail-card">
+
+            <span class="detail-icon">
+                🏢
+            </span>
+
+            <div>
+
+                <small>
+                    ASSIGNED TO
+                </small>
+
+                 <strong id="assignedDepartment">
+                   Road Department
+                 </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         PROGRESS
+    ================================================== -->
+
+    <div class="progress-section">
+
+        <div class="progress-heading">
+
+            <div>
+
+                <span class="result-label">
+                    RESOLUTION PROGRESS
+                </span>
+
+                <h3 id="progressMessage">
+                    Issue is currently being resolved
+                </h3>
+
+            </div>
+
+            <strong id="resultProgress">
+                65%
+            </strong>
+
+        </div>
+
+
+        <div class="progress-bar">
+
+            <span id="progressBarFill"></span>
+
+        </div>
+
+
+        <div class="progress-labels">
+
+            <span class="done">
+                Reported
+            </span>
+
+            <span class="done">
+                Verified
+            </span>
+
+            <span class="active">
+                In Progress
+            </span>
+
+            <span>
+                Resolved
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         TIMELINE
+    ================================================== -->
+
+    <div class="timeline-section">
+
+        <div class="timeline-heading">
+
+            <span class="result-label">
+                ACTIVITY TIMELINE
+            </span>
+
+            <h3>
+                Report progress
+            </h3>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+            <div class="timeline-item completed">
+
+                <div class="timeline-marker">
+                    ✓
+                </div>
+
+                <div class="timeline-content">
+
+                    <div class="timeline-top">
+
+                        <h4>
+                            Issue reported
+                        </h4>
+
+                        <span id="timelineReportedDate">
+                            12 Sep 2026
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Your community issue was successfully
+                        submitted to CIVEXA.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item completed">
+
+                <div class="timeline-marker">
+                    ✓
+                </div>
+
+                <div class="timeline-content">
+
+                    <div class="timeline-top">
+
+                        <h4>
+                            Issue verified
+                        </h4>
+
+                        <span>
+                            Pending
+                        </span>
+
+                    </div>
+
+                    <p>
+                        The submitted issue information was
+                        reviewed and verified.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item active">
+
+                <div class="timeline-marker">
+                    03
+                </div>
+
+                <div class="timeline-content">
+
+                    <div class="timeline-top">
+
+                        <h4>
+                            Resolution in progress
+                        </h4>
+
+                        <span>
+                            Pending
+                        </span>
+
+                    </div>
+
+                    <p>
+                        The concerned department is working
+                        on the reported problem.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-marker">
+                    04
+                </div>
+
+                <div class="timeline-content">
+
+                    <div class="timeline-top">
+
+                        <h4>
+                            Issue resolved
+                        </h4>
+
+                        <span>
+                            Pending
+                        </span>
+
+                    </div>
+
+                    <p>
+                        The report will be marked resolved after
+                        the required work is completed.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         REPORT SUMMARY
+    ================================================== -->
+
+    <div class="report-summary">
+
+        <div class="summary-heading">
+
+            <span class="result-label">
+                REPORT SUMMARY
+            </span>
+
+            <h3>
+                Issue information
+            </h3>
+
+        </div>
+
+
+        <div class="summary-grid">
+
+            <div>
+
+                <span>
+                    REPORT ID
+                </span>
+
+                <strong id="resultReportId">
+                    #CVX-2026-1042
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    REPORTED ON
+                </span>
+
+                <strong id="resultDate">
+                    12 Sep 2026
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    LOCATION
+                </span>
+
+                <strong id="summaryLocation">
+                    Shivaji Nagar, Pune
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    DEPARTMENT
+                </span>
+
+                 <strong id="summaryDepartment">
+                     Road Department
+             </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         SUPPORT MESSAGE
+    ================================================== -->
+
+    <div class="support-banner">
+
+        <div class="support-banner-icon">
+            🤝
+        </div>
+
+        <div>
+
+            <strong>
+                Community support matters.
+            </strong>
+
+            <p>
+                Issues supported by more citizens can receive
+                stronger community attention.
+            </p>
+
+        </div>
+
+        <a href="issues.html">
+            Browse Issues →
+        </a>
+
+    </div>
+
+</section>
+
+    <!-- =================================================
+         HOW TRACKING WORKS
+    ================================================== -->
+
+    <section class="how-track">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                HOW IT WORKS
+            </span>
+
+            <h2>
+                Follow every step.
+            </h2>
+
+            <p>
+                CIVEXA keeps the reporting journey clear from
+                submission to resolution.
+            </p>
+
+        </div>
+
+
+        <div class="track-steps">
+
+            <div class="track-step">
+
+                <span class="step-number">
+                    01
+                </span>
+
+                <div class="step-icon">
+                    📝
+                </div>
+
+                <h3>
+                    Report
+                </h3>
+
+                <p>
+                    Submit the issue with its description,
+                    category and location.
+                </p>
+
+            </div>
+
+
+            <div class="track-step">
+
+                <span class="step-number">
+                    02
+                </span>
+
+                <div class="step-icon">
+                    ✓
+                </div>
+
+                <h3>
+                    Verify
+                </h3>
+
+                <p>
+                    The submitted information is reviewed
+                    and verified.
+                </p>
+
+            </div>
+
+
+            <div class="track-step">
+
+                <span class="step-number">
+                    03
+                </span>
+
+                <div class="step-icon">
+                    ⚙
+                </div>
+
+                <h3>
+                    Resolve
+                </h3>
+
+                <p>
+                    The concerned department works on
+                    resolving the issue.
+                </p>
+
+            </div>
+
+
+            <div class="track-step">
+
+                <span class="step-number">
+                    04
+                </span>
+
+                <div class="step-icon">
+                    ★
+                </div>
+
+                <h3>
+                    Feedback
+                </h3>
+
+                <p>
+                    Citizens can provide feedback after
+                    the issue is resolved.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         NEED HELP
+    ================================================== -->
+
+    <section class="need-help">
+
+        <div class="need-help-content">
+
+            <span class="section-label">
+                NEED ASSISTANCE?
+            </span>
+
+            <h2>
+                Can't find your report?
+            </h2>
+
+            <p>
+                If you have lost your Report ID or need help
+                understanding your issue status, contact the
+                CIVEXA support team.
+            </p>
+
+            <a href="contact.html">
+                Contact CIVEXA →
+            </a>
+
+        </div>
+
+        <div class="need-help-visual">
+            <span>?</span>
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="footer-main">
+
+        <div class="footer-brand">
+
+            <div class="footer-logo">
+
+                <span>◆</span>
+
+                CIVEXA
+
+            </div>
+
+            <p>
+                Report It. Support It. Track It. Fix It.
+                A community issue reporting, prioritization
+                and resolution system.
+            </p>
+
+            <div class="footer-status">
+
+                <span></span>
+
+                Prototype system active
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                EXPLORE
+            </h4>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="report.html">
+                Report Issue
+            </a>
+
+            <a href="issues.html">
+                Browse Issues
+            </a>
+
+            <a href="track.html">
+                Track Issue
+            </a>
+
+            <a href="about.html">
+                About CIVEXA
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                QUICK ACTIONS
+            </h4>
+
+            <a href="report.html">
+                + Report a problem
+            </a>
+
+            <a href="issues.html">
+                → Find an issue
+            </a>
+
+            <a href="issues.html">
+                ♡ Support an issue
+            </a>
+
+            <a href="track.html">
+                ◷ Track a report
+            </a>
+
+            <a href="about.html">
+                ? How CIVEXA works
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 CIVEXA. Web Technology Microproject.
+        </span>
+
+        <span>
+            Built for better communities.
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+    const trackForm =
+        document.getElementById("trackForm");
+
+    const reportId =
+        document.getElementById("reportId");
+
+    const trackingResult =
+        document.getElementById("trackingResult");
+
+
+    /* ==========================================
+       TRACK ISSUE FORM
+    ========================================== */
+
+    trackForm.addEventListener(
+        "submit",
+        async function(event) {
+
+            event.preventDefault();
+
+            const enteredId =
+                reportId.value.trim();
+
+
+            if (enteredId === "") {
+
+                alert(
+                    "Please enter your Report ID."
+                );
+
+                return;
+            }
+
+
+            try {
+
+                const response =
+                    await fetch(
+                        `http://localhost:3000/api/issues/track/${encodeURIComponent(enteredId)}`
+                    );
+
+
+                const result =
+                    await response.json();
+
+
+                /* ==================================
+                   ISSUE NOT FOUND
+                ================================== */
+
+                if (!response.ok) {
+
+                    trackingResult.classList.remove(
+                        "show"
+                    );
+
+                    alert(
+                        result.message ||
+                        "Issue not found."
+                    );
+
+                    return;
+                }
+
+
+                /* ==================================
+                   GET ISSUE DATA
+                ================================== */
+
+                const issue =
+                    result.issue;
+
+
+                console.log(
+                    "Issue received from backend:",
+                    issue
+                );
+
+
+                /* ==================================
+                   DISPLAY ISSUE INFORMATION
+                ================================== */
+
+                document.getElementById(
+                    "resultTitle"
+                ).textContent =
+                    issue.title;
+
+
+                document.getElementById(
+                    "resultLocation"
+                ).textContent =
+                    "📍 " +
+                    (
+                        issue.location ||
+                        "Location not available"
+                    );
+
+
+document.getElementById(
+    "resultDepartment"
+).textContent =
+    "🏢 Department: " +
+    (
+        issue.department_name ||
+        "Not assigned"
+    );
+
+document.getElementById(
+    "assignedDepartment"
+).textContent =
+    issue.department_name ||
+    "Not assigned";
+
+document.getElementById(
+    "summaryDepartment"
+).textContent =
+    issue.department_name ||
+    "Not assigned";
+
+
+                document.getElementById(
+                    "resultStatus"
+                ).textContent =
+                    formatStatus(
+                        issue.status
+                    );
+
+
+                document.getElementById(
+                    "resultCategory"
+                ).textContent =
+                    formatCategory(
+                        issue.category
+                    );
+
+
+                document.getElementById(
+                    "resultPriority"
+                ).textContent =
+                    formatPriority(
+                        issue.priority
+                    );
+
+
+                /* ==================================
+                   PROGRESS
+                ================================== */
+
+                const progress =
+                    Number(issue.progress) || 0;
+
+
+                document.getElementById(
+                    "resultProgress"
+                ).textContent =
+                    progress + "%";
+
+
+document.getElementById(
+    "progressBarFill"
+).style.width =
+    Math.min(Number(issue.progress), 100) + "%";
+    
+const progressMessages = {
+    pending: "Issue has been received",
+    verified: "Issue has been verified",
+    "in-progress": "Issue is currently being resolved",
+    resolved: "Issue has been resolved"
+};
+
+document.getElementById(
+    "progressMessage"
+).textContent =
+    progressMessages[issue.status] ||
+    "Issue status updated";
+
+
+                // Update timeline dynamically
+const timelineItems =
+    document.querySelectorAll(".timeline-item");
+
+const progressLabels =
+    document.querySelectorAll(".progress-labels span");
+
+const statusOrder = {
+    pending: 0,
+    verified: 1,
+    "in-progress": 2,
+    resolved: 3
+};
+
+const currentStep =
+    statusOrder[issue.status] ?? 0;
+
+// Update progress labels
+progressLabels.forEach((label, index) => {
+    label.classList.remove("done");
+    label.classList.remove("active");
+
+    if (index < currentStep) {
+        label.classList.add("done");
+    } else if (index === currentStep) {
+        label.classList.add("active");
+    }
+});
+
+// Update timeline items
+timelineItems.forEach((item, index) => {
+
+    item.classList.remove("completed");
+    item.classList.remove("active");
+
+    const marker =
+        item.querySelector(".timeline-marker");
+
+    const statusText =
+        item.querySelector(".timeline-top span");
+
+    if (index < currentStep) {
+
+        item.classList.add("completed");
+
+        if (marker) {
+            marker.textContent = "✓";
+        }
+
+        if (statusText) {
+            statusText.textContent = "Completed";
+        }
+
+    } else if (index === currentStep) {
+
+        item.classList.add("active");
+
+        if (marker) {
+            marker.textContent =
+                String(index + 1).padStart(2, "0");
+        }
+
+        if (statusText) {
+            statusText.textContent = "Current";
+        }
+
+    } else {
+
+        if (marker) {
+            marker.textContent =
+                String(index + 1).padStart(2, "0");
+        }
+
+        if (statusText) {
+            statusText.textContent = "Pending";
+        }
+    }
+});
+
+
+
+                /* ==================================
+                   REPORT SUMMARY
+                ================================== */
+
+                document.getElementById(
+                    "resultReportId"
+                ).textContent =
+                    "#" + issue.report_code;
+
+
+                document.getElementById(
+                    "resultDate"
+                ).textContent =
+                    formatDate(
+                        issue.created_at
+                    );
+
+
+                document.getElementById(
+                    "summaryLocation"
+                ).textContent =
+                    issue.location ||
+                    "Location not available";
+
+
+                /* ==================================
+                   SHOW RESULT
+                ================================== */
+
+                trackingResult.classList.add(
+                    "show"
+                );
+
+
+                trackingResult.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+
+            } catch (error) {
+
+                console.error(
+                    "Track issue error:",
+                    error
+                );
+
+
+                alert(
+                    "Unable to connect to CIVEXA server."
+                );
+
+            }
+
+        }
+    );
+
+
+    /* ==========================================
+       AUTOMATIC TRACK FROM MY REPORTS
+    ========================================== */
+
+    const urlParams =
+        new URLSearchParams(
+            window.location.search
+        );
+
+
+    const reportFromUrl =
+        urlParams.get("report");
+
+
+    if (reportFromUrl) {
+
+        reportId.value =
+            reportFromUrl;
+
+
+        trackForm.dispatchEvent(
+            new Event("submit")
+        );
+
+    }
+
+
+    /* ==========================================
+       FORMAT STATUS
+    ========================================== */
+
+    function formatStatus(status) {
+
+        if (!status) {
+            return "Unknown";
+        }
+
+
+        return status
+            .split("-")
+            .map(word =>
+                word.charAt(0).toUpperCase() +
+                word.slice(1)
+            )
+            .join(" ");
+
+    }
+
+
+    /* ==========================================
+       FORMAT CATEGORY
+    ========================================== */
+
+    function formatCategory(category) {
+
+        if (!category) {
+            return "Unknown";
+        }
+
+
+        return category
+            .split("-")
+            .map(word =>
+                word.charAt(0).toUpperCase() +
+                word.slice(1)
+            )
+            .join(" ");
+
+    }
+
+
+    /* ==========================================
+       FORMAT PRIORITY
+    ========================================== */
+
+    function formatPriority(priority) {
+
+        if (!priority) {
+            return "Unknown";
+        }
+
+
+        return priority.charAt(0).toUpperCase() +
+            priority.slice(1);
+
+    }
+
+
+    /* ==========================================
+       FORMAT DATE
+    ========================================== */
+
+    function formatDate(dateValue) {
+
+        if (!dateValue) {
+            return "Not available";
+        }
+
+
+        const date =
+            new Date(dateValue);
+
+
+        return date.toLocaleDateString(
+            "en-IN",
+            {
+                day: "2-digit",
+                month: "short",
+                year: "numeric"
+            }
+        );
+
+    }
+
+</script>
+</body>
+</html>

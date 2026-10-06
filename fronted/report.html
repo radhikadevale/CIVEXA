@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Report an Issue | CIVEXA</title>
+
+    <link rel="stylesheet" href="report.css">
+    <link rel="stylesheet" href="navbar.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <div class="logo-icon">◆</div>
+            <span>CIVEXA</span>
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="report.html" class="active">Report Issue</a>
+            <a href="browse.html">Browse Issues</a>
+            <a href="track.html">Track Issue</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+         <div class="nav-buttons">
+    <a href="login.html" class="login-btn">Login</a>
+    <a href="register.html" class="register-btn">Register</a>
+</div>
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="report-hero">
+
+        <div class="hero-content">
+
+            <span class="hero-badge">
+                <span class="badge-dot"></span>
+                Community issue reporting
+            </span>
+
+            <h1>
+                Report an issue.<br>
+                <span>Make your community better.</span>
+            </h1>
+
+            <p>
+                Found a problem in your neighborhood?
+                Tell CIVEXA about it and help the right people
+                take action.
+            </p>
+
+            <div class="hero-points">
+                <div>
+                    <span>✓</span>
+                    Easy reporting
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Location based
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Track progress
+                </div>
+            </div>
+
+        </div>
+
+        <div class="hero-visual">
+
+            <div class="visual-card">
+
+                <div class="visual-top">
+                    <span class="visual-dot"></span>
+                    NEW REPORT
+                </div>
+
+                <div class="visual-icon">
+                    📍
+                </div>
+
+                <h3>Community Issue</h3>
+
+                <p>
+                    Your report can help identify
+                    and resolve problems faster.
+                </p>
+
+                <div class="visual-line"></div>
+
+                <div class="visual-status">
+                    <span>●</span>
+                    Ready to report
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= REPORT FORM ================= -->
+
+    <main class="report-container">
+
+        <div class="form-heading">
+
+            <span class="section-label">
+                REPORT FORM
+            </span>
+
+            <h2>Tell us about the issue</h2>
+
+            <p>
+                Provide accurate information so the issue
+                can be reviewed and resolved efficiently.
+            </p>
+
+        </div>
+
+
+        <form id="reportForm" class="report-form">
+
+
+            <!-- ===== STEP 01 ===== -->
+
+            <div class="form-section">
+
+                <div class="step-title">
+                    <span>01</span>
+
+                    <div>
+                        <h3>Issue details</h3>
+                        <p>What problem did you notice?</p>
+                    </div>
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="form-group full-width">
+
+                        <label for="issueTitle">
+                            Issue title
+                        </label>
+
+                        <input
+                            type="text"
+                            id="issueTitle"
+                            name="issueTitle"
+                            placeholder="Example: Large pothole near main road"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="category">
+                            Issue category
+                        </label>
+
+                        <select id="category" name="category" required>
+
+                            <option value="">
+                                Select a category
+                            </option>
+
+                            <option value="roads">
+                                🛣️ Roads
+                            </option>
+
+                            <option value="waste">
+                                🗑️ Waste
+                            </option>
+
+                            <option value="streetlights">
+                                💡 Streetlights
+                            </option>
+
+                            <option value="water">
+                                💧 Water
+                            </option>
+
+                            <option value="drainage">
+                                🌊 Drainage
+                            </option>
+
+                            <option value="infrastructure">
+                                🏗️ Infrastructure
+                            </option>
+
+                            <option value="other">
+                                📌 Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="urgency">
+                            Issue urgency
+                        </label>
+
+                        <select id="urgency" name="urgency" required>
+
+                            <option value="">
+                                Select urgency
+                            </option>
+
+                            <option value="low">
+                                Low
+                            </option>
+
+                            <option value="medium">
+                                Medium
+                            </option>
+
+                            <option value="high">
+                                High
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group full-width">
+
+                        <label for="description">
+                            Describe the issue
+                        </label>
+
+                        <textarea
+                            id="description"
+                            name="description"
+                            rows="6"
+                            placeholder="Describe what happened, where you noticed it, and how it affects the community..."
+                            required
+                        ></textarea>
+
+                        <div class="character-count">
+                            <span id="charCount">0</span>/500
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ===== STEP 02 ===== -->
+
+            <div class="form-section">
+
+                <div class="step-title">
+
+                    <span>02</span>
+
+                    <div>
+                        <h3>Issue location</h3>
+                        <p>Where is the problem located?</p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="form-group full-width">
+
+                        <label for="location">
+                            Location / Address
+                        </label>
+
+                        <input
+                            type="text"
+                            id="location"
+                            name="location"
+                            placeholder="Example: Near City Library, MG Road"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="city">
+                            City
+                        </label>
+
+                        <input
+                            type="text"
+                            id="city"
+                            name="city"
+                            placeholder="Enter city"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="landmark">
+                            Nearby landmark
+                        </label>
+
+                        <input
+                            type="text"
+                            id="landmark"
+                            name="landmark"
+                            placeholder="Optional"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ===== STEP 03 ===== -->
+
+            <div class="form-section">
+
+                <div class="step-title">
+
+                    <span>03</span>
+
+                    <div>
+                        <h3>Add evidence</h3>
+                        <p>A photo can help explain the problem.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="upload-box" id="uploadBox">
+
+                    <input
+                        type="file"
+                        id="issueImage"
+                        accept="image/*"
+                        hidden
+                    >
+
+                    <div class="upload-icon">
+                        ↑
+                    </div>
+
+                    <h3>Upload an issue photo</h3>
+
+                    <p>
+                        Drag & drop an image here or
+                        <label for="issueImage">browse</label>
+                    </p>
+
+                    <span>
+                        JPG, PNG or WEBP • Maximum 5 MB
+                    </span>
+
+                </div>
+
+
+                <div
+                    id="imagePreview"
+                    class="image-preview"
+                    style="display: none;"
+                >
+
+                    <img id="previewImage" src="" alt="Issue preview">
+
+                    <div class="preview-info">
+
+                        <strong id="fileName">
+                            Image selected
+                        </strong>
+
+                        <button
+                            type="button"
+                            id="removeImage"
+                        >
+                            Remove
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ===== STEP 04 ===== -->
+
+            <div class="form-section">
+
+                <div class="step-title">
+
+                    <span>04</span>
+
+                    <div>
+                        <h3>Your information</h3>
+                        <p>How can CIVEXA contact you?</p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Your name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="you@example.com"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="anonymous-option">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            id="anonymous"
+                        >
+
+                        <span class="custom-checkbox"></span>
+
+                        <div>
+                            <strong>Submit anonymously</strong>
+                            <small>
+                                Your personal details will not be displayed publicly.
+                            </small>
+                        </div>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- ===== SUBMIT AREA ===== -->
+
+            <div class="submit-area">
+
+                <div class="submit-note">
+
+                    <span>🔒</span>
+
+                    <p>
+                        Your information is used only
+                        for processing and tracking your report.
+                    </p>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="submit-button"
+                >
+                    Submit Issue
+                    <span>→</span>
+                </button>
+
+            </div>
+
+
+        </form>
+
+    </main>
+
+
+    <!-- ================= SUCCESS MESSAGE ================= -->
+
+    <div id="successMessage" class="success-message">
+
+        <div class="success-card">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <h2>Issue submitted!</h2>
+
+            <p>
+                Your report has been recorded successfully.
+                You can track its progress from the Track Issue page.
+            </p>
+
+            <div class="report-id">
+                Report ID:
+                <strong id="reportId">
+                    CIV-000000
+                </strong>
+            </div>
+
+            <button id="closeSuccess">
+                Continue
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="footer-main">
+
+            <div class="footer-brand">
+
+                <div class="footer-logo">
+                    <span>◆</span>
+                    CIVEXA
+                </div>
+
+                <p>
+                    Report It. Support It. Track It. Fix It.
+                </p>
+
+                <div class="footer-status">
+                    <span></span>
+                    Prototype system active
+                </div>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>EXPLORE</h4>
+
+                <a href="index.html">Home</a>
+                <a href="report.html">Report Issue</a>
+                <a href="issues.html">Browse Issues</a>
+                <a href="track.html">Track Issue</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>QUICK ACTIONS</h4>
+
+                <a href="report.html">+ Report a problem</a>
+                <a href="issues.html">→ Find an issue</a>
+                <a href="track.html">◷ Track a report</a>
+                <a href="about.html">? How CIVEXA works</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 CIVEXA
+            </span>
+
+            <span>
+                Web Technology Microproject
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <script>
+const reportForm = document.getElementById("reportForm");
+
+const issueTitle = document.getElementById("issueTitle");
+const category = document.getElementById("category");
+const urgency = document.getElementById("urgency");
+const description = document.getElementById("description");
+const locationInput = document.getElementById("location");
+const city = document.getElementById("city");
+const landmark = document.getElementById("landmark");
+
+const nameInput = document.getElementById("name");
+const emailInput = document.getElementById("email");
+const anonymous = document.getElementById("anonymous");
+
+const issueImage =
+    document.getElementById("issueImage");
+
+const successMessage =
+    document.getElementById("successMessage");
+
+const reportId =
+    document.getElementById("reportId");
+
+const closeSuccess =
+    document.getElementById("closeSuccess");
+
+
+// =========================
+// CHARACTER COUNT
+// =========================
+
+const charCount =
+    document.getElementById("charCount");
+
+description.addEventListener("input", function () {
+
+    charCount.textContent =
+        description.value.length;
+
+});
+
+
+// =========================
+// SUBMIT REPORT
+// =========================
+
+reportForm.addEventListener("submit", async function (event) {
+
+    event.preventDefault();
+
+
+    // Check login
+
+    const savedUser =
+        localStorage.getItem("civexaUser");
+
+
+    if (!savedUser) {
+
+        alert(
+            "Please login before submitting an issue."
+        );
+
+        window.location.href = "login.html";
+
+        return;
+
+    }
+
+
+    // Get logged-in user
+
+    const user =
+        JSON.parse(savedUser);
+
+
+    // =========================
+    // CREATE FORMDATA
+    // =========================
+
+    const formData =
+        new FormData();
+
+
+    formData.append(
+        "user_id",
+        user.user_id
+    );
+
+    formData.append(
+        "title",
+        issueTitle.value
+    );
+
+    formData.append(
+        "category",
+        category.value
+    );
+
+    formData.append(
+        "description",
+        description.value
+    );
+
+    formData.append(
+        "location",
+        locationInput.value
+    );
+
+    formData.append(
+        "city",
+        city.value
+    );
+
+    formData.append(
+        "landmark",
+        landmark.value
+    );
+
+    formData.append(
+        "priority",
+        urgency.value
+    );
+
+    formData.append(
+        "is_anonymous",
+        anonymous.checked
+    );
+
+
+    // Add image if selected
+
+    if (issueImage.files.length > 0) {
+
+        formData.append(
+            "issueImage",
+            issueImage.files[0]
+        );
+
+    }
+
+
+    try {
+
+        const response = await fetch(
+            "http://localhost:3000/api/issues",
+            {
+                method: "POST",
+
+                body: formData
+            }
+        );
+
+
+        const result =
+            await response.json();
+
+
+        if (response.ok) {
+
+            // Show report ID
+
+            reportId.textContent =
+                result.report_id;
+
+
+            successMessage.classList.add(
+                "show"
+            );
+
+
+            // Reset form
+
+            reportForm.reset();
+
+
+            charCount.textContent = "0";
+
+
+        } else {
+
+            alert(
+                result.message
+            );
+
+        }
+
+
+    } catch (error) {
+
+        console.error(
+            "Report submission error:",
+            error
+        );
+
+        alert(
+            "Unable to connect to CIVEXA server. Make sure the backend is running."
+        );
+
+    }
+
+});
+
+
+// =========================
+// CLOSE SUCCESS MESSAGE
+// =========================
+
+closeSuccess.addEventListener(
+    "click",
+    function () {
+
+        successMessage.classList.remove(
+            "show"
+        );
+
+    }
+);
+
+// =========================
+// IMAGE PREVIEW
+// =========================
+
+const uploadBox =
+    document.getElementById("uploadBox");
+
+const imagePreview =
+    document.getElementById("imagePreview");
+
+const previewImage =
+    document.getElementById("previewImage");
+
+const fileName =
+    document.getElementById("fileName");
+
+const removeImage =
+    document.getElementById("removeImage");
+
+
+// When image is selected
+issueImage.addEventListener("change", function () {
+
+    const file = issueImage.files[0];
+
+    if (!file) {
+        return;
+    }
+
+
+    // Check image type
+    if (!file.type.startsWith("image/")) {
+
+        alert("Please select an image file.");
+
+        issueImage.value = "";
+
+        return;
+    }
+
+
+    // Check maximum size: 5 MB
+    if (file.size > 5 * 1024 * 1024) {
+
+        alert("Image must be smaller than 5 MB.");
+
+        issueImage.value = "";
+
+        return;
+    }
+
+
+    // Create image preview
+    const reader = new FileReader();
+
+    reader.onload = function (event) {
+
+        previewImage.src =
+            event.target.result;
+
+        fileName.textContent =
+            file.name;
+
+        imagePreview.style.display =
+            "flex";
+
+        uploadBox.style.display =
+            "none";
+
+    };
+
+    reader.readAsDataURL(file);
+
+});
+
+
+// =========================
+// REMOVE IMAGE
+// =========================
+
+removeImage.addEventListener(
+    "click",
+    function () {
+
+        issueImage.value = "";
+
+        previewImage.src = "";
+
+        imagePreview.style.display =
+            "none";
+
+        uploadBox.style.display =
+            "block";
+
+    }
+);
+
+</script>
+
+</body>
+</html>

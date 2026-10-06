@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manage Issues | CIVEXA</title>
+
+    <link rel="stylesheet" href="manage-issues.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="manage-navbar">
+
+        <div class="manage-logo">
+            <a href="admin.html">CIVEXA</a>
+        </div>
+
+        <nav class="manage-nav">
+
+            <a href="admin.html">
+                Dashboard
+            </a>
+
+            <a href="manage-issues.html" class="active">
+                Manage Issues
+            </a>
+
+            <a href="departments.html">
+                Departments
+            </a>
+
+            <a href="analytics.html">
+                Analytics
+            </a>
+
+               <a href="feedback.html">
+    Feedback
+</a>
+
+        <a href="contact-messages.html">
+             Contact-messages
+            </a>
+
+        </nav>
+
+        <div class="manage-account">
+
+            <span>
+                ADMIN
+            </span>
+
+            <a href="../login.html" class="manage-avatar">
+                A
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="manage-main">
+
+
+        <!-- ================= PAGE HEADER ================= -->
+
+        
+
+        <!-- ================= STATISTICS ================= -->
+
+        
+        <!-- ================= STATISTICS ================= -->
+
+<section class="manage-stats">
+
+    <div class="manage-stat">
+        <span>Total Issues</span>
+        <strong id="manageTotalIssues">0</strong>
+    </div>
+
+    <div class="manage-stat">
+        <span>Pending</span>
+        <strong id="managePendingIssues">0</strong>
+    </div>
+
+    <div class="manage-stat">
+        <span>In Progress</span>
+        <strong id="manageInProgressIssues">0</strong>
+    </div>
+
+    <div class="manage-stat">
+        <span>Resolved</span>
+        <strong id="manageResolvedIssues">0</strong>
+    </div>
+
+</section>
+
+        <!-- ================= FILTER AREA ================= -->
+
+        <section class="issue-management-panel">
+
+            <div class="filter-heading">
+
+                <div>
+
+                    <span class="panel-label">
+                        REPORT DATABASE
+                    </span>
+
+                    <h2>
+                        All Issues
+                    </h2>
+
+                </div>
+
+                <span class="demo-badge">
+               LIVE DATA
+              </span>
+
+            </div>
+
+
+            <div class="issue-filters">
+
+                <!-- Search -->
+
+                <div class="search-box">
+
+                    <span>
+                        🔎
+                    </span>
+
+                    <input
+                        type="text"
+                        id="issueSearch"
+                        placeholder="Search by issue, location or ID..."
+                    >
+
+                </div>
+
+
+                <!-- Category -->
+
+                <select id="categoryFilter">
+
+                    <option value="all">
+                        All Categories
+                    </option>
+
+                    <option value="roads">
+                        Roads
+                    </option>
+
+                    <option value="waste">
+                        Waste
+                    </option>
+
+                    <option value="streetlights">
+                        Streetlights
+                    </option>
+
+                    <option value="water">
+                        Water
+                    </option>
+
+                    <option value="drainage">
+                        Drainage
+                    </option>
+
+                    <option value="infrastructure">
+                        Infrastructure
+                    </option>
+
+                </select>
+
+
+                <!-- Status -->
+
+                <select id="statusFilter">
+
+                    <option value="all">
+                        All Status
+                    </option>
+
+                    <option value="pending">
+                        Pending
+                    </option>
+
+                    <option value="verified">
+                        Verified
+                    </option>
+
+                    <option value="in-progress">
+                        In Progress
+                    </option>
+
+                    <option value="resolved">
+                        Resolved
+                    </option>
+
+                </select>
+
+
+                <!-- Priority -->
+
+                <select id="priorityFilter">
+
+                    <option value="all">
+                        All Priority
+                    </option>
+
+                    <option value="high">
+                        High
+                    </option>
+
+                    <option value="medium">
+                        Medium
+                    </option>
+
+                    <option value="low">
+                        Low
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- ================= ISSUE TABLE ================= -->
+
+            <div class="issues-table-wrapper">
+
+                <table class="issues-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                ISSUE
+                            </th>
+
+                            <th>
+                                CATEGORY
+                            </th>
+
+                            <th>
+                                LOCATION
+                            </th>
+
+                            <th>
+                                PRIORITY
+                            </th>
+
+                            <th>
+                                STATUS
+                            </th>
+
+                            <th>
+                                REPORT ID
+                            </th>
+
+                            <th>
+                                ACTION
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="issuesTableBody">
+
+
+                        <!-- ISSUE 1 -->
+
+                        <tr
+                            data-category="roads"
+                            data-status="pending"
+                            data-priority="high"
+                        >
+
+                            <td>
+
+                                <div class="table-issue">
+
+                                    <div class="issue-mini-icon">
+                                        R
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Pothole on Main Road
+                                        </strong>
+
+                                        <span>
+                                            Reported by Citizen
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+                                Roads
+                            </td>
+
+                            <td>
+                                Shivaji Nagar, Pune
+                            </td>
+
+                            <td>
+                                <span class="priority high">
+                                    High
+                                </span>
+                            </td>
+
+                            <td>
+                                <span class="status pending">
+                                    Pending
+                                </span>
+                            </td>
+
+                            <td>
+                                <code>
+                                    #CVX-2026-1042
+                                </code>
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="manage-btn"
+                                    onclick="openIssue('Pothole on Main Road')"
+                                >
+                                    Manage
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                        <!-- ISSUE 2 -->
+
+                        <tr
+                            data-category="streetlights"
+                            data-status="in-progress"
+                            data-priority="high"
+                        >
+
+                            <td>
+
+                                <div class="table-issue">
+
+                                    <div class="issue-mini-icon">
+                                        S
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Streetlight Not Working
+                                        </strong>
+
+                                        <span>
+                                            Reported by Citizen
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+                                Streetlights
+                            </td>
+
+                            <td>
+                                Baner, Pune
+                            </td>
+
+                            <td>
+                                <span class="priority high">
+                                    High
+                                </span>
+                            </td>
+
+                            <td>
+                                <span class="status progress">
+                                    In Progress
+                                </span>
+                            </td>
+
+                            <td>
+                                <code>
+                                    #CVX-2026-1038
+                                </code>
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="manage-btn"
+                                    onclick="openIssue('Streetlight Not Working')"
+                                >
+                                    Manage
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                        <!-- ISSUE 3 -->
+
+                        <tr
+                            data-category="waste"
+                            data-status="verified"
+                            data-priority="medium"
+                        >
+
+                            <td>
+
+                                <div class="table-issue">
+
+                                    <div class="issue-mini-icon">
+                                        W
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Garbage Collection Delay
+                                        </strong>
+
+                                        <span>
+                                            Reported by Citizen
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+                                Waste
+                            </td>
+
+                            <td>
+                                Kothrud, Pune
+                            </td>
+
+                            <td>
+                                <span class="priority medium">
+                                    Medium
+                                </span>
+                            </td>
+
+                            <td>
+                                <span class="status verified">
+                                    Verified
+                                </span>
+                            </td>
+
+                            <td>
+                                <code>
+                                    #CVX-2026-1029
+                                </code>
+
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="manage-btn"
+                                    onclick="openIssue('Garbage Collection Delay')"
+                                >
+                                    Manage
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                        <!-- ISSUE 4 -->
+
+                        <tr
+                            data-category="water"
+                            data-status="pending"
+                            data-priority="high"
+                        >
+
+                            <td>
+
+                                <div class="table-issue">
+
+                                    <div class="issue-mini-icon">
+                                        W
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Irregular Water Supply
+                                        </strong>
+
+                                        <span>
+                                            Reported by Citizen
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+                                Water
+                            </td>
+
+                            <td>
+                                Viman Nagar, Pune
+                            </td>
+
+                            <td>
+                                <span class="priority high">
+                                    High
+                                </span>
+                            </td>
+
+                            <td>
+                                <span class="status pending">
+                                    Pending
+                                </span>
+                            </td>
+
+                            <td>
+                                <code>
+                                    #CVX-2026-1024
+                                </code>
+
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="manage-btn"
+                                    onclick="openIssue('Irregular Water Supply')"
+                                >
+                                    Manage
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                        <!-- ISSUE 5 -->
+
+                        <tr
+                            data-category="drainage"
+                            data-status="in-progress"
+                            data-priority="medium"
+                        >
+
+                            <td>
+
+                                <div class="table-issue">
+
+                                    <div class="issue-mini-icon">
+                                        D
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Blocked Drainage System
+                                        </strong>
+
+                                        <span>
+                                            Reported by Citizen
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+                                Drainage
+                            </td>
+
+                            <td>
+                                Hadapsar, Pune
+                            </td>
+
+                            <td>
+                                <span class="priority medium">
+                                    Medium
+                                </span>
+                            </td>
+
+                            <td>
+                                <span class="status progress">
+                                    In Progress
+                                </span>
+                            </td>
+
+                            <td>
+                                <code>
+                                    #CVX-2026-1018
+                                </code>
+
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="manage-btn"
+                                    onclick="openIssue('Blocked Drainage System')"
+                                >
+                                    Manage
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                        <!-- ISSUE 6 -->
+
+                        <tr
+                            data-category="infrastructure"
+                            data-status="resolved"
+                            data-priority="low"
+                        >
+
+                            <td>
+
+                                <div class="table-issue">
+
+                                    <div class="issue-mini-icon">
+                                        I
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Damaged Public Infrastructure
+                                        </strong>
+
+                                        <span>
+                                            Reported by Citizen
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+                                Infrastructure
+                            </td>
+
+                            <td>
+                                Aundh, Pune
+                            </td>
+
+                            <td>
+                                <span class="priority low">
+                                    Low
+                                </span>
+
+                            </td>
+
+                            <td>
+                                <span class="status resolved">
+                                    Resolved
+                                </span>
+
+                            </td>
+
+                            <td>
+                                <code>
+                                    #CVX-2026-1012
+                                </code>
+
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="manage-btn"
+                                    onclick="openIssue('Damaged Public Infrastructure')"
+                                >
+                                    Manage
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <!-- NO RESULTS -->
+
+            <div
+                class="no-results"
+                id="noResults"
+            >
+
+                <div>
+                    —
+                </div>
+
+                <h3>
+                    No issues found
+                </h3>
+
+                <p>
+                    Try changing your search or filters.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= INFORMATION ================= -->
+
+        <section class="management-info">
+
+            <div class="info-card">
+
+                <div class="info-icon">
+                    01
+                </div>
+
+                <div>
+
+                    <h3>
+                        Verify Reports
+                    </h3>
+
+                    <p>
+                        Review submitted information before
+                        confirming an issue as genuine.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-icon">
+                    02
+                </div>
+
+                <div>
+
+                    <h3>
+                        Assign Departments
+                    </h3>
+
+                    <p>
+                        Send verified issues to the department
+                        responsible for resolving them.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-icon">
+                    03
+                </div>
+
+                <div>
+
+                    <h3>
+                        Update Progress
+                    </h3>
+
+                    <p>
+                        Keep citizens informed by updating the
+                        status as work progresses.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= MANAGE MODAL ================= -->
+
+    <div
+        class="issue-modal"
+        id="issueModal"
+    >
+
+        <div class="modal-card">
+
+            <button
+                class="modal-close"
+                onclick="closeIssue()"
+            >
+                ×
+            </button>
+
+            <span class="manage-eyebrow">
+                ISSUE MANAGEMENT
+            </span>
+
+            <h2 id="modalIssueTitle">
+                Issue
+            </h2>
+
+            <p class="modal-description">
+                Manage this citizen report using the controls below.
+            </p>
+
+
+            <div class="modal-details">
+
+                <div>
+                    <span>Category</span>
+                    <strong id="modalCategory">
+                        Roads
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Location</span>
+                    <strong id="modalLocation">
+                        Shivaji Nagar, Pune
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Priority</span>
+
+                    <select id="modalPriority">
+
+                        <option>
+                            High
+                        </option>
+
+                        <option>
+                            Medium
+                        </option>
+
+                        <option>
+                            Low
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div>
+                    <span>Status</span>
+
+                    <select id="modalStatus">
+
+                        <option>
+                            Pending
+                        </option>
+
+                        <option>
+                            Verified
+                        </option>
+
+                        <option>
+                            In Progress
+                        </option>
+
+                        <option>
+                            Resolved
+                        </option>
+
+                    </select>
+
+                </div>
+
+               <div>
+                <span>Department</span>
+
+                <select id="modalDepartment">
+
+                    <option value="">
+                        Not Assigned
+                    </option>
+
+                    <option value="1">
+                        Road Department
+                    </option>
+
+                    <option value="2">
+                        Waste Management
+                    </option>
+
+                    <option value="3">
+                        Water Department
+                    </option>
+
+                    <option value="4">
+                        Streetlight Department
+                    </option>
+
+                    <option value="5">
+                        Drainage Department
+                    </option>
+
+                    <option value="6">
+                        Infrastructure Department
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- ================= PROGRESS ================= -->
+
+            <div>
+
+                <span>Progress</span>
+
+                <select id="modalProgress">
+
+                    <option value="0">
+                        0%
+                    </option>
+
+                    <option value="25">
+                        25%
+                    </option>
+
+                    <option value="50">
+                        50%
+                    </option>
+
+                    <option value="75">
+                        75%
+                    </option>
+
+                    <option value="100">
+                        100%
+                    </option>
+
+                </select>
+
+            </div>
+            </div>
+
+
+            <button
+                class="save-management"
+                onclick="saveIssue()"
+            >
+                Save Changes
+            </button>
+
+            <p
+    class="demo-message"
+    id="demoMessage"
+>
+    Changes are saved to the CIVEXA database.
+</p>
+
+        </div>
+
+    </div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+// =========================
+// ADMIN AUTHENTICATION
+// =========================
+
+const savedUser =
+    JSON.parse(
+        localStorage.getItem("civexaUser")
+    );
+
+if (!savedUser) {
+
+    alert("Please login as an administrator.");
+
+    window.location.href =
+        "../login.html";
+
+}
+else if (savedUser.role !== "admin") {
+
+    alert("Access denied. Administrator access required.");
+
+    window.location.href =
+        "../index.html";
+
+}
+
+// =========================
+// VARIABLES
+// =========================
+
+const searchInput =
+    document.getElementById("issueSearch");
+
+const categoryFilter =
+    document.getElementById("categoryFilter");
+
+const statusFilter =
+    document.getElementById("statusFilter");
+
+const priorityFilter =
+    document.getElementById("priorityFilter");
+
+const issuesTableBody =
+    document.getElementById("issuesTableBody");
+
+const noResults =
+    document.getElementById("noResults");
+
+let allIssues = [];
+
+let selectedIssue = null;
+
+
+// =========================
+// LOAD ALL ISSUES
+// =========================
+
+async function loadAllIssues() {
+
+    try {
+
+        const response = await fetch(
+            "http://localhost:3000/api/issues/admin/all"
+        );
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.message);
+        }
+
+        allIssues = data.issues;
+
+        displayIssues(allIssues);
+
+    } catch (error) {
+
+        console.error(
+            "Failed to load issues:",
+            error
+        );
+
+        issuesTableBody.innerHTML = "";
+
+        noResults.classList.add("show");
+
+    }
+
+}
+
+
+// =========================
+// DISPLAY ISSUES
+// =========================
+
+function displayIssues(issues) {
+
+    issuesTableBody.innerHTML = "";
+
+    if (issues.length === 0) {
+
+        noResults.classList.add("show");
+
+        return;
+
+    }
+
+    noResults.classList.remove("show");
+
+
+    issues.forEach(function(issue) {
+
+        // Category text
+        const categoryText =
+            formatCategory(issue.category);
+
+
+        // Status text
+        const statusText =
+            formatStatus(issue.status);
+
+
+        // Priority text
+        const priorityText =
+            formatPriority(issue.priority);
+
+
+        // City
+        const cityText =
+            issue.city
+                ? ", " + issue.city
+                : "";
+
+
+        // First letter for icon
+        const iconLetter =
+            issue.title
+                ? issue.title.charAt(0).toUpperCase()
+                : "I";
+
+
+        // Create row
+        const row =
+            document.createElement("tr");
+
+
+        row.dataset.category =
+            issue.category;
+
+        row.dataset.status =
+            issue.status;
+
+        row.dataset.priority =
+            issue.priority;
+
+
+        row.innerHTML = `
+
+            <td>
+
+                <div class="table-issue">
+
+                    <div class="issue-mini-icon">
+                        ${iconLetter}
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            ${issue.title}
+                        </strong>
+
+                        <span>
+                            ${issue.is_anonymous
+                                ? "Reported Anonymously"
+                                : "Reported by Citizen"}
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </td>
+
+
+            <td>
+                ${categoryText}
+            </td>
+
+
+            <td>
+                ${issue.location}${cityText}
+            </td>
+
+
+            <td>
+
+                <span class="priority ${issue.priority}">
+                    ${priorityText}
+                </span>
+
+            </td>
+
+
+            <td>
+
+                <span class="status ${getStatusClass(issue.status)}">
+                    ${statusText}
+                </span>
+
+            </td>
+
+
+            <td>
+
+                <code>
+                    #${issue.report_code}
+                </code>
+
+            </td>
+
+
+            <td>
+
+                <button
+                    class="manage-btn"
+                    onclick="openIssue(${issue.issue_id})"
+                >
+                    Manage
+                </button>
+
+            </td>
+
+        `;
+
+
+        issuesTableBody.appendChild(row);
+
+    });
+
+}
+
+
+// =========================
+// CATEGORY FORMAT
+// =========================
+
+function formatCategory(category) {
+
+    const categories = {
+
+        roads: "Roads",
+
+        waste: "Waste",
+
+        streetlights: "Streetlights",
+
+        water: "Water",
+
+        drainage: "Drainage",
+
+        infrastructure: "Infrastructure"
+
+    };
+
+    return categories[category] || category;
+
+}
+
+
+// =========================
+// STATUS FORMAT
+// =========================
+
+function formatStatus(status) {
+
+    if (status === "in-progress") {
+        return "In Progress";
+    }
+
+    if (status === "pending") {
+        return "Pending";
+    }
+
+    if (status === "verified") {
+        return "Verified";
+    }
+
+    if (status === "resolved") {
+        return "Resolved";
+    }
+
+    return status;
+
+}
+
+
+// =========================
+// STATUS CSS CLASS
+// =========================
+
+function getStatusClass(status) {
+
+    if (status === "in-progress") {
+        return "progress";
+    }
+
+    return status;
+
+}
+
+
+// =========================
+// PRIORITY FORMAT
+// =========================
+
+function formatPriority(priority) {
+
+    if (!priority) {
+        return "Medium";
+    }
+
+    return priority.charAt(0).toUpperCase()
+        + priority.slice(1);
+
+}
+
+
+// =========================
+// FILTER ISSUES
+// =========================
+
+function filterIssues() {
+
+    const search =
+        searchInput.value
+            .toLowerCase()
+            .trim();
+
+    const category =
+        categoryFilter.value;
+
+    const status =
+        statusFilter.value;
+
+    const priority =
+        priorityFilter.value;
+
+
+    const filteredIssues =
+        allIssues.filter(function(issue) {
+
+            const searchableText = (
+
+                issue.title +
+                " " +
+                issue.location +
+                " " +
+                (issue.city || "") +
+                " " +
+                issue.report_code +
+                " " +
+                issue.category
+
+            ).toLowerCase();
+
+
+            const matchesSearch =
+                searchableText.includes(search);
+
+
+            const matchesCategory =
+                category === "all" ||
+                issue.category === category;
+
+
+            const matchesStatus =
+                status === "all" ||
+                issue.status === status;
+
+
+            const matchesPriority =
+                priority === "all" ||
+                issue.priority === priority;
+
+
+            return (
+                matchesSearch &&
+                matchesCategory &&
+                matchesStatus &&
+                matchesPriority
+            );
+
+        });
+
+
+    displayIssues(filteredIssues);
+
+}
+
+
+// =========================
+// FILTER EVENTS
+// =========================
+
+searchInput.addEventListener(
+    "input",
+    filterIssues
+);
+
+categoryFilter.addEventListener(
+    "change",
+    filterIssues
+);
+
+statusFilter.addEventListener(
+    "change",
+    filterIssues
+);
+
+priorityFilter.addEventListener(
+    "change",
+    filterIssues
+);
+
+
+// =========================
+// OPEN ISSUE MODAL
+// =========================
+
+function openIssue(issueId) {
+
+    selectedIssue =
+        allIssues.find(function(issue) {
+
+            return issue.issue_id === issueId;
+
+        });
+
+
+    if (!selectedIssue) {
+        return;
+    }
+
+
+    document.getElementById(
+        "modalIssueTitle"
+    ).textContent =
+        selectedIssue.title;
+
+
+    document.getElementById(
+        "modalCategory"
+    ).textContent =
+        formatCategory(
+            selectedIssue.category
+        );
+
+
+    document.getElementById(
+        "modalLocation"
+    ).textContent =
+        selectedIssue.location +
+        (
+            selectedIssue.city
+                ? ", " + selectedIssue.city
+                : ""
+        );
+
+
+    document.getElementById(
+        "modalPriority"
+    ).value =
+        formatPriority(
+            selectedIssue.priority
+        );
+
+
+    document.getElementById(
+        "modalStatus"
+    ).value =
+        formatStatus(
+            selectedIssue.status
+        );
+
+
+        document.getElementById(
+    "modalDepartment"
+).value =
+    selectedIssue.department_id
+        ? String(selectedIssue.department_id)
+        : "";
+
+        document.getElementById(
+        "modalProgress"
+    ).value =
+        selectedIssue.progress || 0;
+
+
+    document.getElementById(
+        "issueModal"
+    ).classList.add("show");
+
+}
+
+
+// =========================
+// CLOSE MODAL
+// =========================
+
+function closeIssue() {
+
+    document.getElementById(
+        "issueModal"
+    ).classList.remove("show");
+
+}
+
+
+// =========================
+// SAVE ISSUE
+// =========================
+
+async function saveIssue() {
+
+    if (!selectedIssue) {
+        return;
+    }
+
+    const priority =
+        document.getElementById("modalPriority").value.toLowerCase();
+
+    const statusValue =
+        document.getElementById("modalStatus").value;
+
+    const status =
+        statusValue.toLowerCase().replace(" ", "-");
+
+    const department_id =
+        document.getElementById("modalDepartment").value;
+
+    const progress =
+    Number(
+        document.getElementById("modalProgress").value
+    );
+
+
+    try {
+
+        const response = await fetch(
+            `http://localhost:3000/api/issues/admin/update/${selectedIssue.issue_id}`,
+            {
+                method: "PUT",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify({
+                    priority: priority,
+                    status: status,
+                    department_id: department_id || null,
+                    progress: progress
+                })
+            }
+        );
+
+
+        const data = await response.json();
+
+
+        if (!response.ok) {
+            throw new Error(data.message);
+        }
+
+
+        const message =
+            document.getElementById("demoMessage");
+
+        message.textContent =
+            "Changes saved successfully!";
+
+        message.classList.add("saved");
+
+
+        await loadAllIssues();
+
+
+        setTimeout(function() {
+
+            closeIssue();
+
+            message.classList.remove("saved");
+
+        }, 1000);
+
+
+    } catch (error) {
+
+        console.error(
+            "Failed to save issue:",
+            error
+        );
+
+        document.getElementById(
+            "demoMessage"
+        ).textContent =
+            "Failed to save changes.";
+
+    }
+
+}
+
+// =========================
+// CLOSE MODAL ON OUTSIDE CLICK
+// =========================
+
+document.getElementById(
+    "issueModal"
+).addEventListener(
+    "click",
+    function(event) {
+
+        if (
+            event.target ===
+            document.getElementById("issueModal")
+        ) {
+
+            closeIssue();
+
+        }
+
+    }
+);
+
+// =========================
+// LOAD MANAGE ISSUE STATS
+// =========================
+
+async function loadManageStats() {
+
+    try {
+
+        const response = await fetch(
+            "http://localhost:3000/api/issues/admin/stats"
+        );
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.message);
+        }
+
+        document.getElementById(
+    "manageTotalIssues"
+).textContent =
+    data.total;
+
+document.getElementById(
+    "managePendingIssues"
+).textContent =
+    data.pending;
+
+document.getElementById(
+    "manageInProgressIssues"
+).textContent =
+    data.in_progress;
+
+document.getElementById(
+    "manageResolvedIssues"
+).textContent =
+    data.resolved;
+
+    } catch (error) {
+
+        console.error(
+            "Failed to load manage issue statistics:",
+            error
+        );
+
+    }
+
+}
+
+loadManageStats();
+
+// =========================
+// START
+// =========================
+
+loadAllIssues();
+
+</script>
+
+</body>
+</html>

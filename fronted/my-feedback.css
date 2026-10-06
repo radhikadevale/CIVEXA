@@ -1,0 +1,1722 @@
+/* ========================================
+   CIVEXA - MY FEEDBACK
+   ======================================== */
+
+
+/* ========================================
+   GLOBAL
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background: #f7f8f6;
+
+    color: #102c31;
+
+    line-height: 1.6;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+button {
+    font-family: inherit;
+}
+
+
+/* ========================================
+   NAVBAR
+   ======================================== 
+
+.navbar {
+
+    width: 100%;
+
+    min-height: 76px;
+
+    padding: 0 7%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background: #ffffff;
+
+    border-bottom:
+        1px solid #e7eeee;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+}
+
+
+.logo {
+
+    font-size: 27px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    color: #087b7c;
+}
+
+
+.nav-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+}
+
+
+.nav-links a {
+
+    position: relative;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #52676b;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.nav-links a:hover {
+
+    color: #087b7c;
+
+    transform:
+        translateY(-1px);
+}
+
+
+.nav-links a.active {
+
+    color: #087b7c;
+}
+
+
+.nav-links a.active::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: -9px;
+
+    height: 2px;
+
+    border-radius: 10px;
+
+    background: #087b7c;
+}
+*/
+/* ========================================
+   CIVEXA NAVBAR
+======================================== */
+
+.navbar {
+
+    width: calc(100% - 80px);
+
+    max-width: 1680px;
+
+    min-height: 100px;
+
+    margin: 28px auto 0;
+
+    padding: 0 28px 0 34px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background: #ffffff;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 12px 35px
+        rgba(19, 48, 57, 0.08);
+
+    position: relative;
+
+    z-index: 1000;
+
+    animation:
+        navbarEnter 0.6s ease-out both;
+}
+
+
+/* ========================================
+   LOGO
+======================================== */
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+
+    font-size: 31px;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+    color: #132f4c;
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.logo:hover {
+
+    transform:
+        translateY(-2px);
+}
+
+
+.logo-mark {
+
+    color: #16a6a8;
+
+    font-size: 23px;
+
+    line-height: 1;
+
+    display: inline-block;
+
+    transform:
+        rotate(45deg);
+}
+
+
+/* ========================================
+   NAVIGATION
+======================================== */
+
+.nav-links {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 29px;
+
+    margin-left: auto;
+
+    margin-right: 45px;
+}
+
+
+.nav-links a {
+
+    position: relative;
+
+    padding: 8px 0;
+
+    color: #5c6d7a;
+
+    font-size: 16px;
+
+    font-weight: 650;
+
+    white-space: nowrap;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.nav-links a:hover {
+
+    color: #132f4c;
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* Active page */
+
+.nav-links a.active {
+
+    color: #087b7c;
+}
+
+
+.nav-links a.active::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: -4px;
+
+    height: 3px;
+
+    border-radius: 10px;
+
+    background: #087b7c;
+
+    transform:
+        scaleX(1);
+
+    transform-origin: center;
+
+    animation:
+        activeLine 0.35s ease-out both;
+}
+
+
+/* ========================================
+   PROFILE BUTTON
+======================================== */
+
+.profile-button {
+
+    width: 58px;
+
+    height: 58px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background: #102f4b;
+
+    color: #ffffff;
+
+    font-size: 22px;
+
+    font-weight: 750;
+
+    box-shadow:
+        0 8px 20px
+        rgba(16, 47, 75, 0.18);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.profile-button:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 25px
+        rgba(16, 47, 75, 0.25);
+}
+
+
+/* ========================================
+   NAVBAR ANIMATIONS
+======================================== */
+
+@keyframes navbarEnter {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(-20px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes activeLine {
+
+    from {
+
+        transform:
+            scaleX(0);
+    }
+
+    to {
+
+        transform:
+            scaleX(1);
+    }
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 1200px) {
+
+    .navbar {
+
+        width: calc(100% - 40px);
+
+        padding-left: 25px;
+
+        padding-right: 22px;
+    }
+
+
+    .nav-links {
+
+        gap: 20px;
+
+        margin-right: 25px;
+    }
+
+
+    .nav-links a {
+
+        font-size: 14px;
+    }
+
+
+    .logo {
+
+        font-size: 27px;
+    }
+}
+
+
+@media (max-width: 950px) {
+
+    .navbar {
+
+        width: calc(100% - 30px);
+
+        min-height: auto;
+
+        padding:
+            18px 22px;
+
+        flex-wrap: wrap;
+
+        gap: 18px;
+    }
+
+
+    .nav-links {
+
+        order: 3;
+
+        width: 100%;
+
+        margin: 0;
+
+        padding-top: 8px;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 12px 20px;
+    }
+
+
+    .profile-button {
+
+        width: 50px;
+
+        height: 50px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+
+        width: calc(100% - 20px);
+
+        margin-top: 12px;
+
+        border-radius: 20px;
+
+        padding:
+            16px;
+    }
+
+
+    .logo {
+
+        font-size: 24px;
+    }
+
+
+    .nav-links {
+
+        gap: 10px 15px;
+    }
+
+
+    .nav-links a {
+
+        font-size: 12px;
+    }
+
+
+    .profile-button {
+
+        width: 46px;
+
+        height: 46px;
+
+        border-radius: 14px;
+
+        font-size: 18px;
+    }
+
+}
+
+/* ========================================
+   HERO
+   ======================================== */
+
+.feedback-hero {
+
+    padding:
+        75px 7%
+        65px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f4f8f6,
+            #eef6f4
+        );
+
+    border-bottom:
+        1px solid #e2ece9;
+}
+
+
+.hero-content {
+
+    max-width: 850px;
+
+    margin: auto;
+
+    text-align: center;
+
+    animation:
+        heroEnter 0.7s ease both;
+}
+
+
+.section-label {
+
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.8px;
+
+    color: #087b7c;
+}
+
+
+.hero-content h1 {
+
+    margin-bottom: 18px;
+
+    font-size:
+        clamp(38px, 5vw, 58px);
+
+    line-height: 1.05;
+
+    letter-spacing: -1.5px;
+
+    color: #102c31;
+}
+
+
+.hero-content p {
+
+    max-width: 680px;
+
+    margin: auto;
+
+    font-size: 17px;
+
+    color: #687b7e;
+}
+
+
+/* ========================================
+   MAIN CONTAINER
+   ======================================== */
+
+.feedback-container {
+
+    width: 86%;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding:
+        55px 0
+        80px;
+}
+
+
+/* ========================================
+   STATISTICS
+   ======================================== */
+
+.feedback-stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+
+    margin-bottom: 55px;
+}
+
+
+.stat-card {
+
+    padding:
+        28px 30px;
+
+    background: #ffffff;
+
+    border:
+        1px solid #e4ecea;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(24, 60, 65, 0.05);
+
+    animation:
+        cardEnter 0.6s ease both;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.stat-card:hover {
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 15px 35px
+        rgba(24, 60, 65, 0.08);
+}
+
+
+.stat-label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    color: #8a9b9e;
+}
+
+
+.stat-card h2 {
+
+    font-size: 29px;
+
+    color: #102c31;
+
+    margin-bottom: 4px;
+}
+
+
+.stat-card p {
+
+    font-size: 12px;
+
+    color: #8a9b9e;
+}
+
+
+#latestFeedback {
+
+    font-size: 18px;
+
+    color: #087b7c;
+}
+
+
+/* ========================================
+   SECTION HEADING
+   ======================================== */
+
+.section-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-bottom: 28px;
+}
+
+
+.section-heading h2 {
+
+    margin-bottom: 5px;
+
+    font-size: 31px;
+
+    line-height: 1.15;
+
+    color: #102c31;
+}
+
+
+.section-heading p {
+
+    font-size: 14px;
+
+    color: #788a8d;
+}
+
+
+/* ========================================
+   GIVE FEEDBACK BUTTON
+   ======================================== */
+
+.give-feedback-btn {
+
+    flex-shrink: 0;
+
+    padding:
+        12px 20px;
+
+    border-radius: 11px;
+
+    background: #087b7c;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.give-feedback-btn:hover {
+
+    background: #066b6c;
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(8, 123, 124, 0.18);
+}
+
+
+/* ========================================
+   LOADING
+   ======================================== */
+
+.loading-state {
+
+    padding:
+        60px 20px;
+
+    text-align: center;
+
+    color: #788a8d;
+}
+
+
+.loading-spinner {
+
+    width: 38px;
+
+    height: 38px;
+
+    margin:
+        0 auto 15px;
+
+    border:
+        3px solid #dce9e6;
+
+    border-top-color: #087b7c;
+
+    border-radius: 50%;
+
+    animation:
+        spin 0.8s linear infinite;
+}
+
+
+/* ========================================
+   FEEDBACK LIST
+   ======================================== */
+
+.feedback-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+
+/* ========================================
+   FEEDBACK CARD
+   ======================================== */
+
+.feedback-card {
+
+    padding:
+        28px 30px;
+
+    background: #ffffff;
+
+    border:
+        1px solid #e4ecea;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 28px
+        rgba(24, 60, 65, 0.045);
+
+    animation:
+        feedbackEnter 0.55s ease both;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.feedback-card:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 14px 32px
+        rgba(24, 60, 65, 0.08);
+}
+
+
+.feedback-top {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 18px;
+}
+
+
+.feedback-heading h3 {
+
+    margin-bottom: 5px;
+
+    font-size: 18px;
+
+    color: #102c31;
+}
+
+
+.feedback-heading p {
+
+    font-size: 12px;
+
+    color: #91a1a4;
+}
+
+
+/* ========================================
+   RATING
+   ======================================== */
+
+.rating {
+
+    white-space: nowrap;
+
+    font-size: 18px;
+
+    letter-spacing: 2px;
+
+    color: #f2aa38;
+}
+
+
+.rating-number {
+
+    margin-left: 5px;
+
+    font-size: 12px;
+
+    letter-spacing: 0;
+
+    color: #7c8c8f;
+}
+
+
+/* ========================================
+   FEEDBACK MESSAGE
+   ======================================== */
+
+.feedback-message {
+
+    padding:
+        17px 18px;
+
+    background: #f5f9f8;
+
+    border-left:
+        3px solid #087b7c;
+
+    border-radius: 13px;
+
+    color: #52676b;
+
+    font-size: 14px;
+
+    line-height: 1.75;
+}
+
+
+/* ========================================
+   FEEDBACK META
+   ======================================== */
+
+.feedback-meta {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 18px;
+}
+
+
+.meta-pill {
+
+    padding:
+        6px 12px;
+
+    border-radius: 20px;
+
+    background: #edf6f4;
+
+    color: #087b7c;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+/* ========================================
+   EMPTY STATE
+   ======================================== */
+
+.empty-state {
+
+    padding:
+        65px 25px;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border:
+        1px solid #e4ecea;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 8px 28px
+        rgba(24, 60, 65, 0.045);
+
+    animation:
+        cardEnter 0.5s ease both;
+}
+
+
+.empty-icon {
+
+    width: 65px;
+
+    height: 65px;
+
+    margin:
+        0 auto 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #edf6f4;
+
+    font-size: 27px;
+}
+
+
+.empty-state h3 {
+
+    margin-bottom: 7px;
+
+    font-size: 22px;
+
+    color: #102c31;
+}
+
+
+.empty-state p {
+
+    margin-bottom: 22px;
+
+    color: #77898c;
+}
+
+
+/* ========================================
+   ERROR STATE
+   ======================================== */
+
+.error-state {
+
+    padding:
+        55px 25px;
+
+    text-align: center;
+
+    background: #fff8f6;
+
+    border:
+        1px solid #efdcd7;
+
+    border-radius: 20px;
+}
+
+
+.error-icon {
+
+    width: 45px;
+
+    height: 45px;
+
+    margin:
+        0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f5dfda;
+
+    color: #9b5145;
+
+    font-size: 23px;
+
+    font-weight: 800;
+}
+
+
+.error-state h3 {
+
+    margin-bottom: 7px;
+
+    color: #843f36;
+
+    font-size: 21px;
+}
+
+
+.error-state p {
+
+    margin-bottom: 20px;
+
+    color: #956b64;
+
+    font-size: 14px;
+}
+
+
+/* ========================================
+   PRIMARY BUTTON
+   ======================================== */
+
+.primary-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: none;
+
+    cursor: pointer;
+
+    padding:
+        12px 22px;
+
+    border-radius: 10px;
+
+    background: #087b7c;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.primary-button:hover {
+
+    background: #066b6c;
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(8, 123, 124, 0.18);
+}
+
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes heroEnter {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(18px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes cardEnter {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes feedbackEnter {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(12px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes spin {
+
+    to {
+
+        transform:
+            rotate(360deg);
+    }
+}
+
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 1050px) {
+
+    .navbar {
+
+        padding:
+            0 4%;
+    }
+
+
+    .nav-links {
+
+        gap: 15px;
+    }
+
+
+    .nav-links a {
+
+        font-size: 12px;
+    }
+
+
+    .feedback-container {
+
+        width: 92%;
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    .navbar {
+
+        min-height: auto;
+
+        padding:
+            18px 5%;
+
+        flex-direction: column;
+
+        gap: 16px;
+    }
+
+
+    .nav-links {
+
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 12px 18px;
+    }
+
+
+    .nav-links a.active::after {
+
+        display: none;
+    }
+
+
+    .feedback-hero {
+
+        padding:
+            55px 5%;
+    }
+
+
+    .feedback-stats {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .feedback-container {
+
+        width: 90%;
+
+        padding-top: 40px;
+    }
+
+
+    .section-heading {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .give-feedback-btn {
+
+        width: fit-content;
+    }
+
+
+    .feedback-top {
+
+        flex-direction: column;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .hero-content h1 {
+
+        font-size: 39px;
+    }
+
+
+    .hero-content p {
+
+        font-size: 15px;
+    }
+
+
+    .feedback-card {
+
+        padding:
+            22px 19px;
+    }
+
+
+    .feedback-message {
+
+        font-size: 13px;
+    }
+
+
+    .section-heading h2 {
+
+        font-size: 27px;
+    }
+
+
+    .stat-card {
+
+        padding:
+            24px 22px;
+    }
+
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes heroEnter {
+
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes cardEnter {
+
+    0% {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes feedbackEnter {
+
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+@keyframes starAppear {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    70% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+@keyframes spin {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+@keyframes buttonPulse {
+
+    0% {
+        box-shadow:
+            0 0 0 0
+            rgba(8, 123, 124, 0.20);
+    }
+
+    70% {
+        box-shadow:
+            0 0 0 8px
+            rgba(8, 123, 124, 0);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 0
+            rgba(8, 123, 124, 0);
+    }
+}
+
+
+/* ========================================
+   APPLY ANIMATIONS
+   ======================================== */
+
+.hero-content {
+    animation:
+        heroEnter 0.75s ease-out both;
+}
+
+
+.stat-card:nth-child(1) {
+    animation:
+        cardEnter 0.55s ease-out 0.10s both;
+}
+
+
+.stat-card:nth-child(2) {
+    animation:
+        cardEnter 0.55s ease-out 0.20s both;
+}
+
+
+.stat-card:nth-child(3) {
+    animation:
+        cardEnter 0.55s ease-out 0.30s both;
+}
+
+
+.feedback-card {
+    animation:
+        feedbackEnter 0.55s ease-out both;
+}
+
+
+.rating {
+    animation:
+        starAppear 0.5s ease-out 0.25s both;
+}
+
+
+.loading-spinner {
+    animation:
+        spin 0.8s linear infinite;
+}
+
+
+/* ========================================
+   HOVER ANIMATIONS
+   ======================================== */
+
+.stat-card {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.stat-card:hover {
+
+    transform:
+        translateY(-6px);
+}
+
+
+.feedback-card {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.feedback-card:hover {
+
+    transform:
+        translateY(-5px);
+}
+
+
+.give-feedback-btn,
+.primary-button {
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.give-feedback-btn:hover,
+.primary-button:hover {
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
+    }
+
+}
+
+/* ========================================
+   NAVBAR ANIMATIONS
+======================================== */
+
+/* Navbar entrance */
+.navbar {
+    animation:
+        navbarEnter 0.6s ease-out both;
+}
+
+
+@keyframes navbarEnter {
+
+    from {
+        opacity: 0;
+        transform: translateY(-18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* CIVEXA logo hover */
+.logo {
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease;
+}
+
+
+.logo:hover {
+    transform:
+        translateY(-2px);
+}
+
+
+/* Navigation links */
+.nav-links a {
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.nav-links a:hover {
+    transform:
+        translateY(-2px);
+}
+
+
+/* Active link */
+.nav-links a.active {
+    transition:
+        color 0.25s ease;
+}
+
+
+/* Active underline animation */
+.nav-links a.active::after {
+
+    transform: scaleX(1);
+
+    transform-origin: center;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+/* ========================================
+   NAVBAR RESPONSIVE ANIMATION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .navbar,
+    .logo,
+    .nav-links a,
+    .nav-links a.active::after {
+
+        animation: none !important;
+
+        transition: none !important;
+    }
+
+}

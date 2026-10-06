@@ -1,0 +1,1990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CIVEXA | Analytics</title>
+
+    <link rel="stylesheet" href="analytics.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="admin-navbar">
+
+        <div class="nav-brand">
+            <a href="admin.html">◆ CIVEXA</a>
+            <span>Admin Panel</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="admin.html">Dashboard</a>
+            <a href="manage-issues.html">Manage Issues</a>
+            <a href="departments.html">Departments</a>
+            <a href="analytics.html" class="active">Analytics</a>
+               <a href="feedback.html">
+    Feedback
+</a>
+
+        <a href="contact-messages.html">
+             Contact-messages
+            </a>
+        </div>
+
+        <a href="../login.html" class="admin-profile">
+            <div class="admin-avatar">A</div>
+
+            <div>
+                <strong>Admin</strong>
+                <small>Administrator</small>
+            </div>
+        </a>
+
+    </nav>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="analytics-page">
+
+
+        <!-- ================= HERO ================= -->
+
+        <section class="analytics-hero">
+
+            <div>
+
+                <span class="eyebrow">
+                    ADMIN • ANALYTICS
+                </span>
+
+                <h1>
+                    Understand what the community needs.
+                </h1>
+
+                <p>
+                    Monitor issue trends, resolution performance,
+                    category distribution and department workload
+                    across the CIVEXA system.
+                </p>
+
+            </div>
+
+            <div class="analytics-status">
+
+                <span class="status-dot"></span>
+
+                Prototype Data
+
+            </div>
+
+        </section>
+
+<!-- ================= KEY STATS ================= -->
+
+<section class="analytics-stats">
+
+
+    <div class="analytics-stat-card">
+
+        <div class="stat-icon">
+            #
+        </div>
+
+        <div>
+            <span>Total Issues</span>
+
+            <strong id="totalIssues">
+                0
+            </strong>
+
+            <small class="positive">
+                Current database total
+            </small>
+        </div>
+
+    </div>
+
+
+    <div class="analytics-stat-card">
+
+        <div class="stat-icon">
+            ✓
+        </div>
+
+        <div>
+            <span>Resolution Rate</span>
+
+            <strong id="analyticsResolutionRate">
+                0%
+            </strong>
+
+            <small class="positive">
+                Based on resolved issues
+            </small>
+        </div>
+
+    </div>
+
+
+    <div class="analytics-stat-card">
+
+        <div class="stat-icon">
+            ◷
+        </div>
+
+        <div>
+            <span>Avg. Resolution Time</span>
+
+            <strong id="avgResolutionTime">
+                0d
+            </strong>
+
+            <small class="positive">
+                Based on resolved issues
+            </small>
+        </div>
+
+    </div>
+
+
+    <div class="analytics-stat-card">
+
+        <div class="stat-icon">
+            ♡
+        </div>
+
+        <div>
+            <span>Community Support</span>
+
+            <strong id="communitySupport">
+                0
+            </strong>
+
+            <small class="positive">
+                Total supports
+            </small>
+        </div>
+
+    </div>
+
+
+</section>
+
+
+<!-- ================= MAIN ANALYTICS GRID ================= -->
+
+<section class="analytics-grid">
+
+
+    <!-- ================= ISSUE TREND ================= -->
+
+    <div class="analytics-card trend-card">
+
+        <div class="card-heading">
+
+            <div>
+                <span class="card-label">
+                    ISSUE ACTIVITY
+                </span>
+
+                <h2>
+                    Reports over time
+                </h2>
+            </div>
+
+            <select class="period-select">
+                <option>Last 6 months</option>
+                <option>Last 3 months</option>
+                <option>Last 12 months</option>
+            </select>
+
+        </div>
+
+
+        <div class="trend-chart">
+
+            <div class="y-axis">
+                <span>3</span>
+                <span>2</span>
+                <span>1</span>
+                <span>0</span>
+            </div>
+
+
+            <div class="chart-area">
+
+                <div class="grid-line line-1"></div>
+                <div class="grid-line line-2"></div>
+                <div class="grid-line line-3"></div>
+                <div class="grid-line line-4"></div>
+
+
+            <div class="bars">
+
+    <div class="bar-group">
+
+        <div
+            class="bar"
+            id="trendBar1"
+            style="height: 0%;">
+        </div>
+
+        <span id="trendLabel1">---</span>
+
+    </div>
+
+
+    <div class="bar-group">
+
+        <div
+            class="bar"
+            id="trendBar2"
+            style="height: 0%;">
+        </div>
+
+        <span id="trendLabel2">---</span>
+
+    </div>
+
+
+    <div class="bar-group">
+
+        <div
+            class="bar"
+            id="trendBar3"
+            style="height: 0%;">
+        </div>
+
+        <span id="trendLabel3">---</span>
+
+    </div>
+
+
+    <div class="bar-group">
+
+        <div
+            class="bar"
+            id="trendBar4"
+            style="height: 0%;">
+        </div>
+
+        <span id="trendLabel4">---</span>
+
+    </div>
+
+
+    <div class="bar-group">
+
+        <div
+            class="bar"
+            id="trendBar5"
+            style="height: 0%;">
+        </div>
+
+        <span id="trendLabel5">---</span>
+
+    </div>
+
+
+    <div class="bar-group">
+
+        <div
+            class="bar"
+            id="trendBar6"
+            style="height: 0%;">
+        </div>
+
+        <span id="trendLabel6">---</span>
+
+    </div>
+
+</div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= STATUS BREAKDOWN ================= -->
+
+    <div class="analytics-card status-card">
+
+        <div class="card-heading">
+
+            <div>
+                <span class="card-label">
+                    ISSUE STATUS
+                </span>
+
+                <h2>
+                    Current breakdown
+                </h2>
+            </div>
+
+        </div>
+
+
+        <div class="donut-wrapper">
+
+         <div
+            class="donut-chart"
+            id="statusDonut"    >
+
+                <div class="donut-center">
+
+                    <strong id="statusTotal">
+                        0
+                    </strong>
+
+                    <span>
+                        Total
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="status-legend">
+
+
+            <div>
+
+                <span class="legend-dot pending"></span>
+
+                <span>
+                    Pending
+                </span>
+
+                <strong id="pendingCount">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span class="legend-dot progress"></span>
+
+                <span>
+                    In Progress
+                </span>
+
+                <strong id="inProgressCount">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span class="legend-dot resolved"></span>
+
+                <span>
+                    Resolved
+                </span>
+
+                <strong id="resolvedCount">
+                    0
+                </strong>
+
+            </div>
+
+            <div>
+
+                    <span class="legend-dot verified"></span>
+
+                    <span>
+                        Verified
+                    </span>
+
+                    <strong id="verifiedCount">
+                        0
+                    </strong>
+
+                </div>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+        <!-- ================= CATEGORY + PRIORITY ================= -->
+
+        <section class="analytics-grid second-grid">
+
+
+            <!-- ================= CATEGORY DISTRIBUTION ================= -->
+
+            <!-- ================= CATEGORY DISTRIBUTION ================= -->
+
+<div class="analytics-card category-card">
+
+    <div class="card-heading">
+
+        <div>
+
+            <span class="card-label">
+                CATEGORIES
+            </span>
+
+            <h2>
+                Most reported issues
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="category-list">
+
+
+        <!-- ROADS -->
+
+        <div class="category-row">
+
+            <div class="category-name">
+                <span>Roads</span>
+                <strong id="categoryPercentRoads">0%</strong>
+            </div>
+
+            <div class="category-progress">
+                <span
+                    id="categoryBarRoads"
+                    style="width: 0%;">
+                </span>
+            </div>
+
+            <small id="categoryCountRoads">
+                0 issues
+            </small>
+
+        </div>
+
+
+        <!-- WASTE -->
+
+        <div class="category-row">
+
+            <div class="category-name">
+                <span>Waste</span>
+                <strong id="categoryPercentWaste">0%</strong>
+            </div>
+
+            <div class="category-progress">
+                <span
+                    id="categoryBarWaste"
+                    style="width: 0%;">
+                </span>
+            </div>
+
+            <small id="categoryCountWaste">
+                0 issues
+            </small>
+
+        </div>
+
+
+        <!-- WATER -->
+
+        <div class="category-row">
+
+            <div class="category-name">
+                <span>Water</span>
+                <strong id="categoryPercentWater">0%</strong>
+            </div>
+
+            <div class="category-progress">
+                <span
+                    id="categoryBarWater"
+                    style="width: 0%;">
+                </span>
+            </div>
+
+            <small id="categoryCountWater">
+                0 issues
+            </small>
+
+        </div>
+
+
+        <!-- STREETLIGHTS -->
+
+        <div class="category-row">
+
+            <div class="category-name">
+                <span>Streetlights</span>
+                <strong id="categoryPercentStreetlights">0%</strong>
+            </div>
+
+            <div class="category-progress">
+                <span
+                    id="categoryBarStreetlights"
+                    style="width: 0%;">
+                </span>
+            </div>
+
+            <small id="categoryCountStreetlights">
+                0 issues
+            </small>
+
+        </div>
+
+
+        <!-- DRAINAGE -->
+
+        <div class="category-row">
+
+            <div class="category-name">
+                <span>Drainage</span>
+                <strong id="categoryPercentDrainage">0%</strong>
+            </div>
+
+            <div class="category-progress">
+                <span
+                    id="categoryBarDrainage"
+                    style="width: 0%;">
+                </span>
+            </div>
+
+            <small id="categoryCountDrainage">
+                0 issues
+            </small>
+
+        </div>
+
+
+        <!-- INFRASTRUCTURE -->
+
+        <div class="category-row">
+
+            <div class="category-name">
+                <span>Infrastructure</span>
+                <strong id="categoryPercentInfrastructure">0%</strong>
+            </div>
+
+            <div class="category-progress">
+                <span
+                    id="categoryBarInfrastructure"
+                    style="width: 0%;">
+                </span>
+            </div>
+
+            <small id="categoryCountInfrastructure">
+                0 issues
+            </small>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- ================= PRIORITY ================= -->
+
+<div class="analytics-card priority-card">
+
+    <div class="card-heading">
+
+        <div>
+
+            <span class="card-label">
+                PRIORITY
+            </span>
+
+            <h2>
+                Issue priority levels
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="priority-content">
+
+
+        <!-- ================= HIGH ================= -->
+
+        <div class="priority-item">
+
+            <div class="priority-info">
+
+                <span class="priority-badge high">
+                    High
+                </span>
+
+                <strong id="highPriorityCount">
+                    0
+                </strong>
+
+            </div>
+
+            <div class="priority-bar">
+
+                <span
+                    id="highPriorityBar"
+                    style="width: 0%;">
+                </span>
+
+            </div>
+
+            <small id="highPriorityPercent">
+                0% of all issues
+            </small>
+
+        </div>
+
+
+        <!-- ================= MEDIUM ================= -->
+
+        <div class="priority-item">
+
+            <div class="priority-info">
+
+                <span class="priority-badge medium">
+                    Medium
+                </span>
+
+                <strong id="mediumPriorityCount">
+                    0
+                </strong>
+
+            </div>
+
+            <div class="priority-bar">
+
+                <span
+                    id="mediumPriorityBar"
+                    style="width: 0%;">
+                </span>
+
+            </div>
+
+            <small id="mediumPriorityPercent">
+                0% of all issues
+            </small>
+
+        </div>
+
+
+        <!-- ================= LOW ================= -->
+
+        <div class="priority-item">
+
+            <div class="priority-info">
+
+                <span class="priority-badge low">
+                    Low
+                </span>
+
+                <strong id="lowPriorityCount">
+                    0
+                </strong>
+
+            </div>
+
+            <div class="priority-bar">
+
+                <span
+                    id="lowPriorityBar"
+                    style="width: 0%;">
+                </span>
+
+            </div>
+
+            <small id="lowPriorityPercent">
+                0% of all issues
+            </small>
+
+        </div>
+
+
+    </div>
+
+</div>
+       
+<!-- ================= DEPARTMENT PERFORMANCE ================= -->
+
+<section class="analytics-card department-performance">
+
+    <div class="card-heading">
+
+        <div>
+
+            <span class="card-label">
+                DEPARTMENT PERFORMANCE
+            </span>
+
+            <h2>
+                Resolution performance
+            </h2>
+
+        </div>
+
+        <a href="departments.html" class="view-link">
+            View Departments →
+        </a>
+
+    </div>
+
+
+    <div class="performance-table">
+
+        <div class="performance-header">
+            <span>Department</span>
+            <span>Issues</span>
+            <span>Resolved</span>
+            <span>Performance</span>
+        </div>
+
+
+        <!-- ================= ROAD ================= -->
+
+        <div class="performance-row">
+
+            <div class="department-name">
+                <span class="table-icon">⌁</span>
+                Road Department
+            </div>
+
+            <strong id="departmentIssues1">
+                0
+            </strong>
+
+            <strong id="departmentResolved1">
+                0
+            </strong>
+
+            <div class="performance-value">
+
+                <div class="mini-progress">
+                    <span
+                        id="departmentBar1"
+                        style="width: 0%;">
+                    </span>
+                </div>
+
+                <strong id="departmentPerformance1">
+                    0%
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= WASTE ================= -->
+
+        <div class="performance-row">
+
+            <div class="department-name">
+                <span class="table-icon">♻</span>
+                Waste Management
+            </div>
+
+            <strong id="departmentIssues2">
+                0
+            </strong>
+
+            <strong id="departmentResolved2">
+                0
+            </strong>
+
+            <div class="performance-value">
+
+                <div class="mini-progress">
+                    <span
+                        id="departmentBar2"
+                        style="width: 0%;">
+                    </span>
+                </div>
+
+                <strong id="departmentPerformance2">
+                    0%
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= WATER ================= -->
+
+        <div class="performance-row">
+
+            <div class="department-name">
+                <span class="table-icon">≈</span>
+                Water Department
+            </div>
+
+            <strong id="departmentIssues3">
+                0
+            </strong>
+
+            <strong id="departmentResolved3">
+                0
+            </strong>
+
+            <div class="performance-value">
+
+                <div class="mini-progress">
+                    <span
+                        id="departmentBar3"
+                        style="width: 0%;">
+                    </span>
+                </div>
+
+                <strong id="departmentPerformance3">
+                    0%
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= STREETLIGHT ================= -->
+
+        <div class="performance-row">
+
+            <div class="department-name">
+                <span class="table-icon">✦</span>
+                Streetlight Department
+            </div>
+
+            <strong id="departmentIssues4">
+                0
+            </strong>
+
+            <strong id="departmentResolved4">
+                0
+            </strong>
+
+            <div class="performance-value">
+
+                <div class="mini-progress">
+                    <span
+                        id="departmentBar4"
+                        style="width: 0%;">
+                    </span>
+                </div>
+
+                <strong id="departmentPerformance4">
+                    0%
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= DRAINAGE ================= -->
+
+        <div class="performance-row">
+
+            <div class="department-name">
+                <span class="table-icon">⌇</span>
+                Drainage Department
+            </div>
+
+            <strong id="departmentIssues5">
+                0
+            </strong>
+
+            <strong id="departmentResolved5">
+                0
+            </strong>
+
+            <div class="performance-value">
+
+                <div class="mini-progress">
+                    <span
+                        id="departmentBar5"
+                        style="width: 0%;">
+                    </span>
+                </div>
+
+                <strong id="departmentPerformance5">
+                    0%
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= INFRASTRUCTURE ================= -->
+
+        <div class="performance-row">
+
+            <div class="department-name">
+                <span class="table-icon">⌂</span>
+                Infrastructure Department
+            </div>
+
+            <strong id="departmentIssues6">
+                0
+            </strong>
+
+            <strong id="departmentResolved6">
+                0
+            </strong>
+
+            <div class="performance-value">
+
+                <div class="mini-progress">
+                    <span
+                        id="departmentBar6"
+                        style="width: 0%;">
+                    </span>
+                </div>
+
+                <strong id="departmentPerformance6">
+                    0%
+                </strong>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+        <!-- ================= INSIGHT ================= -->
+
+        <section class="insight-card">
+
+            <div class="insight-icon">
+                ✦
+            </div>
+
+            <div class="insight-content">
+
+                <span class="card-label">
+                    CIVEXA INSIGHT
+                </span>
+
+             <h2 id="insightTitle">
+                Loading insight...
+            </h2>
+
+            <p id="insightDescription">
+                Loading community issue insights...
+            </p>
+
+            </div>
+
+            <a href="manage-issues.html" class="insight-button">
+                Review Issues →
+            </a>
+
+        </section>
+
+
+        <!-- ================= FOOTER CTA ================= -->
+
+        <section class="analytics-cta">
+
+            <div>
+
+                <span class="card-label">
+                    KEEP IMPROVING
+                </span>
+
+                <h2>
+                    Use data to make faster decisions.
+                </h2>
+
+                <p>
+                    Analytics helps CIVEXA administrators understand
+                    where community attention and resources are needed most.
+                </p>
+
+            </div>
+
+            <a href="manage-issues.html" class="cta-button">
+                Manage Issues →
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="admin-footer">
+
+        <div class="footer-brand">
+
+            <strong>◆ CIVEXA</strong>
+
+            <p>
+                Community issue reporting, prioritization
+                and resolution system.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="admin.html">
+                Dashboard
+            </a>
+
+            <a href="manage-issues.html">
+                Manage Issues
+            </a>
+
+            <a href="departments.html">
+                Departments
+            </a>
+
+            <a href="analytics.html">
+                Analytics
+            </a>
+
+            <a href="../index.html">
+                Citizen Website
+            </a>
+
+        </div>
+
+
+        <div class="footer-status">
+
+            <span class="status-dot"></span>
+
+            Prototype System Active
+
+        </div>
+
+    </footer>
+
+<script>
+
+// =========================
+// ADMIN AUTHENTICATION
+// =========================
+
+const savedUser =
+    JSON.parse(
+        localStorage.getItem("civexaUser")
+    );
+
+if (!savedUser) {
+
+    alert("Please login as an administrator.");
+
+    window.location.href =
+        "../login.html";
+
+}
+else if (savedUser.role !== "admin") {
+
+    alert("Access denied. Administrator access required.");
+
+    window.location.href =
+        "../index.html";
+
+}
+
+async function loadAnalyticsStats() {
+
+    try {
+
+        const response = await fetch(
+            "http://localhost:3000/api/issues/admin/analytics"
+        );
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.message);
+        }
+
+
+        // =========================
+        // TOTAL ISSUES
+        // =========================
+            document.getElementById(
+            "totalIssues"
+            ).textContent = data.totalIssues;
+
+
+        // =========================
+        // RESOLUTION RATE
+        // =========================
+
+        document.getElementById(
+            "analyticsResolutionRate"
+        ).textContent =
+            data.resolutionRate + "%";
+        
+        
+
+
+        // =========================
+        // AVERAGE RESOLUTION TIME
+        // =========================
+
+        document.getElementById(
+            "avgResolutionTime"
+        ).textContent =
+            data.averageResolutionTime + "d";
+
+
+        // =========================
+        // COMMUNITY SUPPORT
+        // =========================
+        // Will be connected later
+
+       document.getElementById("communitySupport").textContent =
+    data.communitySupport;
+
+
+    } catch (error) {
+
+        console.error(
+            "Failed to load analytics statistics:",
+            error
+        );
+        
+    }
+
+}
+
+
+
+async function loadStatusBreakdown() {
+
+    try {
+
+        const response = await fetch(
+            "http://localhost:3000/api/issues/admin/analytics"
+        );
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.message);
+        }
+
+
+        // =========================
+        // TOTAL
+        // =========================
+
+        document.getElementById(
+            "statusTotal"
+        ).textContent =
+            data.totalIssues;
+
+
+        // =========================
+        // PENDING
+        // =========================
+
+        document.getElementById(
+            "pendingCount"
+        ).textContent =
+            data.pendingIssues;
+
+
+        // =========================
+        // IN PROGRESS
+        // =========================
+
+        document.getElementById(
+            "inProgressCount"
+        ).textContent =
+            data.inProgressIssues;
+
+
+        // =========================
+        // RESOLVED
+        // =========================
+
+        document.getElementById(
+            "resolvedCount"
+        ).textContent =
+            data.resolvedIssues;
+
+
+        document.getElementById("verifiedCount").textContent =
+    data.verifiedIssues;
+
+
+        // =========================
+        // UPDATE DONUT
+        // =========================
+
+        updateStatusDonut(
+            Number(data.pendingIssues),
+            Number(data.inProgressIssues),
+            Number(data.resolvedIssues),
+             Number(data.verifiedIssues)
+
+        );
+
+
+    } catch (error) {
+
+        console.error(
+            "Failed to load status breakdown:",
+            error
+        );
+
+    }
+
+}
+
+
+
+function updateStatusDonut(
+    pending,
+    inProgress,
+    resolved,
+    verified
+) {
+
+    const total =
+        pending +
+        inProgress +
+        resolved +
+         verified;
+
+
+    const donut =
+        document.getElementById(
+            "statusDonut"
+        );
+
+
+    if (!donut) {
+        return;
+    }
+
+
+    // =========================
+    // NO ISSUES
+    // =========================
+
+    if (total === 0) {
+
+        donut.style.background =
+            "conic-gradient(#e5e7eb 0% 100%)";
+
+        return;
+
+    }
+
+
+    // =========================
+    // CALCULATE PERCENTAGES
+    // =========================
+
+    const pendingPercent =
+        (pending / total) * 100;
+
+
+    const progressPercent =
+        (inProgress / total) * 100;
+
+        const resolvedPercent =
+    (resolved / total) * 100;
+
+const verifiedPercent =
+    (verified / total) * 100;
+
+    const pendingEnd =
+        pendingPercent;
+
+
+    const progressEnd =
+        pendingPercent +
+        progressPercent;
+
+    const resolvedEnd =
+    progressEnd + resolvedPercent;
+
+
+    // =========================
+    // UPDATE DONUT
+    // =========================
+
+    donut.style.background =
+    `conic-gradient(
+        #f59e0b 0% ${pendingEnd}%,
+        #3b82f6 ${pendingEnd}% ${progressEnd}%,
+        #22c55e ${progressEnd}% ${resolvedEnd}%,
+        #8b5cf6 ${resolvedEnd}% 100%
+    )`;
+
+}
+
+
+async function loadCategoryAnalytics() {
+
+    try {
+
+        const response = await fetch(
+            "http://localhost:3000/api/issues/admin/analytics/categories"
+        );
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.message);
+        }
+
+
+        const categories =
+            data.categories;
+
+
+        // Calculate total issues
+        let totalIssues = 0;
+
+        categories.forEach(function(category) {
+
+            totalIssues += Number(
+                category.issue_count
+            );
+
+        });
+
+
+        categories.forEach(function(category) {
+
+            const name =
+                category.category.toLowerCase();
+
+            const count =
+                Number(category.issue_count);
+
+
+            let key = "";
+
+
+            // Match database category
+            // with HTML IDs
+
+            if (name === "roads" || name === "road") {
+
+                key = "Roads";
+
+            }
+
+            else if (name === "waste") {
+
+                key = "Waste";
+
+            }
+
+            else if (name === "water") {
+
+                key = "Water";
+
+            }
+
+            else if (
+                name === "streetlights" ||
+                name === "streetlight"
+            ) {
+
+                key = "Streetlights";
+
+            }
+
+            else if (name === "drainage") {
+
+                key = "Drainage";
+
+            }
+
+            else if (name === "infrastructure") {
+
+                key = "Infrastructure";
+
+            }
+
+
+            if (!key) {
+                return;
+            }
+
+
+            // Calculate percentage
+
+            let percentage = 0;
+
+            if (totalIssues > 0) {
+
+                percentage =
+                    Math.round(
+                        (count / totalIssues) * 100
+                    );
+
+            }
+
+
+            // Percentage text
+
+            document.getElementById(
+                `categoryPercent${key}`
+            ).textContent =
+                percentage + "%";
+
+
+            // Progress bar
+
+            document.getElementById(
+                `categoryBar${key}`
+            ).style.width =
+                percentage + "%";
+
+
+            // Issue count
+
+            document.getElementById(
+                `categoryCount${key}`
+            ).textContent =
+                count +
+                (count === 1
+                    ? " issue"
+                    : " issues");
+
+        });
+
+
+    } catch (error) {
+
+        console.error(
+            "Failed to load category analytics:",
+            error
+        );
+
+    }
+
+}
+
+async function loadPriorityAnalytics() {
+
+    try {
+
+        const response = await fetch(
+            "http://localhost:3000/api/issues/admin/analytics/priority"
+        );
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.message);
+        }
+
+
+        const priorities =
+            data.priorities;
+
+
+        // Calculate total issues
+        let totalIssues = 0;
+
+        priorities.forEach(function(priority) {
+
+            totalIssues += Number(
+                priority.issue_count
+            );
+
+        });
+
+
+        priorities.forEach(function(priority) {
+
+            const name =
+                priority.priority.toLowerCase();
+
+            const count =
+                Number(priority.issue_count);
+
+
+            let countElement;
+            let barElement;
+            let percentElement;
+
+
+            // =========================
+            // HIGH
+            // =========================
+
+            if (name === "high") {
+
+                countElement =
+                    document.getElementById(
+                        "highPriorityCount"
+                    );
+
+                barElement =
+                    document.getElementById(
+                        "highPriorityBar"
+                    );
+
+                percentElement =
+                    document.getElementById(
+                        "highPriorityPercent"
+                    );
+
+            }
+
+
+            // =========================
+            // MEDIUM
+            // =========================
+
+            else if (name === "medium") {
+
+                countElement =
+                    document.getElementById(
+                        "mediumPriorityCount"
+                    );
+
+                barElement =
+                    document.getElementById(
+                        "mediumPriorityBar"
+                    );
+
+                percentElement =
+                    document.getElementById(
+                        "mediumPriorityPercent"
+                    );
+
+            }
+
+
+            // =========================
+            // LOW
+            // =========================
+
+            else if (name === "low") {
+
+                countElement =
+                    document.getElementById(
+                        "lowPriorityCount"
+                    );
+
+                barElement =
+                    document.getElementById(
+                        "lowPriorityBar"
+                    );
+
+                percentElement =
+                    document.getElementById(
+                        "lowPriorityPercent"
+                    );
+
+            }
+
+
+            if (!countElement) {
+                return;
+            }
+
+
+            // Calculate percentage
+
+            let percentage = 0;
+
+            if (totalIssues > 0) {
+
+                percentage =
+                    Math.round(
+                        (count / totalIssues) * 100
+                    );
+
+            }
+
+
+            // Update count
+
+            countElement.textContent =
+                count;
+
+
+            // Update progress bar
+
+            barElement.style.width =
+                percentage + "%";
+
+
+            // Update percentage text
+
+            percentElement.textContent =
+                percentage +
+                "% of all issues";
+
+        });
+
+
+    } catch (error) {
+
+        console.error(
+            "Failed to load priority analytics:",
+            error
+        );
+
+    }
+
+}
+
+async function loadDepartmentPerformance() {
+
+    try {
+
+        const response = await fetch(
+            "http://localhost:3000/api/issues/admin/departments"
+        );
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.message);
+        }
+
+
+        const departments =
+            data.departments;
+
+
+        departments.forEach(function(department) {
+
+            const id =
+                department.department_id;
+
+
+            const active =
+                Number(department.active_issues);
+
+
+            const resolved =
+                Number(department.resolved_issues);
+
+
+            // Total issues handled by department
+            const total =
+                active + resolved;
+
+
+            // Resolution performance
+            let performance = 0;
+
+            if (total > 0) {
+
+                performance =
+                    Math.round(
+                        (resolved / total) * 100
+                    );
+
+            }
+
+
+            // =========================
+            // UPDATE ISSUES
+            // =========================
+
+            document.getElementById(
+                `departmentIssues${id}`
+            ).textContent = total;
+
+
+            // =========================
+            // UPDATE RESOLVED
+            // =========================
+
+            document.getElementById(
+                `departmentResolved${id}`
+            ).textContent = resolved;
+
+
+            // =========================
+            // UPDATE PROGRESS BAR
+            // =========================
+
+            document.getElementById(
+                `departmentBar${id}`
+            ).style.width =
+                performance + "%";
+
+
+            // =========================
+            // UPDATE PERFORMANCE %
+            // =========================
+
+            document.getElementById(
+                `departmentPerformance${id}`
+            ).textContent =
+                performance + "%";
+
+        });
+
+
+    } catch (error) {
+
+        console.error(
+            "Failed to load department performance:",
+            error
+        );
+
+    }
+
+}
+
+
+async function loadTrendAnalytics() {
+
+    try {
+
+        const response = await fetch(
+            "http://localhost:3000/api/issues/admin/analytics/trend"
+        );
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.message);
+        }
+
+
+        const trend = data.trend;
+
+
+        // =========================
+        // PREPARE LAST 6 MONTHS
+        // =========================
+
+        const now = new Date();
+
+        const months = [];
+
+        for (let i = 5; i >= 0; i--) {
+
+            const date = new Date(
+                now.getFullYear(),
+                now.getMonth() - i,
+                1
+            );
+
+            months.push({
+                month: date.getMonth() + 1,
+                year: date.getFullYear(),
+                label: date.toLocaleString(
+                    "en-US",
+                    { month: "short" }
+                ),
+                count: 0
+            });
+
+        }
+
+
+        // =========================
+        // MATCH API DATA
+        // =========================
+
+        trend.forEach(function(item) {
+
+            const apiMonth =
+                Number(item.month_number);
+
+            const apiCount =
+                Number(item.issue_count);
+
+
+            const apiYear =
+    Number(item.year_number);
+
+const matchingMonth =
+    months.find(function(month) {
+
+        return (
+            month.month === apiMonth &&
+            month.year === apiYear
+        );
+
+    });
+
+            if (matchingMonth) {
+
+                matchingMonth.count =
+                    apiCount;
+
+            }
+
+        });
+
+
+        // =========================
+        // FIND MAXIMUM
+        // =========================
+
+        let maxCount = 0;
+
+        months.forEach(function(month) {
+
+            if (month.count > maxCount) {
+
+                maxCount =
+                    month.count;
+
+            }
+
+        });
+
+
+        // Prevent division by zero
+
+        if (maxCount === 0) {
+            maxCount = 1;
+        }
+
+
+        // =========================
+        // UPDATE SIX BARS
+        // =========================
+
+        months.forEach(function(month, index) {
+
+            const bar =
+                document.getElementById(
+                    `trendBar${index + 1}`
+                );
+
+            const label =
+                document.getElementById(
+                    `trendLabel${index + 1}`
+                );
+
+
+            if (!bar || !label) {
+                return;
+            }
+
+
+            // Calculate visual height
+
+            const height =
+                (month.count / maxCount) * 100;
+
+
+            bar.style.height =
+                height + "%";
+
+           
+
+            // Month label
+
+            label.textContent =
+                month.label;
+
+        });
+
+
+    } catch (error) {
+
+        console.error(
+            "Failed to load trend analytics:",
+            error
+        );
+
+    }
+
+}
+
+
+async function loadInsight() {
+    try {
+        const response = await fetch(
+            "http://localhost:3000/api/issues/admin/analytics/categories"
+        );
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.message);
+        }
+
+        const categories = data.categories;
+
+        if (categories.length === 0) {
+            document.getElementById("insightTitle").textContent =
+                "No community issues reported yet.";
+
+            document.getElementById("insightDescription").textContent =
+                "Insights will appear here once citizens start reporting community issues.";
+
+            return;
+        }
+
+        const topCategory = categories[0];
+
+        const categoryName = topCategory.category;
+        const issueCount = Number(topCategory.issue_count);
+
+        document.getElementById("insightTitle").textContent =
+            categoryName + " issues are currently the largest source of community reports.";
+
+        document.getElementById("insightDescription").textContent =
+            categoryName +
+            " has the highest number of reported issues with " +
+            issueCount +
+            (issueCount === 1 ? " report." : " reports.") +
+            " This helps administrators identify which type of community issue requires greater attention.";
+            
+    } catch (error) {
+        console.error("Failed to load insight:", error);
+    }
+}
+
+// =========================
+// LOAD ANALYTICS
+// =========================
+
+loadAnalyticsStats();
+
+loadStatusBreakdown();
+
+loadCategoryAnalytics();
+
+loadPriorityAnalytics();
+
+loadDepartmentPerformance();
+
+loadTrendAnalytics();
+
+loadInsight();
+
+</script>
+
+</body>
+</html>

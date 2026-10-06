@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | CIVEXA</title>
+
+    <link rel="stylesheet" href="login.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+</head>
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+    <a href="index.html" class="logo">
+        <span class="logo-icon">◆</span>
+        CIVEXA
+    </a>
+
+    <a href="index.html" class="back-home">
+        ← Back to Home
+    </a>
+
+</nav>
+
+
+
+<!-- ================= LOGIN PAGE ================= -->
+
+<main class="auth-page">
+
+
+    <!-- LEFT SIDE -->
+
+    <section class="auth-intro">
+
+        <div class="intro-content">
+
+            <div class="hero-badge">
+                <span></span>
+                CIVEXA COMMUNITY
+            </div>
+
+            <h1>
+                Welcome
+                <span>back.</span>
+            </h1>
+
+            <p>
+                Sign in to report community issues, support
+                important problems and track your reports.
+            </p>
+
+
+            <div class="intro-points">
+
+                <div>
+                    <span>✓</span>
+                    Report community problems
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Support local issues
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Track your reports
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- DECORATION -->
+
+        <div class="intro-decoration">
+
+            <div class="ring ring-one"></div>
+            <div class="ring ring-two"></div>
+
+            <div class="decoration-center">
+                <span>◆</span>
+                <small>CIVEXA</small>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- RIGHT SIDE -->
+
+    <section class="auth-card-section">
+
+        <div class="auth-card">
+
+
+            <div class="card-heading">
+
+                <div class="card-icon">
+                    →
+                </div>
+
+                <span class="section-label">
+                    ACCOUNT LOGIN
+                </span>
+
+                <h2>
+                    Sign in to CIVEXA
+                </h2>
+
+                <p>
+                    Enter your account details to continue.
+                </p>
+
+            </div>
+
+
+            <!-- LOGIN FORM -->
+
+            <form id="loginForm">
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <div class="input-box">
+
+                        <span>✉</span>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <div class="label-row">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                         <a href="forgot-password.html">
+                            Forgot password?
+                         </a>
+
+                    </div>
+
+                    <div class="input-box">
+
+                        <span>●</span>
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="show-password"
+                            id="showPassword"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- REMEMBER -->
+
+                <label class="remember">
+
+                    <input
+                        type="checkbox"
+                        id="remember"
+                    >
+
+                    <span class="custom-check"></span>
+
+                    Remember me
+
+                </label>
+
+
+
+                <!-- BUTTON -->
+
+                <button
+                    type="submit"
+                    class="login-button"
+                >
+
+                    Sign In
+
+                    <span>→</span>
+
+                </button>
+
+
+                <!-- DEMO MESSAGE -->
+
+                <div
+                    class="login-message"
+                    id="loginMessage"
+                >
+                </div>
+
+
+            </form>
+
+
+
+            <!-- REGISTER -->
+
+            <div class="auth-switch">
+
+                <span>
+                    Don't have a CIVEXA account?
+                </span>
+
+                <a href="register.html">
+                    Create an account
+                </a>
+
+            </div>
+
+
+            <div class="security-note">
+
+                <span>🔒</span>
+
+                Your account information is kept secure.
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div>
+
+        <strong>
+            <span>◆</span>
+            CIVEXA
+        </strong>
+
+        <p>
+            Report It. Support It. Track It. Fix It.
+        </p>
+
+    </div>
+
+    <span>
+        © 2026 CIVEXA. Web Technology Microproject.
+    </span>
+
+</footer>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+const loginForm =
+    document.getElementById("loginForm");
+
+const loginMessage =
+    document.getElementById("loginMessage");
+
+const password =
+    document.getElementById("password");
+
+const showPassword =
+    document.getElementById("showPassword");
+
+const email =
+    document.getElementById("email");
+
+
+/* SHOW / HIDE PASSWORD */
+
+showPassword.addEventListener("click", function () {
+
+    if (password.type === "password") {
+
+        password.type = "text";
+
+        showPassword.textContent = "Hide";
+
+    } else {
+
+        password.type = "password";
+
+        showPassword.textContent = "Show";
+
+    }
+
+});
+
+/* REAL LOGIN */
+
+loginForm.addEventListener("submit", async function(event) {
+
+    event.preventDefault();
+
+    const data = {
+
+        email: email.value.trim(),
+        password: password.value
+
+    };
+
+    try {
+
+        const response = await fetch(
+            "http://localhost:3000/api/auth/login",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify(data)
+            }
+        );
+
+        const result = await response.json();
+
+        if (response.ok) {
+
+            /* =========================
+               SAVE LOGGED-IN USER
+            ========================= */
+
+            localStorage.setItem(
+                "civexaUser",
+                JSON.stringify(result.user)
+            );
+
+            loginMessage.textContent =
+                "Login successful!";
+
+            loginMessage.classList.add("show");
+
+            console.log(
+                "Logged in user:",
+                result.user
+            );
+
+
+            /* =========================
+               ROLE-BASED REDIRECT
+            ========================= */
+
+            setTimeout(() => {
+
+                if (result.user.role === "admin") {
+
+                    window.location.href =
+                        "admin/admin.html";
+
+                } else {
+
+                    window.location.href =
+                        "dashboard.html";
+
+                }
+
+            }, 500);
+
+        } else {
+
+            loginMessage.textContent =
+                result.message ||
+                "Invalid email or password.";
+
+            loginMessage.classList.add("show");
+
+        }
+
+    } catch (error) {
+
+        console.error(
+            "Login error:",
+            error
+        );
+
+        alert(
+            "Unable to connect to CIVEXA server. Make sure the backend is running."
+        );
+
+    }
+
+});
+
+</script>
+
+
+</body>
+</html>

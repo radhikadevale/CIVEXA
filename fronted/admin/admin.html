@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | CIVEXA</title>
+
+    <!-- Main CIVEXA styles -->
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- Admin Dashboard styles -->
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="admin-navbar">
+
+        <div class="admin-logo">
+            <a href="../index.html">CIVEXA</a>
+        </div>
+
+        <nav class="admin-nav">
+
+            <a href="admin.html" class="active">
+                Dashboard
+            </a>
+
+            <a href="manage-issues.html">
+                Manage Issues
+            </a>
+
+            <a href="departments.html">
+                Departments
+            </a>
+
+            <a href="analytics.html">
+                Analytics
+            </a>
+             
+    <a href="feedback.html">
+    Feedback
+</a>
+
+        <a href="contact-messages.html">
+             Contact-messages
+            </a>
+
+        </nav>
+
+        <div class="admin-account">
+
+    <span class="admin-role">
+        ADMIN
+    </span>
+
+    <button
+        type="button"
+        class="admin-avatar"
+        id="adminProfileButton"
+    >
+        A
+    </button>
+
+    <div
+        class="admin-profile-popup"
+        id="adminProfilePopup"
+    >
+
+        <div class="admin-profile-avatar">
+            A
+        </div>
+
+        <h3 id="adminProfileName">
+            CIVEXA Admin
+        </h3>
+
+        <p id="adminProfileEmail">
+            civexa.admin@example.com
+        </p>
+
+        <div class="admin-profile-info">
+
+            <div>
+                <span>Role</span>
+                <strong>Administrator</strong>
+            </div>
+
+            <div>
+                <span>Phone</span>
+                <strong id="adminProfilePhone">
+                    Not available
+                </strong>
+            </div>
+
+        </div>
+
+        <button
+            type="button"
+            class="admin-logout-button"
+            id="adminLogoutButton"
+        >
+            Logout
+        </button>
+
+    </div>
+
+</div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="admin-main">
+
+
+        <!-- ================= WELCOME ================= -->
+
+        <section class="admin-welcome">
+
+            <div>
+
+                <span class="admin-eyebrow">
+                    CIVEXA ADMIN CONTROL CENTER
+                </span>
+
+                <h1>
+                    Welcome back, Admin.
+                </h1>
+
+                <p>
+                    Monitor community issues, manage reports,
+                    coordinate departments and track resolution
+                    progress from one place.
+                </p>
+
+            </div>
+
+            <div class="admin-date-card">
+
+                <span>
+                    SYSTEM STATUS
+                </span>
+
+                <strong>
+                    ● Prototype Active
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= STATISTICS ================= -->
+
+        <section class="admin-statistics">
+
+            <div class="admin-stat-card">
+
+                <div class="stat-icon">
+                    #
+                </div>
+
+                <span>
+                    TOTAL ISSUES
+                </span>
+
+                <h2>
+                    1,248
+                </h2>
+
+                <p>
+                    All reported issues
+                </p>
+
+            </div>
+
+
+            <div class="admin-stat-card pending">
+
+                <div class="stat-icon">
+                    !
+                </div>
+
+                <span>
+                    PENDING
+                </span>
+
+                <h2>
+                    126
+                </h2>
+
+                <p>
+                    Awaiting verification
+                </p>
+
+            </div>
+
+
+            <div class="admin-stat-card progress">
+
+                <div class="stat-icon">
+                    →
+                </div>
+
+                <span>
+                    IN PROGRESS
+                </span>
+
+                <h2>
+                    248
+                </h2>
+
+                <p>
+                    Currently being handled
+                </p>
+
+            </div>
+
+
+            <div class="admin-stat-card resolved">
+
+                <div class="stat-icon">
+                    ✓
+                </div>
+
+                <span>
+                    RESOLVED
+                </span>
+
+                <h2>
+                    874
+                </h2>
+
+                <p>
+                    Successfully resolved
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= DASHBOARD GRID ================= -->
+
+        <section class="admin-dashboard-grid">
+
+
+            <!-- ================= RECENT ISSUES ================= -->
+
+            <div class="admin-panel recent-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+
+                        <span class="panel-label">
+                            RECENT ACTIVITY
+                        </span>
+
+                        <h2>
+                            Recent Issues
+                        </h2>
+
+                    </div>
+
+                    <a href="manage-issues.html">
+                        View All →
+                    </a>
+
+                </div>
+
+
+                <div class="admin-issue-list" id="adminRecentIssues">
+
+                    <!-- Real issues will be loaded from MySQL -->
+
+                </div>
+
+              
+            </div>  
+
+
+            <!-- ================= QUICK ACTIONS ================= -->
+
+            <div class="admin-panel quick-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+
+                        <span class="panel-label">
+                            ADMIN TOOLS
+                        </span>
+
+                        <h2>
+                            Quick Actions
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-actions">
+
+                    <a href="manage-issues.html"
+                       class="admin-action">
+
+                        <div class="action-icon">
+                            ✓
+                        </div>
+
+                        <div>
+                            <strong>
+                                Manage Issues
+                            </strong>
+
+                            <span>
+                                Verify and update reports
+                            </span>
+                        </div>
+
+                        <b>→</b>
+
+                    </a>
+
+
+                    <a href="departments.html"
+                       class="admin-action">
+
+                        <div class="action-icon">
+                            ▣
+                        </div>
+
+                        <div>
+                            <strong>
+                                Departments
+                            </strong>
+
+                            <span>
+                                Manage responsible teams
+                            </span>
+                        </div>
+
+                        <b>→</b>
+
+                    </a>
+
+
+                    <a href="analytics.html"
+                       class="admin-action">
+
+                        <div class="action-icon">
+                            ↗
+                        </div>
+
+                        <div>
+                            <strong>
+                                View Analytics
+                            </strong>
+
+                            <span>
+                                Analyze community data
+                            </span>
+                        </div>
+
+                        <b>→</b>
+
+      
+</a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PRIORITY + DEPARTMENTS ================= -->
+
+<section class="admin-bottom-grid">
+
+
+    <!-- ================= PRIORITY ISSUES ================= -->
+
+    <div class="admin-panel">
+
+        <div class="panel-heading">
+
+            <div>
+
+                <span class="panel-label">
+                    ATTENTION REQUIRED
+                </span>
+
+                <h2>
+                    High Priority Issues
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="priority-list" id="highPriorityList">
+
+            <!-- High priority issues will be loaded from MySQL -->
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= DEPARTMENT WORKLOAD ================= -->
+
+    <div class="admin-panel">
+
+        <div class="panel-heading">
+
+            <div>
+
+                <span class="panel-label">
+                    OPERATIONS
+                </span>
+
+                <h2>
+                    Department Workload
+                </h2>
+
+            </div>
+
+            <a href="departments.html">
+                Manage →
+            </a>
+
+        </div>
+
+
+        <div class="department-list" id="departmentWorkloadList">
+
+            <!-- Department workload will be loaded from MySQL -->
+
+        </div>
+
+    </div>
+
+
+</section>
+
+        <!-- ================= ADMIN CTA ================= -->
+
+        <section class="admin-cta">
+
+            <div>
+
+                <span>
+                    CIVEXA OPERATIONS
+                </span>
+
+                <h2>
+                    Keep the community moving forward.
+                </h2>
+
+                <p>
+                    Review pending reports, coordinate departments
+                    and help move verified issues toward resolution.
+                </p>
+
+            </div>
+
+            <a href="manage-issues.html">
+                Manage Issues →
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="admin-footer">
+
+        <div>
+
+            <strong>
+                ◆ CIVEXA
+            </strong>
+
+            <p>
+                Admin Control Center
+            </p>
+
+        </div>
+
+        <div>
+
+            <a href="../index.html">
+                Citizen Website
+            </a>
+
+            <span>
+                Prototype system active
+            </span>
+
+        </div>
+
+    </footer>
+
+<script>
+
+async function loadAdminStats() {
+
+    try {
+
+        const response = await fetch(
+            "http://localhost:3000/api/issues/admin/stats"
+        );
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.message);
+        }
+
+
+        // =========================
+        // UPDATE ADMIN STATISTICS
+        // =========================
+
+        const statCards =
+            document.querySelectorAll(
+                ".admin-stat-card h2"
+            );
+
+
+        statCards[0].textContent =
+            data.total;
+
+        statCards[1].textContent =
+            data.pending;
+
+        statCards[2].textContent =
+            data.in_progress;
+
+        statCards[3].textContent =
+            data.resolved;
+
+
+    } catch (error) {
+
+        console.error(
+            "Failed to load admin statistics:",
+            error
+        );
+
+    }
+
+}
+
+
+// =========================
+// LOAD RECENT ISSUES
+// =========================
+
+async function loadRecentIssues() {
+
+    const container =
+        document.getElementById(
+            "adminRecentIssues"
+        );
+
+
+    if (!container) {
+        return;
+    }
+
+
+    try {
+
+        const response = await fetch(
+            "http://localhost:3000/api/issues/admin/recent"
+        );
+
+
+        const data = await response.json();
+
+
+        if (!response.ok) {
+            throw new Error(data.message);
+        }
+
+
+        // Clear old content
+        container.innerHTML = "";
+
+
+        // =========================
+        // NO ISSUES
+        // =========================
+
+        if (data.issues.length === 0) {
+
+            container.innerHTML =
+                "<p>No issues reported yet.</p>";
+
+            return;
+
+        }
+
+
+        // =========================
+        // DISPLAY REAL ISSUES
+        // =========================
+
+        data.issues.forEach(function (issue) {
+
+
+            // Status dot
+            let statusClass = "pending-dot";
+
+
+            if (issue.status === "in-progress") {
+
+                statusClass = "progress-dot";
+
+            }
+            else if (issue.status === "verified") {
+
+                statusClass = "verified-dot";
+
+            }
+            else if (issue.status === "resolved") {
+
+                statusClass = "verified-dot";
+
+            }
+
+
+            // Status text
+            let statusText =
+                issue.status;
+
+
+            if (issue.status === "in-progress") {
+
+                statusText = "In Progress";
+
+            }
+            else if (issue.status === "pending") {
+
+                statusText = "Pending";
+
+            }
+            else if (issue.status === "verified") {
+
+                statusText = "Verified";
+
+            }
+            else if (issue.status === "resolved") {
+
+                statusText = "Resolved";
+
+            }
+
+
+            // Priority text
+            let priorityText =
+                issue.priority
+                    ? issue.priority
+                        .charAt(0)
+                        .toUpperCase()
+                        +
+                        issue.priority.slice(1)
+                    : "Medium";
+
+
+            // Create issue element
+            const issueElement =
+                document.createElement("div");
+
+
+            issueElement.className =
+                "admin-issue";
+
+
+            issueElement.innerHTML = `
+
+                <div class="issue-status-dot ${statusClass}">
+                </div>
+
+
+                <div class="issue-content">
+
+                    <h3>
+                        ${issue.title}
+                    </h3>
+
+
+                    <p>
+                        ${issue.category}
+                        •
+                        ${issue.location}
+                        ${issue.city
+                            ? ", " + issue.city
+                            : ""}
+                    </p>
+
+                </div>
+
+
+                <span class="issue-priority ${issue.priority}">
+                    ${priorityText}
+                </span>
+
+
+                <span class="issue-status">
+                    ${statusText}
+                </span>
+
+            `;
+
+
+            container.appendChild(
+                issueElement
+            );
+
+        });
+
+    }
+    catch (error) {
+
+        console.error(
+            "Failed to load recent issues:",
+            error
+        );
+
+
+        container.innerHTML =
+            "<p>Unable to load recent issues.</p>";
+
+    }
+
+}
+
+
+// =========================
+// LOAD ADMIN DASHBOARD
+// =========================
+
+loadAdminStats();
+
+loadRecentIssues();
+
+// =========================
+// LOAD HIGH PRIORITY ISSUES
+// =========================
+
+async function loadHighPriorityIssues() {
+
+    const container =
+        document.getElementById("highPriorityList");
+
+    if (!container) {
+        return;
+    }
+
+    try {
+
+        const response = await fetch(
+            "http://localhost:3000/api/issues/admin/high-priority"
+        );
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.message);
+        }
+
+        container.innerHTML = "";
+
+        if (data.issues.length === 0) {
+
+            container.innerHTML =
+                "<p>No high priority issues.</p>";
+
+            return;
+        }
+
+        data.issues.forEach(function (issue) {
+
+            const item =
+                document.createElement("div");
+
+            item.className = "priority-item";
+
+            item.innerHTML = `
+
+                <div>
+
+                    <strong>
+                        ${issue.title}
+                    </strong>
+
+                    <span>
+                        ${issue.location}
+                        •
+                        ${issue.category}
+                    </span>
+
+                </div>
+
+                <b>
+                    HIGH
+                </b>
+
+            `;
+
+            container.appendChild(item);
+
+        });
+
+    } catch (error) {
+
+        console.error(
+            "Failed to load high priority issues:",
+            error
+        );
+
+        container.innerHTML =
+            "<p>Unable to load high priority issues.</p>";
+
+    }
+
+}
+
+loadHighPriorityIssues();
+
+// =========================
+// LOAD DEPARTMENT WORKLOAD
+// =========================
+
+async function loadDepartmentWorkload() {
+
+    const container =
+        document.getElementById("departmentWorkloadList");
+
+    if (!container) {
+        return;
+    }
+
+    try {
+
+       const response = await fetch(
+          "http://localhost:3000/api/issues/admin/departments"
+       );
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.message);
+        }
+
+        container.innerHTML = "";
+
+        if (data.departments.length === 0) {
+
+            container.innerHTML =
+                "<p>No departments found.</p>";
+
+            return;
+        }
+
+    data.departments.forEach(function (department) {
+
+    const item =
+        document.createElement("div");
+
+    item.className =
+        "department-row";
+
+    const activeIssues =
+        Number(department.active_issues);
+
+    const totalActiveIssues =
+        data.departments.reduce(function (total, dept) {
+            return total + Number(dept.active_issues);
+        }, 0);
+
+    let workload = 0;
+
+    if (totalActiveIssues > 0) {
+        workload =
+            Math.round(
+                (activeIssues / totalActiveIssues) * 100
+            );
+    }
+
+    item.innerHTML = `
+
+        <div class="department-info">
+
+            <strong>
+                ${department.department_name}
+            </strong>
+
+            <span>
+                ${activeIssues} active issues
+            </span>
+
+        </div>
+
+        <div class="workload">
+
+            <div class="workload-bar">
+
+                <span style="width: ${workload}%;"></span>
+
+            </div>
+
+            <b>
+                ${workload}%
+            </b>
+
+        </div>
+
+    `;
+
+    container.appendChild(item);
+
+});
+
+    } catch (error) {
+
+        console.error(
+            "Failed to load department workload:",
+            error
+        );
+
+        container.innerHTML =
+            "<p>Unable to load department workload.</p>";
+
+    }
+
+}
+
+loadDepartmentWorkload();
+
+
+/* =========================
+   ADMIN PROFILE POPUP
+========================= */
+
+const adminProfileButton =
+    document.getElementById(
+        "adminProfileButton"
+    );
+
+const adminProfilePopup =
+    document.getElementById(
+        "adminProfilePopup"
+    );
+
+const adminLogoutButton =
+    document.getElementById(
+        "adminLogoutButton"
+    );
+
+const savedUser =
+    JSON.parse(
+        localStorage.getItem("civexaUser")
+    );
+
+// =========================
+// ADMIN AUTHENTICATION
+// =========================
+
+if (!savedUser) {
+
+    alert("Please login as an administrator.");
+
+    window.location.href =
+        "../login.html";
+
+}
+else if (savedUser.role !== "admin") {
+
+    alert("Access denied. Administrator access required.");
+
+    window.location.href =
+        "../index.html";
+
+}
+
+
+/* LOAD ADMIN INFORMATION */
+
+if (savedUser) {
+
+    document.getElementById(
+        "adminProfileName"
+    ).textContent =
+        savedUser.full_name ||
+        "CIVEXA Admin";
+
+    document.getElementById(
+        "adminProfileEmail"
+    ).textContent =
+        savedUser.email ||
+        "Email not available";
+
+    document.getElementById(
+        "adminProfilePhone"
+    ).textContent =
+        savedUser.phone ||
+        "Not available";
+}
+
+
+/* OPEN / CLOSE PROFILE */
+
+adminProfileButton.addEventListener(
+    "click",
+    function(event) {
+
+        event.stopPropagation();
+
+        adminProfilePopup.classList.toggle(
+            "show"
+        );
+
+    }
+);
+
+
+/* CLOSE WHEN CLICKING OUTSIDE */
+
+document.addEventListener(
+    "click",
+    function(event) {
+
+        if (
+            !adminProfilePopup.contains(event.target) &&
+            !adminProfileButton.contains(event.target)
+        ) {
+
+            adminProfilePopup.classList.remove(
+                "show"
+            );
+
+        }
+
+    }
+);
+
+
+/* LOGOUT */
+
+adminLogoutButton.addEventListener(
+    "click",
+    function() {
+
+        localStorage.removeItem(
+            "civexaUser"
+        );
+
+        window.location.href =
+            "../login.html";
+
+    }
+);
+
+loadDepartmentWorkload();
+
+
+
+</script>
+
+</body>
+</html>

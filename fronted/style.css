@@ -1,0 +1,5908 @@
+/* =====================================================
+   CIVEXA
+   GLOBAL STYLES
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+
+    background: #fbfaf5;
+
+    color: #102c38;
+
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+
+    height: 112px;
+
+    padding: 0 8.5%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background: #fffefa;
+
+    border-bottom: 1px solid #e5e7e3;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+}
+
+
+/* LOGO */
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    text-decoration: none;
+
+    color: #102c38;
+}
+
+
+.logo-icon {
+
+    width: 40px;
+
+    height: 40px;
+
+    border-radius: 50%;
+
+    background: #087b7c;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 17px;
+}
+
+
+.logo-text {
+
+    font-size: 21px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+}
+
+
+/* NAV LINKS */
+
+.nav-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 4px;
+}
+
+
+.nav-links a {
+
+    text-decoration: none;
+
+    color: #617078;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    padding: 13px 15px;
+
+    border-radius: 14px;
+
+    transition: all 0.25s ease;
+}
+
+
+.nav-links a:hover {
+
+    color: #087b7c;
+
+    background: #edf7f6;
+}
+
+
+.nav-links a.active {
+
+    color: #087b7c;
+
+    background: #e2f3f2;
+}
+
+
+/* NAV ACTIONS */
+
+.nav-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 21px;
+}
+
+
+.login-btn {
+
+    border: none;
+
+    background: transparent;
+
+    color: #243b44;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+
+.register-btn {
+
+    border: none;
+
+    background: #087b7c;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    padding: 13px 19px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+
+.register-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 7px 18px rgba(8, 123, 124, 0.18);
+}
+
+
+/* MOBILE MENU */
+
+.menu-btn {
+
+    display: none;
+
+    border: none;
+
+    background: transparent;
+
+    color: #102c38;
+
+    font-size: 26px;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+
+    min-height: 660px;
+
+    padding: 105px 8.5% 95px;
+
+    display: grid;
+
+    grid-template-columns: 0.98fr 1.02fr;
+
+    align-items: center;
+
+    gap: 65px;
+
+    background:
+
+        radial-gradient(
+            circle at 8% 15%,
+            rgba(210, 233, 229, 0.85),
+            transparent 39%
+        ),
+
+        radial-gradient(
+            circle at 95% 16%,
+            rgba(255, 238, 207, 0.85),
+            transparent 38%
+        ),
+
+        #fbfaf5;
+}
+
+
+/* HERO CONTENT */
+
+.hero-content {
+
+    max-width: 650px;
+}
+
+
+.hero-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    background: white;
+
+    border: 1px solid #dce7e4;
+
+    border-radius: 30px;
+
+    padding: 8px 15px;
+
+    color: #087b7c;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    margin-bottom: 30px;
+
+    box-shadow: 0 4px 15px rgba(20, 60, 60, 0.035);
+}
+
+
+.badge-icon {
+
+    font-size: 17px;
+}
+
+
+/* MAIN HEADING */
+
+.hero h1 {
+
+    color: #102c38;
+
+    font-size: clamp(48px, 5vw, 66px);
+
+    line-height: 1.06;
+
+    letter-spacing: -2.8px;
+
+    font-weight: 800;
+
+    margin-bottom: 29px;
+}
+
+
+/* DESCRIPTION */
+
+.hero-description {
+
+    max-width: 620px;
+
+    color: #61737a;
+
+    font-size: 17px;
+
+    line-height: 1.75;
+
+    margin-bottom: 34px;
+}
+
+
+/* BUTTONS */
+
+.hero-buttons {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+}
+
+
+.primary-btn,
+.secondary-btn {
+
+    height: 51px;
+
+    padding: 0 25px;
+
+    border-radius: 12px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+
+.primary-btn {
+
+    border: none;
+
+    background: #087b7c;
+
+    color: white;
+
+    box-shadow:
+        0 8px 20px rgba(8, 123, 124, 0.16);
+}
+
+
+.primary-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(8, 123, 124, 0.22);
+}
+
+
+.arrow {
+
+    margin-left: 12px;
+
+    font-size: 18px;
+}
+
+
+.secondary-btn {
+
+    border: 1px solid #d8e1df;
+
+    background: white;
+
+    color: #193741;
+}
+
+
+.secondary-btn:hover {
+
+    background: #f1f8f7;
+
+    border-color: #c9ddda;
+}
+
+
+/* =====================================================
+   HERO ILLUSTRATION CARD
+===================================================== */
+
+.hero-visual {
+
+    width: 100%;
+}
+
+
+.city-card {
+
+    width: 100%;
+
+    background: white;
+
+    border: 1px solid #dbe4e1;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 20px 55px rgba(21, 56, 61, 0.09);
+}
+
+
+/* =====================================================
+   CITY SCENE
+===================================================== */
+
+.city-scene {
+
+    height: 365px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #f8f7ee 0%,
+            #edf4e9 64%,
+            #d9e7d5 100%
+        );
+}
+
+
+/* CLOUDS */
+
+.sky-cloud {
+
+    position: absolute;
+
+    width: 80px;
+
+    height: 18px;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.7);
+}
+
+
+.cloud-one {
+
+    top: 40px;
+
+    left: 23%;
+}
+
+
+.cloud-two {
+
+    top: 75px;
+
+    right: 18%;
+
+    width: 60px;
+}
+
+
+/* SUN */
+
+.sun {
+
+    position: absolute;
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: #f6b431;
+
+    top: 33px;
+
+    right: 16%;
+}
+
+
+/* =====================================================
+   BUILDINGS
+===================================================== */
+
+.buildings {
+
+    position: absolute;
+
+    bottom: 90px;
+
+    left: 29%;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 8px;
+}
+
+
+.building {
+
+    width: 42px;
+
+    background: #8eafa8;
+
+    border-radius: 3px 3px 0 0;
+
+    padding: 10px 7px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+
+.building span {
+
+    width: 9px;
+
+    height: 8px;
+
+    background: #dce7df;
+
+    display: block;
+
+    margin: auto;
+}
+
+
+.building-one {
+
+    height: 110px;
+}
+
+
+.building-two {
+
+    height: 145px;
+
+    background: #769e99;
+}
+
+
+.building-three {
+
+    height: 85px;
+
+    background: #a5beb8;
+}
+
+
+.building-four {
+
+    height: 125px;
+
+    background: #89aaa4;
+}
+
+
+/* =====================================================
+   ROAD
+===================================================== */
+
+.road {
+
+    position: absolute;
+
+    width: 62%;
+
+    height: 155px;
+
+    bottom: -72px;
+
+    left: 20%;
+
+    background: #9ca9a5;
+
+    border-radius: 50%;
+
+    transform: rotate(-5deg);
+}
+
+
+.road-line {
+
+    position: absolute;
+
+    width: 80%;
+
+    height: 5px;
+
+    border-top: 4px dashed #e8e5d7;
+
+    top: 65px;
+
+    left: 10%;
+}
+
+
+/* =====================================================
+   HOUSE
+===================================================== */
+
+.house {
+
+    position: absolute;
+
+    bottom: 85px;
+
+    left: 19%;
+
+    width: 95px;
+}
+
+
+.roof {
+
+    width: 0;
+
+    height: 0;
+
+    border-left: 55px solid transparent;
+
+    border-right: 55px solid transparent;
+
+    border-bottom: 48px solid #236d70;
+
+    position: relative;
+
+    left: -7px;
+}
+
+
+.house-body {
+
+    height: 75px;
+
+    background: #f0b65b;
+
+    border: 3px solid #376b6b;
+
+    position: relative;
+}
+
+
+.window {
+
+    position: absolute;
+
+    width: 18px;
+
+    height: 18px;
+
+    background: #d8eeee;
+
+    border: 2px solid #376b6b;
+
+    top: 17px;
+
+    left: 15px;
+}
+
+
+.second-window {
+
+    left: 55px;
+}
+
+
+.door {
+
+    position: absolute;
+
+    width: 19px;
+
+    height: 34px;
+
+    background: #376b6b;
+
+    bottom: 0;
+
+    left: 36px;
+}
+
+
+/* =====================================================
+   TREES
+===================================================== */
+
+.tree {
+
+    position: absolute;
+
+    font-size: 52px;
+
+    z-index: 4;
+}
+
+
+.tree-one {
+
+    bottom: 58px;
+
+    left: 3%;
+}
+
+
+.tree-two {
+
+    bottom: 57px;
+
+    right: 3%;
+}
+
+
+.tree-three {
+
+    bottom: 78px;
+
+    right: 28%;
+
+    font-size: 37px;
+}
+
+
+/* =====================================================
+   STREETLIGHT
+===================================================== */
+
+.street-light {
+
+    position: absolute;
+
+    left: 12%;
+
+    bottom: 84px;
+
+    width: 50px;
+
+    height: 150px;
+
+    z-index: 6;
+}
+
+
+.light-pole {
+
+    width: 6px;
+
+    height: 130px;
+
+    background: #173d42;
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 22px;
+
+    border-radius: 5px;
+}
+
+
+.light-head {
+
+    position: absolute;
+
+    top: 2px;
+
+    left: 3px;
+
+    width: 45px;
+
+    height: 7px;
+
+    background: #173d42;
+
+    border-radius: 10px;
+}
+
+
+.light-glow {
+
+    position: absolute;
+
+    top: 8px;
+
+    left: 22px;
+
+    width: 25px;
+
+    height: 25px;
+
+    border-radius: 50%;
+
+    background: #f5bd46;
+
+    box-shadow: 0 0 25px rgba(245, 189, 70, 0.5);
+}
+
+
+/* =====================================================
+   ISSUE MARKERS
+===================================================== */
+
+.issue-marker {
+
+    position: absolute;
+
+    background: white;
+
+    width: 75px;
+
+    min-height: 75px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-shadow:
+        0 7px 20px rgba(0,0,0,0.11);
+
+    z-index: 10;
+
+    text-align: center;
+}
+
+
+.marker-icon {
+
+    font-size: 21px;
+
+    margin-bottom: 1px;
+}
+
+
+.issue-marker span {
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    color: #21424a;
+}
+
+
+.issue-marker small {
+
+    font-size: 7px;
+
+    color: #6e7d82;
+}
+
+
+.marker-light {
+
+    top: 42px;
+
+    left: 39%;
+}
+
+
+.marker-road {
+
+    top: 55px;
+
+    left: 61%;
+}
+
+
+.marker-garbage {
+
+    top: 38px;
+
+    right: 5%;
+}
+
+
+/* =====================================================
+   PEOPLE
+===================================================== */
+
+.person {
+
+    position: absolute;
+
+    font-size: 48px;
+
+    z-index: 8;
+}
+
+
+.person-one {
+
+    left: 24%;
+
+    bottom: 72px;
+}
+
+
+.person-two {
+
+    right: 14%;
+
+    bottom: 68px;
+}
+
+
+/* =====================================================
+   MINI REPORT CARD
+===================================================== */
+
+.mini-report-card {
+
+    position: absolute;
+
+    left: 23%;
+
+    bottom: 42px;
+
+    width: 112px;
+
+    padding: 9px;
+
+    background: white;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 7px 20px rgba(0,0,0,0.13);
+
+    z-index: 15;
+}
+
+
+.mini-title {
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    color: #173b43;
+
+    margin-bottom: 7px;
+}
+
+
+.mini-categories {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 12px;
+
+    margin-bottom: 7px;
+}
+
+
+.mini-location {
+
+    font-size: 7px;
+
+    color: #738086;
+
+    margin-bottom: 7px;
+}
+
+
+.mini-report-card button {
+
+    width: 100%;
+
+    border: none;
+
+    background: #087b7c;
+
+    color: white;
+
+    border-radius: 4px;
+
+    height: 18px;
+
+    font-size: 7px;
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   ILLUSTRATION FOOTER
+===================================================== */
+
+.city-card-footer {
+
+    min-height: 82px;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    border-top: 1px solid #e3e9e6;
+}
+
+
+.footer-feature {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 14px;
+
+    border-right: 1px solid #e5eae8;
+}
+
+
+.footer-feature:last-child {
+
+    border-right: none;
+}
+
+
+.feature-icon {
+
+    min-width: 30px;
+
+    height: 30px;
+
+    border-radius: 50%;
+
+    background: #e4f3f1;
+
+    color: #087b7c;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+.footer-feature strong {
+
+    display: block;
+
+    color: #087b7c;
+
+    font-size: 9px;
+
+    margin-bottom: 4px;
+}
+
+
+.footer-feature small {
+
+    display: block;
+
+    color: #77858a;
+
+    font-size: 7px;
+
+    line-height: 1.4;
+}
+
+
+/* =====================================================
+   STATISTICS
+===================================================== */
+
+.statistics {
+
+    padding: 62px 8.5% 80px;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 23px;
+
+    background: #fbfaf5;
+
+    border-top: 1px solid #e7e7e1;
+}
+
+
+.stat-card {
+
+    min-height: 125px;
+
+    background: white;
+
+    border: 1px solid #dce5e2;
+
+    border-radius: 18px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    box-shadow:
+        0 5px 20px rgba(25, 55, 60, 0.025);
+
+    transition: all 0.25s ease;
+}
+
+
+.stat-card:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 30px rgba(25, 55, 60, 0.07);
+}
+
+
+.stat-card h2 {
+
+    color: #087b7c;
+
+    font-size: 31px;
+
+    font-weight: 700;
+
+    margin-bottom: 7px;
+
+    letter-spacing: -1px;
+}
+
+
+.stat-card p {
+
+    color: #6e7e84;
+
+    font-size: 14px;
+
+    font-weight: 400;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .navbar {
+
+        padding: 0 5%;
+    }
+
+    .nav-links {
+
+        gap: 0;
+    }
+
+    .nav-links a {
+
+        padding: 11px 8px;
+
+        font-size: 13px;
+    }
+
+    .hero {
+
+        padding-left: 5%;
+
+        padding-right: 5%;
+
+        gap: 35px;
+    }
+
+    .statistics {
+
+        padding-left: 5%;
+
+        padding-right: 5%;
+    }
+}
+
+
+/* TABLET */
+
+@media (max-width: 850px) {
+
+    .navbar {
+
+        height: 80px;
+    }
+
+
+    .nav-links,
+    .nav-actions {
+
+        display: none;
+    }
+
+
+    .menu-btn {
+
+        display: block;
+    }
+
+
+    .nav-links.mobile-open {
+
+        position: absolute;
+
+        top: 80px;
+
+        left: 0;
+
+        width: 100%;
+
+        background: white;
+
+        display: flex;
+
+        flex-direction: column;
+
+        padding: 15px 25px 20px;
+
+        border-bottom: 1px solid #e0e5e3;
+
+        box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+
+
+    .nav-links.mobile-open a {
+
+        width: 100%;
+
+        text-align: center;
+
+        padding: 13px;
+    }
+
+
+    .hero {
+
+        grid-template-columns: 1fr;
+
+        padding-top: 70px;
+
+        padding-bottom: 70px;
+    }
+
+
+    .hero-content {
+
+        max-width: 700px;
+    }
+
+
+    .hero h1 {
+
+        font-size: 50px;
+    }
+
+
+    .statistics {
+
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 550px) {
+
+    .hero {
+
+        padding: 55px 20px;
+    }
+
+
+    .hero h1 {
+
+        font-size: 39px;
+
+        letter-spacing: -1.7px;
+    }
+
+
+    .hero-description {
+
+        font-size: 15px;
+
+        line-height: 1.7;
+    }
+
+
+    .hero-buttons {
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .primary-btn,
+    .secondary-btn {
+
+        width: 100%;
+    }
+     
+    
+
+    .city-card {
+
+        border-radius: 18px;
+    }
+
+
+    .city-scene {
+
+        height: 280px;
+    }
+
+
+    .issue-marker {
+
+        transform: scale(0.75);
+    }
+
+
+    .marker-light {
+
+        left: 31%;
+    }
+
+
+    .marker-road {
+
+        left: 53%;
+    }
+
+
+    .marker-garbage {
+
+        right: 0;
+    }
+
+
+    .mini-report-card {
+
+        left: 18%;
+
+        transform: scale(0.85);
+
+        transform-origin: bottom left;
+    }
+
+
+    .city-card-footer {
+
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .footer-feature {
+
+        min-height: 70px;
+    }
+
+
+    .statistics {
+
+        grid-template-columns: 1fr;
+
+        padding: 40px 20px 60px;
+    }
+}
+
+
+/* =====================================================
+   CIVEXA — PREMIUM ANIMATIONS
+===================================================== */
+
+
+/* =====================================================
+   1. PAGE LOAD ANIMATION
+===================================================== */
+
+.hero-content {
+    animation: heroContentIn 0.9s ease-out both;
+}
+
+.hero-visual {
+    animation: heroVisualIn 1s ease-out 0.15s both;
+}
+
+.statistics {
+    animation: sectionFadeIn 0.9s ease-out 0.25s both;
+}
+
+
+@keyframes heroContentIn {
+
+    from {
+        opacity: 0;
+        transform: translateX(-35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+@keyframes heroVisualIn {
+
+    from {
+        opacity: 0;
+        transform: translateX(35px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+
+}
+
+
+@keyframes sectionFadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =====================================================
+   2. NAVBAR ANIMATION
+===================================================== */
+
+.navbar {
+    animation: navbarDrop 0.7s ease-out both;
+}
+
+
+@keyframes navbarDrop {
+
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =====================================================
+   3. LOGO HOVER
+===================================================== */
+
+.logo {
+    transition: transform 0.3s ease;
+}
+
+
+.logo:hover {
+    transform: translateY(-2px);
+}
+
+
+.logo-icon {
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+.logo:hover .logo-icon {
+
+    transform: rotate(-8deg) scale(1.08);
+
+    box-shadow:
+        0 7px 20px rgba(8, 123, 124, 0.25);
+}
+
+
+/* =====================================================
+   4. HERO BADGE
+===================================================== */
+
+.hero-badge {
+
+    animation:
+        badgeFloat 3s ease-in-out infinite;
+
+}
+
+
+@keyframes badgeFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+
+}
+
+
+/* =====================================================
+   5. HERO HEADING
+===================================================== */
+
+.hero h1 {
+
+    animation:
+        headingReveal 1s ease-out 0.15s both;
+
+}
+
+
+@keyframes headingReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+        filter: blur(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+
+}
+
+
+/* =====================================================
+   6. DESCRIPTION
+===================================================== */
+
+.hero-description {
+
+    animation:
+        descriptionReveal 0.9s ease-out 0.35s both;
+
+}
+
+
+@keyframes descriptionReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =====================================================
+   7. BUTTON ANIMATIONS
+===================================================== */
+
+.hero-buttons {
+
+    animation:
+        buttonsReveal 0.9s ease-out 0.5s both;
+
+}
+
+
+@keyframes buttonsReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+.primary-btn {
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.primary-btn::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 80%;
+    height: 100%;
+
+    background: rgba(255, 255, 255, 0.16);
+
+    transform: skewX(-20deg);
+
+    transition: left 0.6s ease;
+}
+
+
+.primary-btn:hover::before {
+
+    left: 130%;
+}
+
+
+.primary-btn:hover .arrow {
+
+    display: inline-block;
+
+    animation:
+        arrowMove 0.5s ease;
+}
+
+
+@keyframes arrowMove {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+
+}
+
+
+/* =====================================================
+   8. SECONDARY BUTTON
+===================================================== */
+
+.secondary-btn {
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.secondary-btn::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: #edf7f6;
+
+    transform: scaleX(0);
+
+    transform-origin: left;
+
+    transition: transform 0.3s ease;
+
+    z-index: 0;
+}
+
+
+.secondary-btn:hover::after {
+
+    transform: scaleX(1);
+
+}
+
+
+.secondary-btn {
+
+    isolation: isolate;
+}
+
+
+.secondary-btn {
+
+    position: relative;
+}
+
+
+.secondary-btn::after {
+
+    z-index: -1;
+}
+
+
+/* =====================================================
+   9. HERO CARD FLOATING ANIMATION
+===================================================== */
+
+.city-card {
+
+    animation:
+        cardFloat 6s ease-in-out infinite;
+
+}
+
+
+@keyframes cardFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+
+}
+
+
+/* =====================================================
+   10. CITY SCENE PARALLAX-LIKE MOVEMENT
+===================================================== */
+
+.city {
+
+    animation:
+        cityMove 7s ease-in-out infinite alternate;
+
+}
+
+
+@keyframes cityMove {
+
+    from {
+        transform: translateX(-3px);
+    }
+
+    to {
+        transform: translateX(3px);
+    }
+
+}
+
+
+/* =====================================================
+   11. CLOUD ANIMATION
+===================================================== */
+
+.cloud-one {
+
+    animation:
+        cloudMoveOne 10s ease-in-out infinite alternate;
+
+}
+
+
+.cloud-two {
+
+    animation:
+        cloudMoveTwo 13s ease-in-out infinite alternate;
+
+}
+
+
+@keyframes cloudMoveOne {
+
+    from {
+        transform: translateX(-8px);
+    }
+
+    to {
+        transform: translateX(18px);
+    }
+
+}
+
+
+@keyframes cloudMoveTwo {
+
+    from {
+        transform: translateX(12px);
+    }
+
+    to {
+        transform: translateX(-15px);
+    }
+
+}
+
+
+/* =====================================================
+   12. SUN SOFT GLOW
+===================================================== */
+
+.sun {
+
+    animation:
+        sunGlow 3s ease-in-out infinite;
+
+}
+
+
+@keyframes sunGlow {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 0 rgba(246, 180, 49, 0);
+    }
+
+    50% {
+        box-shadow:
+            0 0 25px rgba(246, 180, 49, 0.25);
+    }
+
+}
+
+
+/* =====================================================
+   13. STREETLIGHT GLOW
+===================================================== */
+
+.light-glow {
+
+    animation:
+        lightPulse 2.5s ease-in-out infinite;
+
+}
+
+
+@keyframes lightPulse {
+
+    0%,
+    100% {
+        opacity: 0.7;
+        transform: scale(0.9);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+
+}
+
+
+/* =====================================================
+   14. ISSUE MARKERS
+===================================================== */
+
+.issue-marker {
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.issue-marker:hover {
+
+    transform: translateY(-7px) scale(1.04);
+
+    box-shadow:
+        0 14px 30px rgba(0, 0, 0, 0.15);
+
+}
+
+
+.marker-light {
+
+    animation:
+        markerFloatOne 4s ease-in-out infinite;
+
+}
+
+
+.marker-road {
+
+    animation:
+        markerFloatTwo 4.5s ease-in-out 0.5s infinite;
+
+}
+
+
+.marker-garbage {
+
+    animation:
+        markerFloatThree 4s ease-in-out 1s infinite;
+
+}
+
+
+@keyframes markerFloatOne {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+}
+
+
+@keyframes markerFloatTwo {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+}
+
+
+@keyframes markerFloatThree {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+}
+
+
+/* =====================================================
+   15. PEOPLE SUBTLE MOVEMENT
+===================================================== */
+
+.person-one {
+
+    animation:
+        personMoveOne 5s ease-in-out infinite;
+
+}
+
+
+.person-two {
+
+    animation:
+        personMoveTwo 5.5s ease-in-out infinite;
+
+}
+
+
+@keyframes personMoveOne {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+
+}
+
+
+@keyframes personMoveTwo {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+
+}
+
+
+/* =====================================================
+   16. MINI REPORT CARD
+===================================================== */
+
+.mini-report-card {
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.mini-report-card:hover {
+
+    transform:
+        translateY(-5px)
+        scale(1.03);
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.15);
+
+}
+
+
+/* =====================================================
+   17. STATISTICS CARD
+===================================================== */
+
+.stat-card {
+
+    opacity: 0;
+
+    animation:
+        statCardIn 0.7s ease-out forwards;
+}
+
+
+.stat-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+
+.stat-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+
+.stat-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+
+.stat-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+
+@keyframes statCardIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =====================================================
+   18. STAT CARD HOVER
+===================================================== */
+
+.stat-card {
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.stat-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    top: -55px;
+    right: -45px;
+
+    border-radius: 50%;
+
+    background: #e9f6f4;
+
+    transition:
+        transform 0.4s ease;
+}
+
+
+.stat-card:hover::before {
+
+    transform: scale(2.2);
+
+}
+
+
+.stat-card h2,
+.stat-card p {
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =====================================================
+   19. STAT NUMBER HOVER
+===================================================== */
+
+.stat-card h2 {
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.stat-card:hover h2 {
+
+    transform: scale(1.06);
+
+}
+
+
+/* =====================================================
+   20. FOOTER FEATURES
+===================================================== */
+
+.footer-feature {
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.footer-feature:hover {
+
+    background: #f5faf9;
+
+}
+
+
+.feature-icon {
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.footer-feature:hover .feature-icon {
+
+    transform: rotate(6deg) scale(1.08);
+
+    background: #dcefed;
+
+}
+
+
+/* =====================================================
+   21. GLOBAL BUTTON PRESS
+===================================================== */
+
+button:active {
+
+    transform: scale(0.97);
+
+}
+
+
+/* =====================================================
+   22. ACCESSIBILITY
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
+
+    }
+
+}
+
+/* =====================================================
+   HOW CIVEXA WORKS
+===================================================== */
+
+.how-it-works {
+
+    padding: 105px 8.5% 115px;
+
+    background: #fbfaf5;
+
+}
+
+
+/* =====================================================
+   SECTION HEADING
+===================================================== */
+
+.section-heading {
+
+    max-width: 700px;
+
+    margin-bottom: 43px;
+
+}
+
+
+.section-heading h2 {
+
+    font-size: 39px;
+
+    line-height: 1.15;
+
+    letter-spacing: -1.4px;
+
+    color: #102c38;
+
+    font-weight: 750;
+
+    margin-bottom: 17px;
+
+}
+
+
+.section-heading p {
+
+    font-size: 17px;
+
+    line-height: 1.6;
+
+    color: #65767d;
+
+}
+
+
+/* =====================================================
+   STEPS CONTAINER
+===================================================== */
+
+.steps-container {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 25px;
+
+}
+
+
+/* =====================================================
+   STEP CARD
+===================================================== */
+
+.step-card {
+
+    min-height: 225px;
+
+    padding: 31px 27px 28px;
+
+    background: #fffefa;
+
+    border: 1px solid #dce5e2;
+
+    border-radius: 19px;
+
+    box-shadow:
+        0 8px 25px rgba(25, 55, 60, 0.035);
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+
+    opacity: 0;
+
+    transform: translateY(35px);
+
+    animation:
+        stepReveal 0.7s ease forwards;
+
+}
+
+
+/* =====================================================
+   STAGGERED ANIMATION
+===================================================== */
+
+.step-card:nth-child(1) {
+
+    animation-delay: 0.1s;
+
+}
+
+
+.step-card:nth-child(2) {
+
+    animation-delay: 0.2s;
+
+}
+
+
+.step-card:nth-child(3) {
+
+    animation-delay: 0.3s;
+
+}
+
+
+.step-card:nth-child(4) {
+
+    animation-delay: 0.4s;
+
+}
+
+
+.step-card:nth-child(5) {
+
+    animation-delay: 0.5s;
+
+}
+
+
+@keyframes stepReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(35px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   CARD HOVER
+===================================================== */
+
+.step-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        0 18px 40px rgba(25, 55, 60, 0.09);
+
+    border-color: #c5dcda;
+
+}
+
+
+/* =====================================================
+   DECORATIVE CIRCLE
+===================================================== */
+
+.step-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 95px;
+
+    height: 95px;
+
+    border-radius: 50%;
+
+    right: -45px;
+
+    bottom: -45px;
+
+    background: #edf7f5;
+
+    transition:
+        transform 0.4s ease;
+
+}
+
+
+.step-card:hover::after {
+
+    transform:
+        scale(1.45);
+
+}
+
+
+/* =====================================================
+   STEP NUMBER
+===================================================== */
+
+.step-number {
+
+    display: block;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #182e37;
+
+    margin-bottom: 25px;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+/* =====================================================
+   STEP TITLE
+===================================================== */
+
+.step-card h3 {
+
+    font-size: 20px;
+
+    line-height: 1.3;
+
+    color: #102c38;
+
+    font-weight: 650;
+
+    margin-bottom: 17px;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+/* =====================================================
+   STEP DESCRIPTION
+===================================================== */
+
+.step-card p {
+
+    color: #65777e;
+
+    font-size: 15px;
+
+    line-height: 1.55;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+/* =====================================================
+   NUMBER HOVER
+===================================================== */
+
+.step-card:hover .step-number {
+
+    color: #087b7c;
+
+    transition:
+        color 0.3s ease;
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .how-it-works {
+
+        padding-left: 5%;
+
+        padding-right: 5%;
+
+    }
+
+
+    .steps-container {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+    }
+
+}
+
+
+/* =====================================================
+   SMALL TABLET
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .how-it-works {
+
+        padding-top: 80px;
+
+        padding-bottom: 85px;
+
+    }
+
+
+    .section-heading h2 {
+
+        font-size: 34px;
+
+    }
+
+
+    .steps-container {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 550px) {
+
+    .how-it-works {
+
+        padding:
+            65px 20px
+            70px;
+
+    }
+
+
+    .section-heading {
+
+        margin-bottom: 30px;
+
+    }
+
+
+    .section-heading h2 {
+
+        font-size: 30px;
+
+        letter-spacing: -1px;
+
+    }
+
+
+    .section-heading p {
+
+        font-size: 15px;
+
+    }
+
+
+    .steps-container {
+
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+
+    }
+
+
+    .step-card {
+
+        min-height: 200px;
+
+        padding: 27px 24px;
+
+    }
+
+}
+
+/* =====================================================
+   CIVEXA — ISSUE CATEGORIES
+===================================================== */
+
+.issue-categories {
+
+    padding: 105px 8.5% 115px;
+
+    background: #fbfaf5;
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.categories-header {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    margin-bottom: 45px;
+
+}
+
+
+.section-label {
+
+    display: inline-block;
+
+    color: #087b7c;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 13px;
+}
+
+
+.categories-header h2 {
+
+    color: #102c38;
+
+    font-size: 39px;
+
+    line-height: 1.15;
+
+    letter-spacing: -1.4px;
+
+    font-weight: 750;
+
+    margin-bottom: 14px;
+
+}
+
+
+.categories-header p {
+
+    color: #65767d;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =====================================================
+   VIEW ALL
+===================================================== */
+
+.view-all-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: #087b7c;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    padding-bottom: 6px;
+
+    border-bottom: 1px solid transparent;
+
+    transition: all 0.3s ease;
+
+}
+
+
+.view-all-link span {
+
+    font-size: 18px;
+
+    transition: transform 0.3s ease;
+
+}
+
+
+.view-all-link:hover {
+
+    border-color: #087b7c;
+
+}
+
+
+.view-all-link:hover span {
+
+    transform: translateX(5px);
+
+}
+
+
+/* =====================================================
+   CATEGORY GRID
+===================================================== */
+
+.category-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 25px;
+
+}
+
+
+/* =====================================================
+   CATEGORY CARD
+===================================================== */
+
+.category-card {
+
+    background: #fffefa;
+
+    border: 1px solid #dce5e2;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 25px rgba(25, 55, 60, 0.035);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+
+    animation: categoryCardReveal 0.7s ease both;
+
+}
+
+
+.category-card:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.category-card:nth-child(2) {
+    animation-delay: 0.10s;
+}
+
+.category-card:nth-child(3) {
+    animation-delay: 0.15s;
+}
+
+.category-card:nth-child(4) {
+    animation-delay: 0.20s;
+}
+
+.category-card:nth-child(5) {
+    animation-delay: 0.25s;
+}
+
+.category-card:nth-child(6) {
+    animation-delay: 0.30s;
+}
+
+.category-card:nth-child(7) {
+    animation-delay: 0.35s;
+}
+
+
+@keyframes categoryCardReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   CARD HOVER
+===================================================== */
+
+.category-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    border-color: #c5dcda;
+
+    box-shadow:
+        0 20px 42px rgba(25, 55, 60, 0.10);
+
+}
+
+
+/* =====================================================
+   IMAGE AREA
+===================================================== */
+
+.category-image {
+
+    height: 185px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #e8f2ef;
+
+}
+
+
+.category-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform 0.65s ease;
+
+}
+
+
+/* IMAGE ZOOM */
+
+.category-card:hover
+.category-image img {
+
+    transform:
+        scale(1.08);
+
+}
+
+
+/* =====================================================
+   IMAGE OVERLAY
+===================================================== */
+
+.image-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(5, 64, 67, 0.02),
+            rgba(5, 64, 67, 0.28)
+        );
+
+    transition:
+        background 0.4s ease;
+
+}
+
+
+.category-card:hover
+.image-overlay {
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(5, 64, 67, 0.08),
+            rgba(5, 64, 67, 0.40)
+        );
+
+}
+
+
+/* =====================================================
+   CATEGORY ICON
+===================================================== */
+
+.category-icon {
+
+    position: absolute;
+
+    top: 16px;
+
+    left: 16px;
+
+    width: 47px;
+
+    height: 47px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(255,255,255,0.94);
+
+    backdrop-filter:
+        blur(8px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 21px;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.08);
+
+    transition:
+        transform 0.35s ease;
+
+}
+
+
+.category-card:hover
+.category-icon {
+
+    transform:
+        rotate(-5deg)
+        scale(1.08);
+
+}
+
+
+/* =====================================================
+   ISSUE COUNT
+===================================================== */
+
+.issue-count {
+
+    position: absolute;
+
+    right: 14px;
+
+    bottom: 14px;
+
+    padding: 7px 11px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,255,255,0.93);
+
+    backdrop-filter:
+        blur(8px);
+
+    color: #087b7c;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.08);
+
+}
+
+
+/* =====================================================
+   CARD CONTENT
+===================================================== */
+
+.category-content {
+
+    padding: 24px 24px 23px;
+
+}
+
+
+.category-content h3 {
+
+    color: #102c38;
+
+    font-size: 21px;
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+
+    letter-spacing: -0.4px;
+
+}
+
+
+.category-content p {
+
+    color: #65767d;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    min-height: 45px;
+
+    margin-bottom: 19px;
+
+}
+
+
+/* =====================================================
+   EXPLORE LINK
+===================================================== */
+
+.category-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #087b7c;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+}
+
+
+.category-link span {
+
+    font-size: 17px;
+
+    transition:
+        transform 0.3s ease;
+
+}
+
+
+.category-link:hover span {
+
+    transform:
+        translateX(5px);
+
+}
+
+
+/* =====================================================
+   SUBTLE TOP LINE
+===================================================== */
+
+.category-card::before {
+
+    content: "";
+
+    display: block;
+
+    position: absolute;
+
+    height: 3px;
+
+    width: 0;
+
+    background: #087b7c;
+
+    transition:
+        width 0.4s ease;
+
+}
+
+
+.category-card {
+
+    position: relative;
+
+}
+
+
+.category-card:hover::before {
+
+    width: 100%;
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .issue-categories {
+
+        padding-left: 5%;
+
+        padding-right: 5%;
+
+    }
+
+
+    .category-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+    }
+
+}
+
+
+/* =====================================================
+   SMALL TABLET
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .categories-header {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 20px;
+
+    }
+
+
+    .categories-header h2 {
+
+        font-size: 34px;
+
+    }
+
+
+    .category-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 550px) {
+
+    .issue-categories {
+
+        padding:
+            70px 20px
+            75px;
+
+    }
+
+
+    .categories-header {
+
+        margin-bottom: 30px;
+
+    }
+
+
+    .categories-header h2 {
+
+        font-size: 30px;
+
+    }
+
+
+    .categories-header p {
+
+        font-size: 15px;
+
+    }
+
+
+    .category-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 17px;
+
+    }
+
+
+    .category-image {
+
+        height: 200px;
+
+    }
+
+
+    .category-content {
+
+        padding: 22px;
+
+    }
+
+}
+
+/* =====================================================
+   CIVEXA - ISSUE CATEGORIES ANIMATIONS
+===================================================== */
+
+
+/* ---------- SECTION ENTRANCE ---------- */
+
+.issue-categories {
+    animation: sectionAppear 0.8s ease both;
+}
+
+@keyframes sectionAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ---------- HEADING ANIMATION ---------- */
+
+.categories-header > div {
+    animation: headingSlide 0.8s ease both;
+}
+
+@keyframes headingSlide {
+    from {
+        opacity: 0;
+        transform: translateX(-25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* ---------- VIEW ALL ANIMATION ---------- */
+
+.view-all-link {
+    animation: viewAllAppear 0.8s ease 0.2s both;
+}
+
+@keyframes viewAllAppear {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* =====================================================
+   CATEGORY CARDS
+===================================================== */
+
+.category-card {
+    opacity: 0;
+    transform: translateY(35px);
+
+    animation: cardAppear 0.7s ease forwards;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+
+/* Staggered appearance */
+
+.category-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.category-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.category-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.category-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.category-card:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.category-card:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+.category-card:nth-child(7) {
+    animation-delay: 0.7s;
+}
+
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =====================================================
+   CARD HOVER
+===================================================== */
+
+.category-card:hover {
+
+    transform: translateY(-10px);
+
+    border-color: #b9d8d5;
+
+    box-shadow:
+        0 20px 45px rgba(16, 64, 67, 0.12);
+}
+
+
+/* =====================================================
+   IMAGE ANIMATION
+===================================================== */
+
+.category-image {
+    overflow: hidden;
+}
+
+
+.category-image img {
+
+    transition:
+        transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+        filter 0.5s ease;
+}
+
+
+.category-card:hover
+.category-image img {
+
+    transform: scale(1.10);
+
+    filter: saturate(1.08);
+}
+
+
+/* =====================================================
+   IMAGE OVERLAY
+===================================================== */
+
+.image-overlay {
+
+    transition:
+        background 0.5s ease;
+}
+
+
+.category-card:hover
+.image-overlay {
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(5, 64, 67, 0.05),
+            rgba(5, 64, 67, 0.42)
+        );
+}
+
+
+/* =====================================================
+   CATEGORY ICON
+===================================================== */
+
+.category-icon {
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+.category-card:hover
+.category-icon {
+
+    transform:
+        translateY(-4px)
+        rotate(-6deg)
+        scale(1.08);
+
+    box-shadow:
+        0 9px 22px rgba(0, 0, 0, 0.14);
+}
+
+
+/* =====================================================
+   ISSUE COUNT
+===================================================== */
+
+.issue-count {
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.category-card:hover
+.issue-count {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.14);
+}
+
+
+/* =====================================================
+   CATEGORY TITLE
+===================================================== */
+
+.category-content h3 {
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.category-card:hover
+.category-content h3 {
+
+    color: #087b7c;
+
+    transform: translateX(3px);
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.category-content p {
+
+    transition:
+        color 0.3s ease;
+}
+
+
+.category-card:hover
+.category-content p {
+
+    color: #50666e;
+}
+
+
+/* =====================================================
+   EXPLORE LINK
+===================================================== */
+
+.category-link {
+
+    transition:
+        color 0.3s ease;
+}
+
+
+.category-link span {
+
+    display: inline-block;
+
+    transition:
+        transform 0.35s ease;
+}
+
+
+.category-link:hover {
+
+    color: #065f60;
+}
+
+
+.category-card:hover
+.category-link span {
+
+    transform: translateX(6px);
+}
+
+
+/* =====================================================
+   TEAL TOP BORDER
+===================================================== */
+
+.category-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 3px;
+
+    background: #087b7c;
+
+    z-index: 10;
+
+    transition:
+        width 0.45s ease;
+}
+
+
+.category-card:hover::before {
+
+    width: 100%;
+}
+
+
+/* =====================================================
+   IMAGE SHINE EFFECT
+===================================================== */
+
+.category-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 60%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.28),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    transition:
+        left 0.7s ease;
+}
+
+
+.category-card:hover
+.category-image::after {
+
+    left: 140%;
+}
+
+
+/* =====================================================
+   VIEW ALL ARROW
+===================================================== */
+
+.view-all-link span {
+
+    display: inline-block;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.view-all-link:hover span {
+
+    transform: translateX(6px);
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 550px) {
+
+    .category-card:hover {
+
+        transform: translateY(-5px);
+    }
+
+    .category-card:hover
+    .category-image img {
+
+        transform: scale(1.05);
+    }
+
+}
+
+/* =====================================================
+   CIVEXA - HOW CIVEXA WORKS
+   PREMIUM STEP DESIGN
+===================================================== */
+
+.how-it-works {
+    position: relative;
+    padding: 110px 8.5% 120px;
+    background: #fbfaf5;
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   BACKGROUND DECORATION
+===================================================== */
+
+.how-it-works::before {
+    content: "";
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    border-radius: 50%;
+
+    top: -220px;
+    right: -160px;
+
+    background: #eaf5f3;
+
+    opacity: 0.55;
+
+    pointer-events: none;
+}
+
+
+.how-it-works::after {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    bottom: -180px;
+    left: -130px;
+
+    background: #f3eadb;
+
+    opacity: 0.45;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   SECTION HEADING
+===================================================== */
+
+.how-it-works .section-heading {
+    position: relative;
+    z-index: 2;
+
+    max-width: 700px;
+
+    margin-bottom: 55px;
+}
+
+
+.how-it-works .section-heading h2 {
+    font-size: 40px;
+
+    line-height: 1.15;
+
+    letter-spacing: -1.5px;
+
+    color: #102c38;
+
+    font-weight: 800;
+
+    margin-bottom: 15px;
+}
+
+
+.how-it-works .section-heading p {
+    color: #65767d;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   STEPS CONTAINER
+===================================================== */
+
+.steps-container {
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 22px;
+}
+
+
+/* =====================================================
+   CONNECTING LINE
+===================================================== */
+
+.steps-container::before {
+    content: "";
+
+    position: absolute;
+
+    top: 48px;
+
+    left: 8%;
+
+    right: 8%;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #cce4e1,
+            #087b7c,
+            #cce4e1
+        );
+
+    z-index: -1;
+}
+
+
+/* =====================================================
+   STEP CARD
+===================================================== */
+
+.step-card {
+    position: relative;
+
+    min-height: 255px;
+
+    padding: 30px 25px 27px;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    border: 1px solid #dce6e3;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 25px rgba(20, 55, 60, 0.04);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease,
+        background 0.4s ease;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   CARD TOP TEAL LINE
+===================================================== */
+
+.step-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 4px;
+
+    background: #087b7c;
+
+    transition: width 0.45s ease;
+}
+
+
+.step-card:hover::before {
+    width: 100%;
+}
+
+
+/* =====================================================
+   DECORATIVE CIRCLE
+===================================================== */
+
+.step-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 130px;
+    height: 130px;
+
+    border-radius: 50%;
+
+    right: -70px;
+    bottom: -70px;
+
+    background: #edf7f5;
+
+    transition:
+        transform 0.5s ease;
+}
+
+
+.step-card:hover::after {
+    transform: scale(1.5);
+}
+
+
+/* =====================================================
+   STEP NUMBER
+===================================================== */
+
+.step-number {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 52px;
+    height: 52px;
+
+    margin-bottom: 27px;
+
+    border-radius: 50%;
+
+    background: #e4f3f1;
+
+    color: #087b7c;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    border: 1px solid #cce5e1;
+
+    box-shadow:
+        0 5px 15px rgba(8, 123, 124, 0.08);
+
+    z-index: 3;
+
+    transition:
+        transform 0.4s ease,
+        background 0.4s ease,
+        color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+/* =====================================================
+   NUMBER HOVER
+===================================================== */
+
+.step-card:hover .step-number {
+    transform:
+        rotate(-8deg)
+        scale(1.12);
+
+    background: #087b7c;
+
+    color: white;
+
+    box-shadow:
+        0 10px 25px rgba(8, 123, 124, 0.25);
+}
+
+
+/* =====================================================
+   STEP TITLE
+===================================================== */
+
+.step-card h3 {
+    position: relative;
+
+    z-index: 3;
+
+    color: #102c38;
+
+    font-size: 20px;
+
+    line-height: 1.3;
+
+    font-weight: 700;
+
+    letter-spacing: -0.3px;
+
+    margin-bottom: 15px;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.step-card:hover h3 {
+    color: #087b7c;
+
+    transform: translateX(3px);
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.step-card p {
+    position: relative;
+
+    z-index: 3;
+
+    color: #65767d;
+
+    font-size: 14px;
+
+    line-height: 1.65;
+
+    transition:
+        color 0.3s ease;
+}
+
+
+.step-card:hover p {
+    color: #536870;
+}
+
+
+/* =====================================================
+   CARD HOVER
+===================================================== */
+
+.step-card:hover {
+    transform: translateY(-10px);
+
+    border-color: #bddbd7;
+
+    background: #fffefa;
+
+    box-shadow:
+        0 20px 45px rgba(20, 65, 70, 0.10);
+}
+
+
+/* =====================================================
+   STEP ARROW
+===================================================== */
+
+.step-card:not(:last-child) {
+    margin-right: 0;
+}
+
+
+/* =====================================================
+   SUBTLE NUMBER GLOW
+===================================================== */
+
+.step-card:hover .step-number::after {
+    content: "";
+
+    position: absolute;
+
+    inset: -7px;
+
+    border-radius: 50%;
+
+    border: 1px solid #b9ddda;
+
+    animation: stepPulse 1.5s ease-out infinite;
+}
+
+
+@keyframes stepPulse {
+    0% {
+        opacity: 0.8;
+        transform: scale(0.9);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.25);
+    }
+}
+
+
+/* =====================================================
+   STEP CARD ENTRANCE
+===================================================== */
+
+.step-card {
+    opacity: 0;
+
+    animation:
+        stepCardIn 0.7s ease forwards;
+}
+
+
+.step-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.step-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.step-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.step-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.step-card:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+
+@keyframes stepCardIn {
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =====================================================
+   HEADING ENTRANCE
+===================================================== */
+
+.how-it-works .section-heading {
+    animation:
+        headingIn 0.8s ease both;
+}
+
+
+@keyframes headingIn {
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(-25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .how-it-works {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .steps-container {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .steps-container::before {
+        display: none;
+    }
+}
+
+
+/* =====================================================
+   SMALL TABLET
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .how-it-works {
+        padding-top: 80px;
+        padding-bottom: 90px;
+    }
+
+    .how-it-works .section-heading h2 {
+        font-size: 34px;
+    }
+
+    .steps-container {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 550px) {
+
+    .how-it-works {
+        padding:
+            70px 20px
+            80px;
+    }
+
+    .how-it-works .section-heading {
+        margin-bottom: 35px;
+    }
+
+    .how-it-works .section-heading h2 {
+        font-size: 30px;
+
+        letter-spacing: -1px;
+    }
+
+    .how-it-works .section-heading p {
+        font-size: 15px;
+    }
+
+    .steps-container {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .step-card {
+        min-height: 205px;
+
+        padding:
+            27px 23px;
+    }
+
+    .step-card:hover {
+        transform:
+            translateY(-5px);
+    }
+
+}
+
+
+/* =====================================================
+   CIVEXA - STATISTICS SECTION
+===================================================== */
+
+.statistics {
+    position: relative;
+    padding: 75px 8.5% 95px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+
+    background: #fbfaf5;
+
+    overflow: hidden;
+}
+
+
+/* Decorative background */
+
+.statistics::before {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    background: #eaf5f3;
+
+    top: -220px;
+    left: -150px;
+
+    opacity: 0.6;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   STAT CARD
+===================================================== */
+
+.stat-card {
+    position: relative;
+
+    min-height: 145px;
+
+    padding: 28px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border: 1px solid #dce6e3;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 25px rgba(20, 55, 60, 0.05);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+
+/* Top animated line */
+
+.stat-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 4px;
+
+    background: #087b7c;
+
+    transition: width 0.5s ease;
+}
+
+
+.stat-card:hover::before {
+    width: 100%;
+}
+
+
+/* Decorative circle */
+
+.stat-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 110px;
+    height: 110px;
+
+    right: -55px;
+    bottom: -55px;
+
+    border-radius: 50%;
+
+    background: #edf7f5;
+
+    transition:
+        transform 0.5s ease;
+}
+
+
+.stat-card:hover::after {
+    transform: scale(1.5);
+}
+
+
+/* =====================================================
+   NUMBER
+===================================================== */
+
+.stat-card h2 {
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0 0 9px;
+
+    color: #087b7c;
+
+    font-size: 38px;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    letter-spacing: -1.5px;
+
+    transition:
+        transform 0.35s ease;
+}
+
+
+.stat-card:hover h2 {
+    transform: scale(1.08);
+}
+
+
+/* =====================================================
+   LABEL
+===================================================== */
+
+.stat-card p {
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0;
+
+    color: #65767d;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    transition:
+        color 0.3s ease;
+}
+
+
+.stat-card:hover p {
+    color: #087b7c;
+}
+
+
+/* =====================================================
+   CARD HOVER
+===================================================== */
+
+.stat-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #bddbd7;
+
+    box-shadow:
+        0 18px 40px rgba(20, 65, 70, 0.10);
+}
+
+
+/* =====================================================
+   COUNTER GLOW
+===================================================== */
+
+.counter {
+    display: inline-block;
+
+    transition:
+        text-shadow 0.3s ease;
+}
+
+
+.stat-card:hover .counter {
+    text-shadow:
+        0 5px 20px rgba(8, 123, 124, 0.22);
+}
+
+
+/* =====================================================
+   NUMBER + SIGN
+===================================================== */
+
+.stat-card h2 {
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   ENTRANCE ANIMATION
+===================================================== */
+
+.stat-card {
+    opacity: 0;
+
+    animation:
+        statisticsAppear 0.7s ease forwards;
+}
+
+
+.stat-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.stat-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.stat-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.stat-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+
+@keyframes statisticsAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 850px) {
+
+    .statistics {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .statistics {
+        grid-template-columns: 1fr;
+
+        padding:
+            55px 20px
+            70px;
+    }
+
+    .stat-card {
+        min-height: 125px;
+    }
+
+    .stat-card h2 {
+        font-size: 34px;
+    }
+
+}
+
+/* =====================================================
+   CIVEXA CTA SECTION
+===================================================== */
+
+.civexa-cta {
+
+    width: calc(100% - 80px);
+    max-width: 1505px;
+
+    margin: 90px auto 0;
+
+    padding: 55px 60px 30px;
+
+    background: #0c3040;
+
+    border-radius: 28px;
+
+    color: white;
+
+    overflow: hidden;
+
+    position: relative;
+
+}
+
+
+/* Decorative circle */
+
+.civexa-cta::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 50%;
+
+    right: -70px;
+    top: -100px;
+
+}
+
+
+.civexa-cta::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border: 1px solid rgba(255,255,255,0.06);
+
+    border-radius: 50%;
+
+    right: 70px;
+    bottom: -120px;
+
+}
+
+
+/* CTA Content */
+
+.cta-content {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.cta-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 14px;
+
+    margin-bottom: 18px;
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    color: #dcefee;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+.cta-text h2 {
+
+    margin: 0 0 14px;
+
+    font-size: clamp(32px, 4vw, 48px);
+
+    line-height: 1.08;
+
+    letter-spacing: -1.5px;
+
+}
+
+
+.cta-text p {
+
+    max-width: 650px;
+
+    margin: 0;
+
+    color: #b8cbd0;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+
+}
+
+
+/* CTA Buttons */
+
+.cta-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    flex-shrink: 0;
+
+}
+
+
+.cta-primary,
+.cta-secondary {
+
+    min-height: 52px;
+
+    padding: 0 23px;
+
+    border-radius: 13px;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    transition: 0.25s ease;
+
+}
+
+
+.cta-primary {
+
+    border: none;
+
+    background: #e5f3f1;
+
+    color: #0c3040;
+
+}
+
+
+.cta-primary:hover {
+
+    transform: translateY(-3px);
+
+    background: white;
+
+    box-shadow: 0 12px 25px rgba(0,0,0,0.18);
+
+}
+
+
+.cta-primary span {
+
+    font-size: 20px;
+
+    transition: transform 0.25s ease;
+
+}
+
+
+.cta-primary:hover span {
+
+    transform: translateX(5px);
+
+}
+
+
+.cta-secondary {
+
+    color: white;
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    background: rgba(255,255,255,0.05);
+
+}
+
+
+.cta-secondary:hover {
+
+    background: rgba(255,255,255,0.12);
+
+    transform: translateY(-3px);
+
+}
+
+
+/* =====================================================
+   CTA FEATURES
+===================================================== */
+
+.cta-features {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 12px;
+
+    margin-top: 45px;
+
+    padding-top: 25px;
+
+    border-top:
+        1px solid rgba(255,255,255,0.10);
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.cta-feature {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px;
+
+    border-radius: 14px;
+
+    transition: 0.25s ease;
+
+}
+
+
+.cta-feature:hover {
+
+    background:
+        rgba(255,255,255,0.06);
+
+    transform: translateY(-3px);
+
+}
+
+
+.feature-icon {
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255,255,255,0.10);
+
+    font-size: 19px;
+
+}
+
+
+.cta-feature strong {
+
+    display: block;
+
+    margin-bottom: 3px;
+
+    font-size: 14px;
+
+}
+
+
+.cta-feature span {
+
+    color: #9eb8bf;
+
+    font-size: 12px;
+
+}
+
+
+/* =====================================================
+   CIVEXA FOOTER
+===================================================== */
+
+.civexa-footer {
+
+    margin-top: 90px;
+
+    background: #0b2d3c;
+
+    color: white;
+
+}
+
+
+/* Footer Main */
+
+.footer-main {
+
+    max-width: 1400px;
+
+    margin: auto;
+
+    padding: 70px 40px 60px;
+
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr 1.2fr 1.3fr;
+
+    gap: 60px;
+
+}
+
+
+/* =====================================================
+   FOOTER BRAND
+===================================================== */
+
+.footer-logo {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 23px;
+
+    font-weight: 800;
+
+    margin-bottom: 28px;
+
+}
+
+
+.footer-logo-icon {
+
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f5a623;
+
+    color: #102c38;
+
+    font-size: 20px;
+
+}
+
+
+.footer-brand h3 {
+
+    font-size: 19px;
+
+    margin: 0 0 15px;
+
+}
+
+
+.footer-brand > p {
+
+    max-width: 500px;
+
+    margin: 0;
+
+    color: #a9c0c6;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+}
+
+
+/* Footer Status */
+
+.footer-status {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 24px;
+
+    padding: 8px 12px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,255,255,0.06);
+
+    color: #b5cbd0;
+
+    font-size: 12px;
+
+}
+
+
+.status-dot {
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #49c6a9;
+
+    box-shadow:
+        0 0 0 4px rgba(73,198,169,0.10);
+
+}
+
+
+/* =====================================================
+   FOOTER COLUMNS
+===================================================== */
+
+.footer-column {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+}
+
+
+.footer-column h4 {
+
+    margin: 5px 0 22px;
+
+    font-size: 13px;
+
+    letter-spacing: 0.5px;
+
+    color: #a9bdc3;
+
+}
+
+
+.footer-column a {
+
+    color: #c0d0d4;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    margin-bottom: 15px;
+
+    transition: 0.2s ease;
+
+}
+
+
+.footer-column a:hover {
+
+    color: white;
+
+    transform: translateX(4px);
+
+}
+
+
+.footer-column p {
+
+    color: #c0d0d4;
+
+    font-size: 14px;
+
+    margin: 0 0 15px;
+
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.footer-contact a,
+.footer-contact p {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.contact-icon {
+
+    width: 20px;
+
+    color: #a9cbd0;
+
+}
+
+
+/* =====================================================
+   SOCIAL
+===================================================== */
+
+.footer-social {
+
+    display: flex;
+
+    gap: 9px;
+
+    margin-top: 15px;
+
+}
+
+
+.footer-social a {
+
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+
+    border-radius: 10px;
+
+    background:
+        rgba(255,255,255,0.07);
+
+    color: #d4e1e4;
+
+    font-weight: 700;
+
+    transition: 0.25s ease;
+
+}
+
+
+.footer-social a:hover {
+
+    background: #087b7c;
+
+    color: white;
+
+    transform: translateY(-3px);
+
+}
+
+
+/* =====================================================
+   FOOTER BOTTOM
+===================================================== */
+
+.footer-bottom {
+
+    border-top:
+        1px solid rgba(255,255,255,0.08);
+
+    padding: 20px 40px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+}
+
+
+.footer-bottom p {
+
+    margin: 0;
+
+    color: #91aeb5;
+
+    font-size: 12px;
+
+}
+
+
+.footer-bottom p span {
+
+    margin: 0 7px;
+
+    color: #607f87;
+
+}
+
+
+.footer-bottom-links {
+
+    display: flex;
+
+    gap: 22px;
+
+}
+
+
+.footer-bottom-links a {
+
+    color: #91aeb5;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    transition: 0.2s ease;
+
+}
+
+
+.footer-bottom-links a:hover {
+
+    color: white;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .cta-content {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .cta-actions {
+
+        width: 100%;
+
+    }
+
+
+    .cta-features {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .footer-main {
+
+        grid-template-columns:
+            1.5fr 1fr 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .civexa-cta {
+
+        width: calc(100% - 30px);
+
+        padding: 40px 25px 25px;
+
+        border-radius: 22px;
+
+    }
+
+
+    .cta-actions {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+
+    .cta-primary,
+    .cta-secondary {
+
+        width: 100%;
+
+    }
+
+
+    .cta-features {
+
+        grid-template-columns: 1fr;
+
+        margin-top: 30px;
+
+    }
+
+
+    .footer-main {
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 40px 25px;
+
+        padding: 50px 25px;
+
+    }
+
+
+    .footer-brand {
+
+        grid-column: 1 / -1;
+
+    }
+
+
+    .footer-bottom {
+
+        padding: 20px 25px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .footer-main {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .footer-brand {
+
+        grid-column: auto;
+
+    }
+
+
+    .footer-bottom-links {
+
+        flex-wrap: wrap;
+
+    }
+
+}
+
+/* =====================================================
+   CIVEXA CTA ANIMATIONS
+===================================================== */
+
+/* Main CTA entrance */
+
+.civexa-cta {
+    animation: ctaReveal 1s ease-out both;
+}
+
+@keyframes ctaReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =====================================================
+   CTA BADGE
+===================================================== */
+
+.cta-badge {
+    animation: badgeReveal 0.8s ease-out 0.25s both;
+}
+
+@keyframes badgeReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* =====================================================
+   CTA HEADING
+===================================================== */
+
+.cta-text h2 {
+    animation: headingReveal 0.9s ease-out 0.4s both;
+}
+
+@keyframes headingReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+        filter: blur(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+
+}
+
+
+/* =====================================================
+   CTA DESCRIPTION
+===================================================== */
+
+.cta-text p {
+    animation: paragraphReveal 0.8s ease-out 0.65s both;
+}
+
+@keyframes paragraphReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =====================================================
+   CTA BUTTONS
+===================================================== */
+
+.cta-actions {
+    animation: buttonsReveal 0.9s ease-out 0.55s both;
+}
+
+@keyframes buttonsReveal {
+
+    from {
+        opacity: 0;
+        transform: translateX(45px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+/* =====================================================
+   BUTTON SHINE EFFECT
+===================================================== */
+
+.cta-primary {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.cta-primary::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 70%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.65),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    transition: 0.6s ease;
+}
+
+
+.cta-primary:hover::before {
+
+    left: 140%;
+
+}
+
+
+/* =====================================================
+   BROWSE BUTTON
+===================================================== */
+
+.cta-secondary span {
+
+    transition: transform 0.25s ease;
+}
+
+
+.cta-secondary:hover span {
+
+    transform: translate(4px, -3px);
+
+}
+
+
+/* =====================================================
+   FEATURE CARDS ENTRANCE
+===================================================== */
+
+.cta-feature {
+
+    opacity: 0;
+
+    animation:
+        featureReveal 0.7s ease-out forwards;
+}
+
+
+.cta-feature:nth-child(1) {
+
+    animation-delay: 0.85s;
+
+}
+
+
+.cta-feature:nth-child(2) {
+
+    animation-delay: 1s;
+
+}
+
+
+.cta-feature:nth-child(3) {
+
+    animation-delay: 1.15s;
+
+}
+
+
+.cta-feature:nth-child(4) {
+
+    animation-delay: 1.3s;
+
+}
+
+
+@keyframes featureReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   FEATURE ICON POP
+===================================================== */
+
+.feature-icon {
+
+    animation:
+        iconPop 0.6s ease-out
+        backwards;
+}
+
+
+.cta-feature:nth-child(1) .feature-icon {
+
+    animation-delay: 1s;
+
+}
+
+
+.cta-feature:nth-child(2) .feature-icon {
+
+    animation-delay: 1.15s;
+
+}
+
+
+.cta-feature:nth-child(3) .feature-icon {
+
+    animation-delay: 1.3s;
+
+}
+
+
+.cta-feature:nth-child(4) .feature-icon {
+
+    animation-delay: 1.45s;
+
+}
+
+
+@keyframes iconPop {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            scale(0.5)
+            rotate(-10deg);
+
+    }
+
+    70% {
+
+        transform:
+            scale(1.08)
+            rotate(2deg);
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            rotate(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   DECORATIVE CIRCLES
+===================================================== */
+
+.civexa-cta::before {
+
+    animation:
+        circleFloat 8s ease-in-out infinite;
+
+}
+
+
+.civexa-cta::after {
+
+    animation:
+        circleFloatReverse 10s ease-in-out infinite;
+
+}
+
+
+@keyframes circleFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translate(0, 0)
+            rotate(0deg);
+
+    }
+
+    50% {
+
+        transform:
+            translate(-25px, 20px)
+            rotate(8deg);
+
+    }
+
+}
+
+
+@keyframes circleFloatReverse {
+
+    0%,
+    100% {
+
+        transform:
+            translate(0, 0);
+
+    }
+
+    50% {
+
+        transform:
+            translate(20px, -15px);
+
+    }
+
+}
+
+
+/* =====================================================
+   FEATURE HOVER
+===================================================== */
+
+.cta-feature:hover .feature-icon {
+
+    transform:
+        scale(1.08)
+        rotate(-4deg);
+
+    transition: 0.25s ease;
+
+}
+
+
+/* =====================================================
+   CTA BUTTON HOVER
+===================================================== */
+
+.cta-primary,
+.cta-secondary {
+
+    will-change: transform;
+
+}
+
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .civexa-cta,
+    .cta-badge,
+    .cta-text h2,
+    .cta-text p,
+    .cta-actions,
+    .cta-feature,
+    .feature-icon,
+    .civexa-cta::before,
+    .civexa-cta::after {
+
+        animation: none !important;
+
+        opacity: 1;
+
+        transform: none;
+
+        filter: none;
+
+    }
+
+}
+

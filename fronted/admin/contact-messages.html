@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Messages | CIVEXA Admin</title>
+
+    <link rel="stylesheet" href="contact-messages.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <nav class="navbar">
+
+        <a href="admin.html" class="logo">
+            <span class="logo-icon">◆</span>
+            <span>CIVEXA</span>
+            <small>ADMIN</small>
+        </a>
+
+        <div class="nav-links">
+
+            <a href="admin.html">
+                Dashboard
+            </a>
+
+            <a href="manage-issues.html">
+                Manage Issues
+            </a>
+
+            <a href="departments.html">
+                Departments
+            </a>
+
+            <a href="analytics.html">
+                Analytics
+            </a>
+
+            <a href="feedback.html">
+                Feedback
+            </a>
+
+            <a href="contact-messages.html" class="active">
+                Contact Messages
+            </a>
+
+        </div>
+
+        <button
+            type="button"
+            class="profile-button"
+            id="profileButton"
+        >
+            <span class="profile-avatar" id="navAvatar">
+                A
+            </span>
+
+            <span class="profile-info">
+                <strong id="navName">
+                    CIVEXA Admin
+                </strong>
+
+                <small>
+                    Administrator
+                </small>
+            </span>
+
+            <span class="profile-arrow">
+               ⌄
+            </span>
+
+        </button>
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         PROFILE POPUP
+    ====================================================== -->
+
+    <div
+        class="profile-overlay"
+        id="profileOverlay"
+    >
+
+        <div class="profile-popup">
+
+            <button
+                type="button"
+                class="popup-close"
+                id="popupClose"
+            >
+                ×
+            </button>
+
+            <div class="popup-avatar" id="popupAvatar">
+                A
+            </div>
+
+            <span class="popup-label">
+                ADMIN ACCOUNT
+            </span>
+
+            <h3 id="popupName">
+                CIVEXA Admin
+            </h3>
+
+            <p id="popupEmail">
+                civexa.admin@example.com
+            </p>
+
+            <div class="popup-details">
+
+                <div>
+                    <span>Role</span>
+                    <strong>Administrator</strong>
+                </div>
+
+                <div>
+                    <span>Phone</span>
+                    <strong id="popupPhone">
+                        Not available
+                    </strong>
+                </div>
+
+            </div>
+
+            <button
+                type="button"
+                class="logout-button"
+                id="logoutButton"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main>
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <span class="hero-badge">
+                    <span></span>
+                    ADMIN COMMUNICATION CENTER
+                </span>
+
+                <h1>
+                    Contact
+                    <span>Messages</span>
+                </h1>
+
+                <p>
+                    Review questions, support requests, account
+                    help requests and suggestions submitted
+                    through the CIVEXA Contact page.
+                </p>
+
+            </div>
+
+            <div class="hero-card">
+
+                <div class="hero-card-top">
+                    <span></span>
+                    LIVE DATA
+                </div>
+
+                <div class="hero-icon">
+                    ✉
+                </div>
+
+                <h3>
+                    Communication Center
+                </h3>
+
+                <p>
+                    Review and manage citizen messages.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             SUMMARY
+        ====================================================== -->
+
+        <section class="summary">
+
+            <div class="summary-card">
+
+                <div class="summary-icon teal">
+                    ✉
+                </div>
+
+                <div>
+                    <span>Total Messages</span>
+                    <strong id="totalMessages">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon yellow">
+                    ●
+                </div>
+
+                <div>
+                    <span>New</span>
+                    <strong id="newMessages">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon blue">
+                    ◉
+                </div>
+
+                <div>
+                    <span>Read</span>
+                    <strong id="readMessages">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon green">
+                    ✓
+                </div>
+
+                <div>
+                    <span>Resolved</span>
+                    <strong id="resolvedMessages">0</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             MESSAGES
+        ====================================================== -->
+
+        <section class="messages-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span>
+                        INBOX
+                    </span>
+
+                    <h2>
+                        Contact Messages
+                    </h2>
+
+                    <p>
+                        Messages submitted through the CIVEXA
+                        Contact form.
+                    </p>
+
+                </div>
+
+                <div class="live-badge">
+                    <span></span>
+                    LIVE DATA
+                </div>
+
+            </div>
+
+
+
+            <!-- FILTERS -->
+
+            <div class="filter-bar">
+
+                <div class="search-box">
+
+                    <span>⌕</span>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search messages..."
+                    >
+
+                </div>
+
+                <select id="statusFilter">
+
+                    <option value="all">
+                        All Status
+                    </option>
+
+                    <option value="new">
+                        New
+                    </option>
+
+                    <option value="read">
+                        Read
+                    </option>
+
+                    <option value="resolved">
+                        Resolved
+                    </option>
+
+                </select>
+
+                <button
+                    type="button"
+                    id="refreshButton"
+                    class="refresh-button"
+                >
+                    ↻ Refresh
+                </button>
+
+            </div>
+
+
+
+            <!-- LOADING -->
+
+            <div
+                class="state-box"
+                id="loadingState"
+            >
+
+                <div class="loader"></div>
+
+                <h3>
+                    Loading messages...
+                </h3>
+
+                <p>
+                    Fetching live contact messages.
+                </p>
+
+            </div>
+
+
+
+            <!-- ERROR -->
+
+            <div
+                class="state-box"
+                id="errorState"
+            >
+
+                <div class="state-icon error">
+                    !
+                </div>
+
+                <h3>
+                    Unable to load messages
+                </h3>
+
+                <p id="errorText">
+                    Something went wrong.
+                </p>
+
+                <button
+                    type="button"
+                    id="retryButton"
+                >
+                    Try Again
+                </button>
+
+            </div>
+
+
+
+            <!-- EMPTY -->
+
+            <div
+                class="state-box"
+                id="emptyState"
+            >
+
+                <div class="state-icon">
+                    ✉
+                </div>
+
+                <h3>
+                    No messages found
+                </h3>
+
+                <p>
+                    There are no contact messages matching
+                    your current search or filter.
+                </p>
+
+            </div>
+
+
+
+            <!-- MESSAGE LIST -->
+
+            <div
+                class="message-list"
+                id="messageList"
+            ></div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         MESSAGE MODAL
+    ====================================================== -->
+
+    <div
+        class="modal-overlay"
+        id="messageModal"
+    >
+
+        <div class="message-modal">
+
+            <button
+                type="button"
+                class="modal-close"
+                id="modalClose"
+            >
+                ×
+            </button>
+
+            <div class="modal-top">
+
+                <span>
+                    CONTACT MESSAGE
+                </span>
+
+                <strong
+                    id="modalStatus"
+                    class="status-badge new"
+                >
+                    New
+                </strong>
+
+            </div>
+
+            <h2 id="modalSubject">
+                Subject
+            </h2>
+
+            <div class="sender-grid">
+
+                <div>
+                    <span>NAME</span>
+                    <strong id="modalName">—</strong>
+                </div>
+
+                <div>
+                    <span>EMAIL</span>
+                    <strong id="modalEmail">—</strong>
+                </div>
+
+                <div>
+                    <span>DATE</span>
+                    <strong id="modalDate">—</strong>
+                </div>
+
+            </div>
+
+            <div class="message-content">
+
+                <span>
+                    MESSAGE
+                </span>
+
+                <p id="modalMessage">
+                    —
+                </p>
+
+            </div>
+
+            <div class="status-update">
+
+                <label for="modalStatusSelect">
+                    Update Status
+                </label>
+
+                <select id="modalStatusSelect">
+
+                    <option value="new">
+                        New
+                    </option>
+
+                    <option value="read">
+                        Read
+                    </option>
+
+                    <option value="resolved">
+                        Resolved
+                    </option>
+
+                </select>
+
+                <button
+                    type="button"
+                    id="saveStatusButton"
+                >
+                    Save Status
+                </button>
+
+            </div>
+
+            <p
+                id="saveMessage"
+                class="save-message"
+            ></p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-main">
+
+            <div class="footer-brand">
+
+                <div class="footer-logo">
+                    <span>◆</span>
+                    CIVEXA
+                </div>
+
+                <p>
+                    Admin communication and community issue
+                    management system.
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <a href="admin.html">
+                    Dashboard
+                </a>
+
+                <a href="manage-issues.html">
+                    Manage Issues
+                </a>
+
+                <a href="departments.html">
+                    Departments
+                </a>
+
+                <a href="analytics.html">
+                    Analytics
+                </a>
+
+                <a href="feedback.html">
+                    Feedback
+                </a>
+
+                <a href="contact-messages.html">
+                    Contact Messages
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 CIVEXA. Admin Panel.
+            </span>
+
+            <span>
+                Built for better communities.
+            </span>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        /* =====================================================
+           AUTH
+        ====================================================== */
+
+        const storedUser =
+            JSON.parse(
+                localStorage.getItem("civexaUser")
+            );
+
+
+        /*
+            Supports the same normal login object and also
+            protects against a nested user object.
+        */
+
+        const adminUser =
+            storedUser?.user ||
+            storedUser;
+
+
+        const adminRole =
+            String(
+                adminUser?.role || ""
+            ).toLowerCase();
+
+
+        if (
+            !adminUser ||
+            adminRole !== "admin"
+        ) {
+
+            window.location.href =
+                "../login.html";
+
+        }
+
+
+
+        /* =====================================================
+           PROFILE
+        ====================================================== */
+
+        const profileButton =
+            document.getElementById(
+                "profileButton"
+            );
+
+        const profileOverlay =
+            document.getElementById(
+                "profileOverlay"
+            );
+
+        const popupClose =
+            document.getElementById(
+                "popupClose"
+            );
+
+        const logoutButton =
+            document.getElementById(
+                "logoutButton"
+            );
+
+
+        function getInitial(name) {
+
+            return (
+                name ||
+                "A"
+            )
+                .trim()
+                .charAt(0)
+                .toUpperCase();
+
+        }
+
+
+        function loadAdminProfile() {
+
+            const name =
+                adminUser?.full_name ||
+                adminUser?.name ||
+                "CIVEXA Admin";
+
+            const email =
+                adminUser?.email ||
+                "civexa.admin@example.com";
+
+            const phone =
+                adminUser?.phone ||
+                "Not available";
+
+            const initial =
+                getInitial(name);
+
+
+            document.getElementById(
+                "navName"
+            ).textContent = name;
+
+
+            document.getElementById(
+                "navAvatar"
+            ).textContent = initial;
+
+
+            document.getElementById(
+                "popupAvatar"
+            ).textContent = initial;
+
+
+            document.getElementById(
+                "popupName"
+            ).textContent = name;
+
+
+            document.getElementById(
+                "popupEmail"
+            ).textContent = email;
+
+
+            document.getElementById(
+                "popupPhone"
+            ).textContent = phone;
+
+        }
+
+
+        profileButton.addEventListener(
+            "click",
+            () => {
+
+                profileOverlay.classList.add(
+                    "show"
+                );
+
+            }
+        );
+
+
+        popupClose.addEventListener(
+            "click",
+            () => {
+
+                profileOverlay.classList.remove(
+                    "show"
+                );
+
+            }
+        );
+
+
+        profileOverlay.addEventListener(
+            "click",
+            event => {
+
+                if (
+                    event.target ===
+                    profileOverlay
+                ) {
+
+                    profileOverlay.classList.remove(
+                        "show"
+                    );
+
+                }
+
+            }
+        );
+
+
+        logoutButton.addEventListener(
+            "click",
+            () => {
+
+                localStorage.removeItem(
+                    "civexaUser"
+                );
+
+                window.location.href =
+                    "../login.html";
+
+            }
+        );
+
+
+
+        /* =====================================================
+           ELEMENTS
+        ====================================================== */
+
+        const messageList =
+            document.getElementById(
+                "messageList"
+            );
+
+        const loadingState =
+            document.getElementById(
+                "loadingState"
+            );
+
+        const errorState =
+            document.getElementById(
+                "errorState"
+            );
+
+        const emptyState =
+            document.getElementById(
+                "emptyState"
+            );
+
+        const errorText =
+            document.getElementById(
+                "errorText"
+            );
+
+        const searchInput =
+            document.getElementById(
+                "searchInput"
+            );
+
+        const statusFilter =
+            document.getElementById(
+                "statusFilter"
+            );
+
+        const refreshButton =
+            document.getElementById(
+                "refreshButton"
+            );
+
+        const retryButton =
+            document.getElementById(
+                "retryButton"
+            );
+
+        const messageModal =
+            document.getElementById(
+                "messageModal"
+            );
+
+        const modalClose =
+            document.getElementById(
+                "modalClose"
+            );
+
+        const modalSubject =
+            document.getElementById(
+                "modalSubject"
+            );
+
+        const modalName =
+            document.getElementById(
+                "modalName"
+            );
+
+        const modalEmail =
+            document.getElementById(
+                "modalEmail"
+            );
+
+        const modalDate =
+            document.getElementById(
+                "modalDate"
+            );
+
+        const modalMessage =
+            document.getElementById(
+                "modalMessage"
+            );
+
+        const modalStatus =
+            document.getElementById(
+                "modalStatus"
+            );
+
+        const modalStatusSelect =
+            document.getElementById(
+                "modalStatusSelect"
+            );
+
+        const saveStatusButton =
+            document.getElementById(
+                "saveStatusButton"
+            );
+
+        const saveMessage =
+            document.getElementById(
+                "saveMessage"
+            );
+
+
+        let allMessages = [];
+
+        let selectedMessage = null;
+
+
+
+        /* =====================================================
+           LOAD DATA
+        ====================================================== */
+
+        async function loadMessages() {
+
+            showState("loading");
+
+
+            try {
+
+                const response =
+                    await fetch(
+                        "http://localhost:3000/api/issues/admin/contact-messages"
+                    );
+
+
+                const result =
+                    await response.json();
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        result.message ||
+                        "Failed to load contact messages."
+                    );
+
+                }
+
+
+                allMessages =
+                    Array.isArray(
+                        result.messages
+                    )
+                        ? result.messages
+                        : [];
+
+
+                updateStatistics();
+
+                applyFilters();
+
+            } catch (error) {
+
+                console.error(
+                    "Contact messages error:",
+                    error
+                );
+
+
+                errorText.textContent =
+                    error.message ||
+                    "Unable to load messages.";
+
+
+                showState("error");
+
+            }
+
+        }
+
+
+
+        /* =====================================================
+           STATISTICS
+        ====================================================== */
+
+        function updateStatistics() {
+
+            document.getElementById(
+                "totalMessages"
+            ).textContent =
+                allMessages.length;
+
+
+            document.getElementById(
+                "newMessages"
+            ).textContent =
+                allMessages.filter(
+                    item =>
+                        item.status === "new"
+                ).length;
+
+
+            document.getElementById(
+                "readMessages"
+            ).textContent =
+                allMessages.filter(
+                    item =>
+                        item.status === "read"
+                ).length;
+
+
+            document.getElementById(
+                "resolvedMessages"
+            ).textContent =
+                allMessages.filter(
+                    item =>
+                        item.status === "resolved"
+                ).length;
+
+        }
+
+
+
+        /* =====================================================
+           FILTER
+        ====================================================== */
+
+        function applyFilters() {
+
+            const search =
+                searchInput.value
+                    .trim()
+                    .toLowerCase();
+
+            const selectedStatus =
+                statusFilter.value;
+
+
+            const filtered =
+                allMessages.filter(
+                    item => {
+
+                        const searchable =
+                            [
+                                item.name,
+                                item.email,
+                                item.subject,
+                                item.message
+                            ]
+                                .join(" ")
+                                .toLowerCase();
+
+
+                        const matchesSearch =
+                            !search ||
+                            searchable.includes(
+                                search
+                            );
+
+
+                        const matchesStatus =
+                            selectedStatus ===
+                                "all" ||
+                            item.status ===
+                                selectedStatus;
+
+
+                        return (
+                            matchesSearch &&
+                            matchesStatus
+                        );
+
+                    }
+                );
+
+
+            renderMessages(filtered);
+
+        }
+
+
+
+        /* =====================================================
+           RENDER
+        ====================================================== */
+
+        function renderMessages(messages) {
+
+            messageList.innerHTML = "";
+
+            hideStates();
+
+
+            if (!messages.length) {
+
+                emptyState.classList.add(
+                    "show"
+                );
+
+                return;
+
+            }
+
+
+            messages.forEach(
+                (message, index) => {
+
+                    const card =
+                        createMessageCard(
+                            message,
+                            index
+                        );
+
+                    messageList.appendChild(
+                        card
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        function createMessageCard(
+            message,
+            index
+        ) {
+
+            const card =
+                document.createElement(
+                    "article"
+                );
+
+
+            card.className =
+                "message-card";
+
+
+            card.style.animationDelay =
+                `${index * 0.05}s`;
+
+
+            const status =
+                message.status ||
+                "new";
+
+
+            const statusText =
+                capitalize(status);
+
+
+            card.innerHTML = `
+
+                <div class="card-top">
+
+                    <div class="sender-avatar">
+                        ${escapeHTML(
+                            getInitial(
+                                message.name
+                            )
+                        )}
+                    </div>
+
+                    <div class="sender-info">
+
+                        <h3>
+                            ${escapeHTML(
+                                message.name
+                            )}
+                        </h3>
+
+                        <span>
+                            ${escapeHTML(
+                                message.email
+                            )}
+                        </span>
+
+                    </div>
+
+                    <span class="status-badge ${status}">
+                        ${statusText}
+                    </span>
+
+                </div>
+
+
+                <div class="card-body">
+
+                    <span class="subject">
+                        ${escapeHTML(
+                            message.subject
+                        )}
+                    </span>
+
+                    <p>
+                        ${escapeHTML(
+                            message.message
+                        )}
+                    </p>
+
+                </div>
+
+
+                <div class="card-footer">
+
+                    <span>
+                        ${formatDate(
+                            message.created_at
+                        )}
+                    </span>
+
+                    <button
+                        type="button"
+                        class="view-button"
+                    >
+                        View Message →
+                    </button>
+
+                </div>
+
+            `;
+
+
+            card
+                .querySelector(
+                    ".view-button"
+                )
+                .addEventListener(
+                    "click",
+                    () => {
+
+                        openMessage(
+                            message.message_id
+                        );
+
+                    }
+                );
+
+
+            return card;
+
+        }
+
+
+
+        /* =====================================================
+           OPEN MODAL
+        ====================================================== */
+
+        function openMessage(messageId) {
+
+            selectedMessage =
+                allMessages.find(
+                    item =>
+                        Number(
+                            item.message_id
+                        ) ===
+                        Number(
+                            messageId
+                        )
+                );
+
+
+            if (!selectedMessage) {
+                return;
+            }
+
+
+            modalSubject.textContent =
+                selectedMessage.subject ||
+                "No Subject";
+
+
+            modalName.textContent =
+                selectedMessage.name ||
+                "Unknown";
+
+
+            modalEmail.textContent =
+                selectedMessage.email ||
+                "No email";
+
+
+            modalDate.textContent =
+                formatDate(
+                    selectedMessage.created_at
+                );
+
+
+            modalMessage.textContent =
+                selectedMessage.message ||
+                "";
+
+
+            const status =
+                selectedMessage.status ||
+                "new";
+
+
+            modalStatus.textContent =
+                capitalize(status);
+
+
+            modalStatus.className =
+                `status-badge ${status}`;
+
+
+            modalStatusSelect.value =
+                status;
+
+
+            saveMessage.textContent = "";
+
+
+            messageModal.classList.add(
+                "show"
+            );
+
+        }
+
+
+
+        /* =====================================================
+           UPDATE STATUS
+        ====================================================== */
+
+        saveStatusButton.addEventListener(
+            "click",
+            async () => {
+
+                if (!selectedMessage) {
+                    return;
+                }
+
+
+                const newStatus =
+                    modalStatusSelect.value;
+
+
+                saveStatusButton.disabled =
+                    true;
+
+                saveStatusButton.textContent =
+                    "Saving...";
+
+
+                try {
+
+                    const response =
+                        await fetch(
+                            `http://localhost:3000/api/issues/admin/contact-messages/${selectedMessage.message_id}`,
+                            {
+                                method: "PUT",
+
+                                headers: {
+                                    "Content-Type":
+                                        "application/json"
+                                },
+
+                                body: JSON.stringify({
+                                    status:
+                                        newStatus
+                                })
+                            }
+                        );
+
+
+                    const result =
+                        await response.json();
+
+
+                    if (!response.ok) {
+
+                        throw new Error(
+                            result.message ||
+                            "Failed to update status."
+                        );
+
+                    }
+
+
+                    selectedMessage.status =
+                        newStatus;
+
+
+                    const index =
+                        allMessages.findIndex(
+                            item =>
+                                Number(
+                                    item.message_id
+                                ) ===
+                                Number(
+                                    selectedMessage.message_id
+                                )
+                        );
+
+
+                    if (index !== -1) {
+
+                        allMessages[
+                            index
+                        ].status =
+                            newStatus;
+
+                    }
+
+
+                    updateStatistics();
+
+                    applyFilters();
+
+
+                    modalStatus.textContent =
+                        capitalize(
+                            newStatus
+                        );
+
+
+                    modalStatus.className =
+                        `status-badge ${newStatus}`;
+
+
+                    saveMessage.textContent =
+                        "Status updated successfully.";
+
+
+                    saveMessage.className =
+                        "save-message success";
+
+
+                } catch (error) {
+
+                    console.error(
+                        "Status update error:",
+                        error
+                    );
+
+
+                    saveMessage.textContent =
+                        error.message ||
+                        "Failed to update status.";
+
+
+                    saveMessage.className =
+                        "save-message error";
+
+                } finally {
+
+                    saveStatusButton.disabled =
+                        false;
+
+                    saveStatusButton.textContent =
+                        "Save Status";
+
+                }
+
+            }
+        );
+
+
+
+        /* =====================================================
+           CLOSE MODAL
+        ====================================================== */
+
+        modalClose.addEventListener(
+            "click",
+            closeModal
+        );
+
+
+        messageModal.addEventListener(
+            "click",
+            event => {
+
+                if (
+                    event.target ===
+                    messageModal
+                ) {
+
+                    closeModal();
+
+                }
+
+            }
+        );
+
+
+        function closeModal() {
+
+            messageModal.classList.remove(
+                "show"
+            );
+
+            selectedMessage = null;
+
+        }
+
+
+
+        /* =====================================================
+           SEARCH / FILTER / REFRESH
+        ====================================================== */
+
+        searchInput.addEventListener(
+            "input",
+            applyFilters
+        );
+
+
+        statusFilter.addEventListener(
+            "change",
+            applyFilters
+        );
+
+
+        refreshButton.addEventListener(
+            "click",
+            loadMessages
+        );
+
+
+        retryButton.addEventListener(
+            "click",
+            loadMessages
+        );
+
+
+
+        /* =====================================================
+           STATES
+        ====================================================== */
+
+        function hideStates() {
+
+            loadingState.classList.remove(
+                "show"
+            );
+
+            errorState.classList.remove(
+                "show"
+            );
+
+            emptyState.classList.remove(
+                "show"
+            );
+
+        }
+
+
+        function showState(state) {
+
+            hideStates();
+
+
+            if (state === "loading") {
+
+                loadingState.classList.add(
+                    "show"
+                );
+
+            }
+
+
+            if (state === "error") {
+
+                errorState.classList.add(
+                    "show"
+                );
+
+            }
+
+
+            if (state === "empty") {
+
+                emptyState.classList.add(
+                    "show"
+                );
+
+            }
+
+        }
+
+
+
+        /* =====================================================
+           HELPERS
+        ====================================================== */
+
+        function capitalize(value) {
+
+            if (!value) {
+                return "";
+            }
+
+            return (
+                value.charAt(0).toUpperCase() +
+                value.slice(1)
+            );
+
+        }
+
+
+        function formatDate(value) {
+
+            if (!value) {
+                return "Unknown date";
+            }
+
+
+            const date =
+                new Date(value);
+
+
+            if (
+                Number.isNaN(
+                    date.getTime()
+                )
+            ) {
+
+                return "Unknown date";
+
+            }
+
+
+            return date.toLocaleDateString(
+                "en-IN",
+                {
+                    day: "2-digit",
+                    month: "short",
+                    year: "numeric"
+                }
+            );
+
+        }
+
+
+        function escapeHTML(value) {
+
+            return String(
+                value ?? ""
+            )
+                .replace(
+                    /&/g,
+                    "&amp;"
+                )
+                .replace(
+                    /</g,
+                    "&lt;"
+                )
+                .replace(
+                    />/g,
+                    "&gt;"
+                )
+                .replace(
+                    /"/g,
+                    "&quot;"
+                )
+                .replace(
+                    /'/g,
+                    "&#039;"
+                );
+
+        }
+
+
+
+        /* =====================================================
+           START
+        ====================================================== */
+
+        loadAdminProfile();
+
+        loadMessages();
+
+    </script>
+
+</body>
+
+</html>

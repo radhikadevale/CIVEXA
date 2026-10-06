@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Feedback | CIVEXA</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="feedback.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="feedback-navbar">
+
+        <div class="feedback-logo">
+            <a href="index.html">CIVEXA</a>
+        </div>
+
+        <nav class="feedback-nav">
+
+            <a href="index.html">Home</a>
+
+            <a href="report.html">Report Issue</a>
+
+            <a href="browse.html">Browse Issues</a>
+
+            <a href="track.html">Track Issue</a>
+
+            <a href="dashboard.html">Dashboard</a>
+
+            <a href="my-reports.html">My Reports</a>
+
+            <a href="feedback.html" class="active">
+                Feedback
+            </a>
+
+        </nav>
+
+        <div class="feedback-profile">
+            <a href="profile.html" class="profile-avatar">
+                C
+            </a>
+        </div>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <main>
+
+        <section class="feedback-hero">
+
+            <div class="feedback-hero-content">
+
+                <span class="feedback-eyebrow">
+                    COMMUNITY VOICE
+                </span>
+
+                <h1>
+                    Your feedback
+                    <span>makes CIVEXA better.</span>
+                </h1>
+
+                <p>
+                    Tell us about your experience with CIVEXA.
+                    Your suggestions help improve community issue
+                    reporting, tracking and resolution.
+                </p>
+
+                <div class="feedback-hero-actions">
+
+                    <a href="#feedback-form" class="feedback-primary-btn">
+                        Give Feedback
+                    </a>
+
+                    <a href="contact.html" class="feedback-secondary-btn">
+                        Need Help?
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Hero Visual -->
+
+            <div class="feedback-hero-visual">
+
+                <div class="feedback-orbit orbit-one"></div>
+                <div class="feedback-orbit orbit-two"></div>
+
+                <div class="feedback-center-card">
+
+                    <div class="feedback-icon">
+                        ♡
+                    </div>
+
+                    <strong>
+                        Community Voice
+                    </strong>
+
+                    <span>
+                        We listen. We improve.
+                    </span>
+
+                </div>
+
+                <div class="feedback-floating-card card-one">
+                    <span>✓</span>
+                    Issue Experience
+                </div>
+
+                <div class="feedback-floating-card card-two">
+                    <span>★</span>
+                    Helpful Support
+                </div>
+
+                <div class="feedback-floating-card card-three">
+                    <span>→</span>
+                    Better Service
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FEEDBACK INTRO ================= -->
+
+        <section class="feedback-intro">
+
+            <div class="feedback-section-heading">
+
+                <span class="feedback-label">
+                    WHY IT MATTERS
+                </span>
+
+                <h2>
+                    Every experience can
+                    help improve the next one.
+                </h2>
+
+                <p>
+                    Whether you reported an issue, supported a
+                    community report or tracked a resolution,
+                    sharing your experience helps CIVEXA become
+                    more useful for everyone.
+                </p>
+
+            </div>
+
+
+            <div class="feedback-benefits">
+
+                <div class="feedback-benefit-card">
+
+                    <div class="benefit-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Share Your Experience
+                    </h3>
+
+                    <p>
+                        Tell us what worked well and where
+                        your experience could be improved.
+                    </p>
+
+                </div>
+
+
+                <div class="feedback-benefit-card">
+
+                    <div class="benefit-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Suggest Improvements
+                    </h3>
+
+                    <p>
+                        Have an idea for a better feature,
+                        process or community experience?
+                    </p>
+
+                </div>
+
+
+                <div class="feedback-benefit-card">
+
+                    <div class="benefit-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Help the Community
+                    </h3>
+
+                    <p>
+                        Your feedback can help make CIVEXA
+                        easier and more effective for citizens.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FEEDBACK FORM ================= -->
+
+        <section class="feedback-form-section" id="feedback-form">
+
+            <div class="feedback-form-wrapper">
+
+                <div class="feedback-form-heading">
+
+                    <span class="feedback-label">
+                        YOUR VOICE
+                    </span>
+
+                    <h2>
+                        Tell us what you think.
+                    </h2>
+
+                    <p>
+                        This is a frontend prototype. Your feedback
+                        will be submitted as a demonstration.
+                    </p>
+
+                </div>
+
+
+                <form id="feedbackForm">
+
+                    <!-- Name -->
+
+                    <div class="feedback-field">
+
+                        <label for="feedbackName">
+                            Your Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="feedbackName"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Email -->
+
+                    <div class="feedback-field">
+
+                        <label for="feedbackEmail">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="feedbackEmail"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Experience -->
+
+                    <div class="feedback-field">
+
+                        <label>
+                            How was your CIVEXA experience?
+                        </label>
+
+                        <div class="rating-options">
+
+                            <label class="rating-option">
+                                <input
+                                    type="radio"
+                                    name="rating"
+                                    value="5"
+                                    required
+                                >
+                                <span>Excellent</span>
+                            </label>
+
+                            <label class="rating-option">
+                                <input
+                                    type="radio"
+                                    name="rating"
+                                    value="4"
+                                >
+                                <span>Good</span>
+                            </label>
+
+                            <label class="rating-option">
+                                <input
+                                    type="radio"
+                                    name="rating"
+                                   value="3"
+                                >
+                                <span>Average</span>
+                            </label>
+
+                            <label class="rating-option">
+                                <input
+                                    type="radio"
+                                    name="rating"
+                                    value="2"
+                                >
+                                <span>Needs Improvement</span>
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Feedback Type -->
+
+                    <div class="feedback-field">
+
+                        <label for="feedbackType">
+                            Feedback Type
+                        </label>
+
+                        <select id="feedbackType" required>
+
+                            <option value="">
+                                Select feedback type
+                            </option>
+
+                            <option value="Suggestion">
+                                Suggestion
+                            </option>
+
+                            <option value="Website Experience">
+                                Website Experience
+                            </option>
+
+                            <option value="Issue Reporting">
+                                Issue Reporting
+                            </option>
+
+                            <option value="Issue Tracking">
+                                Issue Tracking
+                            </option>
+
+                            <option value="General Feedback">
+                                General Feedback
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Message -->
+
+                    <div class="feedback-field">
+
+                        <label for="feedbackMessage">
+                            Your Feedback
+                        </label>
+
+                        <textarea
+                            id="feedbackMessage"
+                            maxlength="500"
+                            placeholder="Write your feedback here..."
+                            required
+                        ></textarea>
+
+                        <div class="character-count">
+                            <span id="characterCount">0</span>/500
+                        </div>
+
+                    </div>
+
+
+                    <!-- Submit -->
+
+                    <button
+                        type="submit"
+                        class="feedback-submit-btn"
+                    >
+                        Submit Feedback
+                        <span>→</span>
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SUCCESS MESSAGE ================= -->
+
+        <div
+            class="feedback-success"
+            id="feedbackSuccess"
+        >
+
+            <div class="success-card">
+
+                <div class="success-icon">
+                    ✓
+                </div>
+
+                <h2>
+                    Thank You!
+                </h2>
+
+                <p>
+                    Your feedback has been recorded in this
+                    CIVEXA prototype.
+                </p>
+
+                <button id="closeFeedback">
+                    Continue
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= CTA ================= -->
+
+        <section class="feedback-cta">
+
+            <div>
+
+                <span class="feedback-label">
+                    KEEP MAKING A DIFFERENCE
+                </span>
+
+                <h2>
+                    See what your community
+                    is working on.
+                </h2>
+
+                <p>
+                    Explore reported issues and support problems
+                    that matter to your community.
+                </p>
+
+            </div>
+
+            <a href="browse.html" class="feedback-primary-btn">
+                Browse Issues →
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="feedback-footer">
+
+        <div class="footer-main">
+
+            <div class="footer-brand">
+
+                <h2>
+                    ◆ CIVEXA
+                </h2>
+
+                <p>
+                    Report It. Support It. Track It. Fix It.
+                </p>
+
+                <span>
+                    A community issue reporting, prioritization
+                    and resolution system built as a Web Technology
+                    microproject prototype.
+                </span>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    EXPLORE
+                </h3>
+
+                <a href="index.html">Home</a>
+                <a href="report.html">Report Issue</a>
+                <a href="browse.html">Browse Issues</a>
+                <a href="track.html">Track Issue</a>
+                <a href="about.html">About CIVEXA</a>
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    ACCOUNT
+                </h3>
+
+                <a href="dashboard.html">Dashboard</a>
+                <a href="my-reports.html">My Reports</a>
+                <a href="profile.html">Profile</a>
+                <a href="feedback.html">Feedback</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                Prototype system active
+            </span>
+
+            <span>
+                © 2026 CIVEXA
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        const feedbackForm =
+            document.getElementById("feedbackForm");
+
+        const feedbackMessage =
+            document.getElementById("feedbackMessage");
+
+        const characterCount =
+            document.getElementById("characterCount");
+
+        const feedbackSuccess =
+            document.getElementById("feedbackSuccess");
+
+        const closeFeedback =
+            document.getElementById("closeFeedback");
+
+
+        /* Character Counter */
+
+        feedbackMessage.addEventListener("input", function () {
+
+            characterCount.textContent =
+                feedbackMessage.value.length;
+
+        });
+
+/* Submit Feedback to Backend */
+
+feedbackForm.addEventListener("submit", async function (event) {
+
+    event.preventDefault();
+
+    const userData =
+        localStorage.getItem("civexaUser");
+
+    let user = null;
+
+    if (userData) {
+        user = JSON.parse(userData);
+    }
+
+    const selectedRating =
+        document.querySelector(
+            'input[name="rating"]:checked'
+        );
+
+    const data = {
+        user_id: user ? user.user_id : null,
+        name:
+            document.getElementById("feedbackName").value.trim(),
+        email:
+            document.getElementById("feedbackEmail").value.trim(),
+        rating:
+            selectedRating ? selectedRating.value : "",
+        feedback_type:
+            document.getElementById("feedbackType").value,
+        message:
+            feedbackMessage.value.trim()
+    };
+
+    try {
+
+        const response = await fetch(
+            "http://localhost:3000/api/issues/feedback",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            }
+        );
+
+        const result = await response.json();
+
+        if (!response.ok) {
+            alert(
+                result.message ||
+                "Failed to submit feedback."
+            );
+            return;
+        }
+
+        feedbackSuccess.classList.add("show");
+
+    } catch (error) {
+
+        console.error(
+            "Feedback submission error:",
+            error
+        );
+
+        alert(
+            "Unable to connect to CIVEXA server. Make sure the backend is running."
+        );
+    }
+
+});
+
+
+        /* Close Success */
+
+        closeFeedback.addEventListener("click", function () {
+
+            feedbackSuccess.classList.remove("show");
+
+            feedbackForm.reset();
+
+            characterCount.textContent = "0";
+
+        });
+
+    </script>
+
+</body>
+</html>
